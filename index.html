@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contenedor de Imágenes y Video con Bootstrap</title>
+  <!-- Integrar Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+<!-- Integrar Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Integrar Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+<body>
+
+<!-- Encabezado flotante -->
+<nav class="navbar navbar-light bg-light fixed-top">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <!-- Logo a la izquierda -->
+    <a class="navbar-brand" href="#">
+      <img src="imagen/0.png" alt="Logo" style="max-width: 100px;">
+    </a>
+    <!-- Mensaje con enlace al formulario en el centro -->
+    <span class="navbar-text mx-auto">
+      <a href="#formulario" style="text-decoration: none; color: inherit;" class="h4 fw-bold">
+        Pídelo ahora y paga en la puerta de tu casa
+      </a>
+    </span>
+  </div>
+</nav>
+
+
+
+
+<div class="container" style="margin-top: 70px;"> <!-- Agregar un margen superior para el contenido -->
+  <figure class="card mb-3">
+    <img src="imagen/1.png" class="card-img-top" alt="">
+    <figcaption class="card-body">
+      <p class="card-text"></p>
+    </figcaption>
+
+
+
+    <a class="btn btn-primary custom-btn font-italic" href="#formulario">
+  <span class="display-2">obtén la oferta!!</span>
+</a>
+
+    
+  
+
+  </figure>
+  <figure class="card mb-3">
+    <img src="imagen/2.png" class="card-img-top" alt="Descripción de la imagen 2">
+    <figcaption class="card-body">
+      <p class="card-text"></p>
+    </figcaption>
+
+
+
+
+
+    <a class="btn btn-primary custom-btn font-italic" href="#formulario">
+      <span class="display-2">obtén la oferta!!</span>
+    </a>
+
+
+
+
+  </figure>
+  <figure class="card mb-3">
+    <img src="imagen/3.png" class="card-img-top" alt="Descripción de la imagen 3">
+    <figcaption class="card-body">
+      <p class="card-text"></p>
+    </figcaption>
+
+
+
+
+    <a class="btn btn-primary custom-btn font-italic" href="#formulario">
+      <span class="display-2">obtén la oferta!!</span>
+    </a>
+
+
+
+  </figure>
+  <!-- Contenedor de video -->
+  <figure class="card mb-3">
+    <figcaption class="card-body">
+      <h5 class="card-title">Video</h5>
+      <video controls class="card-video">
+        <source src="video/1.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </figcaption>
+
+
+
+    <a class="btn btn-primary custom-btn font-italic" href="#formulario">
+      <span class="display-2">obtén la oferta!!</span>
+    </a>
+
+  </figure>
+</div>
+
+<!-- Google Apps Script iframe -->
+<div id="formulario" class="container" style="margin-top: 50px;">
+  <!-- Aquí va el formulario -->
+  <iframe id="miFormulario" src="https://script.google.com/macros/s/AKfycbx7GiYQ0jFxVJ4ABs5VAqbiK2tsPuyWqQIf_sykgDK2gg6yaplhQi2qXBdEeOP4Vc10/exec" frameborder="0"></iframe>
+</div>
+
+<!-- Botón de WhatsApp estilizado con Bootstrap y estilos personalizados -->
+<a href="https://wa.me/1234567890" target="_blank" class="btn btn-success custom-whatsapp-btn">
+  <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+</a>
+
+
+
+<!-- Integrar Bootstrap JS (opcional, solo si necesitas funcionalidades como modales, etc.) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Integrar JavaScript -->
+<script src="script.js"></script>
+
+<!-- Pie de página -->
+<footer class="mt-5">
+  <div class="container">
+    <p>© S24 seguridad electronica. Todos los derechos reservados.</p>
+    <p>Contacto: info@tuempresa.com</p>
+  </div>
+</footer>
+
+</body>
+</html>
