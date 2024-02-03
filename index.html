@@ -1,35 +1,112 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <base target="_top">
-  </head>
-  <body>
-    <form id="myForm">
-      Nombre Completo:<br>
-      <input type="text" name="nombreCompleto"><br>
-      Dirección:<br>
-      <input type="text" name="direccion"><br>
-      Ciudad:<br>
-      <input type="text" name="ciudad"><br>
-      Teléfono:<br>
-      <input type="text" name="telefono"><br>
-      Correo Electrónico:<br>
-      <input type="text" name="correoElectronico"><br><br>
-      <input type="button" value="Enviar" onclick="submitForm()">
-    </form>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contenedor de Imágenes y Video con Bootstrap</title>
+  <!-- Integrar Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Integrar Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    /* Agregar estilo para quitar el scroll del iframe */
+    iframe {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
 
-    <script>
-      function submitForm() {
-        var form = document.getElementById('myForm');
-        google.script.run.withSuccessHandler(function() {
-          form.reset();
-          alert('Datos enviados correctamente.');
-        }).doPost(form);
-      }
-    </script>
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script>
-      google.script.url = 'https://script.google.com/macros/s/AKfycbw7DAQDzuV68PUpTDRJnr9ET7V5V9QVuF5K0u29ZOkHOZgcnooKbat3_pbjfUusbMmd/exec';
-    </script>
-  </body>
+<!-- Encabezado flotante -->
+<nav class="navbar navbar-light bg-light fixed-top">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <!-- Logo a la izquierda -->
+    <a class="navbar-brand" href="#">
+      <img src="imagen/0.png" alt="Logo" style="max-width: 100px;">
+    </a>
+    <!-- Mensaje con enlace al formulario en el centro -->
+    <span class="navbar-text mx-auto">
+      <a href="#formulario" style="text-decoration: none; color: inherit;" class="h4 fw-bold">
+        Pídelo ahora y paga en la puerta de tu casa
+      </a>
+    </span>
+  </div>
+</nav>
+
+<!-- Contenido principal -->
+<div class="container mt-5"> <!-- Agregar un margen superior para el contenido -->
+  <div class="row">
+    <!-- Imágenes y botones -->
+    <div class="col-md-12 mb-4">
+      <div class="card">
+        <img src="imagen/1.png" class="card-img-top" alt="">
+        <div class="card-body">
+          <a class="btn btn-primary custom-btn font-italic" href="#formulario">
+            <span class="display-2">¡Obtén la oferta!</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mb-4">
+      <div class="card">
+        <img src="imagen/2.png" class="card-img-top" alt="">
+        <div class="card-body">
+          <a class="btn btn-primary custom-btn font-italic" href="#formulario">
+            <span class="display-2">¡Obtén la oferta!</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mb-4">
+      <div class="card">
+        <img src="imagen/3.png" class="card-img-top" alt="">
+        <div class="card-body">
+          <a class="btn btn-primary custom-btn font-italic" href="#formulario">
+            <span class="display-2">¡Obtén la oferta!</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Contenedor de video -->
+    <div class="col-md-12 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Video</h5>
+          <video controls class="card-video">
+            <source src="video/1.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Formulario de Google Sheets -->
+<div id="formulario" class="container mt-5">
+  <!-- Aquí va el formulario -->
+  <iframe id="miFormulario" src="https://docs.google.com/forms/d/e/1FAIpQLScSEy7Nn-Esv3-48aVZJY7q8H_pvHfTJHSlKk-Jg2ZEVXX3gA/viewform?usp=sf_link" frameborder="0" width="100%" height="1500" scrolling="no"></iframe>
+</div>
+
+<!-- Botón de WhatsApp estilizado con Bootstrap y estilos personalizados -->
+<a href="https://wa.me/1234567890" target="_blank" class="btn btn-success custom-whatsapp-btn">
+  <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+</a>
+
+<!-- Pie de página -->
+<footer class="mt-5">
+  <div class="container">
+    <p>© S24 seguridad electronica. Todos los derechos reservados.</p>
+    <p>Contacto: info@tuempresa.com</p>
+  </div>
+</footer>
+
+<!-- Integrar Bootstrap JS (opcional, solo si necesitas funcionalidades como modales, etc.) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Integrar JavaScript -->
+<script src="script.js"></script>
+
+</body>
 </html>
