@@ -32,24 +32,15 @@
 document.getElementById("formularioDatos").addEventListener("submit", function(event) {
   event.preventDefault();
   var formData = new FormData(this);
-  
-  fetch('https://script.google.com/macros/s/AKfycbx7GiYQ0jFxVJ4ABs5VAqbiK2tsPuyWqQIf_sykgDK2gg6yaplhQi2qXBdEeOP4Vc10/exec', {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Hubo un problema al enviar los datos.');
-    }
-    return response.text();
-  })
-  .then(data => {
-    alert(data);
+
+  // Enviar los datos del formulario a Google Apps Script
+  google.script.run.withSuccessHandler(function(response) {
+    alert(response);
     // Puedes realizar alguna acción adicional después de enviar los datos
-  })
-  .catch(error => {
+  }).withFailureHandler(function(error) {
     console.error('Error:', error);
-  });
+    alert('Hubo un problema al enviar los datos.');
+  }).doPost(formData);
 });
 </script>
 
