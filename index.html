@@ -3,63 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tabla de Datos desde Google Sheets</title>
-<style>
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-</style>
+<title>Formulario de Datos</title>
 </head>
 <body>
-<h2>Tabla de Datos desde Google Sheets</h2>
-<table id="tablaDatos">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Edad</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Los datos se agregarán aquí con JavaScript -->
-  </tbody>
-</table>
+
+<h2>Formulario de Datos</h2>
+
+<form id="formularioDatos">
+  <label for="nombreCompleto">Nombre Completo:</label><br>
+  <input type="text" id="nombreCompleto" name="nombreCompleto"><br>
+  
+  <label for="direccion">Dirección/Barrio:</label><br>
+  <input type="text" id="direccion" name="direccion"><br>
+  
+  <label for="ciudad">Ciudad/Región:</label><br>
+  <input type="text" id="ciudad" name="ciudad"><br>
+  
+  <label for="telefono">Teléfono:</label><br>
+  <input type="text" id="telefono" name="telefono"><br>
+  
+  <label for="correoElectronico">Correo Electrónico:</label><br>
+  <input type="email" id="correoElectronico" name="correoElectronico"><br><br>
+  
+  <input type="submit" value="Enviar">
+</form>
 
 <script>
-// Hacer la solicitud HTTP para obtener los datos desde Google Apps Script
-fetch('https://script.google.com/macros/s/AKfycbx7GiYQ0jFxVJ4ABs5VAqbiK2tsPuyWqQIf_sykgDK2gg6yaplhQi2qXBdEeOP4Vc10/exec?action=leerDatos')
-  .then(response => response.json())
+document.getElementById("formularioDatos").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var formData = new FormData(this);
+  
+  fetch('https://script.google.com/macros/s/AKfycbx7GiYQ0jFxVJ4ABs5VAqbiK2tsPuyWqQIf_sykgDK2gg6yaplhQi2qXBdEeOP4Vc10/exec', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Hubo un problema al enviar los datos.');
+    }
+    return response.text();
+  })
   .then(data => {
-    // Hacer algo con los datos, como mostrarlos en una tabla
-    mostrarDatosEnTabla(data);
+    alert(data);
+    // Puedes realizar alguna acción adicional después de enviar los datos
+  })
+  .catch(error => {
+    console.error('Error:', error);
   });
-
-// Función para mostrar los datos en la tabla
-function mostrarDatosEnTabla(datos) {
-  var tbody = document.querySelector('#tablaDatos tbody');
-  tbody.innerHTML = ''; // Limpiar tabla antes de agregar nuevos datos
-
-  datos.forEach(function(fila) {
-    var tr = document.createElement('tr');
-    fila.forEach(function(valor) {
-      var td = document.createElement('td');
-      td.textContent = valor;
-      tr.appendChild(td);
-    });
-    tbody.appendChild(tr);
-  });
-}
+});
 </script>
 
 </body>
