@@ -1,48 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formulario de Datos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
 </head>
 <body>
+    <h2>Formulario de Datos</h2>
+    <form id="myForm">
+        <label for="nombreCompleto">Nombre Completo:</label><br>
+        <input type="text" id="nombreCompleto" name="nombreCompleto" required><br><br>
+        
+        <label for="direccion">Dirección:</label><br>
+        <input type="text" id="direccion" name="direccion" required><br><br>
+        
+        <label for="ciudad">Ciudad:</label><br>
+        <input type="text" id="ciudad" name="ciudad" required><br><br>
+        
+        <label for="telefono">Teléfono:</label><br>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Formato: 123-456-7890" required><br><br>
+        
+        <label for="correoElectronico">Correo Electrónico:</label><br>
+        <input type="email" id="correoElectronico" name="correoElectronico" required><br><br>
+        
+        <input type="submit" value="Enviar">
+    </form>
 
-<h2>Formulario de Datos</h2>
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event){
+            event.preventDefault();
+            submitForm();
+        });
 
-<form id="formularioDatos">
-  <label for="nombreCompleto">Nombre Completo:</label><br>
-  <input type="text" id="nombreCompleto" name="nombreCompleto"><br>
-  
-  <label for="direccion">Dirección/Barrio:</label><br>
-  <input type="text" id="direccion" name="direccion"><br>
-  
-  <label for="ciudad">Ciudad/Región:</label><br>
-  <input type="text" id="ciudad" name="ciudad"><br>
-  
-  <label for="telefono">Teléfono:</label><br>
-  <input type="text" id="telefono" name="telefono"><br>
-  
-  <label for="correoElectronico">Correo Electrónico:</label><br>
-  <input type="email" id="correoElectronico" name="correoElectronico"><br><br>
-  
-  <input type="submit" value="Enviar">
-</form>
+        function submitForm() {
+            var formData = {
+                nombreCompleto: document.getElementById("nombreCompleto").value,
+                direccion: document.getElementById("direccion").value,
+                ciudad: document.getElementById("ciudad").value,
+                telefono: document.getElementById("telefono").value,
+                correoElectronico: document.getElementById("correoElectronico").value
+            };
 
-<script>
-document.getElementById("formularioDatos").addEventListener("submit", function(event) {
-  event.preventDefault();
-  var formData = new FormData(this);
+            // Aquí puedes agregar código para enviar los datos a través de AJAX a un servidor, o simplemente mostrarlos en la consola.
+            console.log(formData);
 
-  // Enviar los datos del formulario a Google Apps Script
-  google.script.run.withSuccessHandler(function(response) {
-    alert(response);
-    // Puedes realizar alguna acción adicional después de enviar los datos
-  }).withFailureHandler(function(error) {
-    console.error('Error:', error);
-    alert('Hubo un problema al enviar los datos.');
-  }).doPost(formData);
-});
-</script>
-
+            // Puedes agregar aquí el código para enviar los datos a través de AJAX a un servidor si es necesario.
+        }
+    </script>
 </body>
 </html>
