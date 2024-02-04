@@ -1,30 +1,175 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formulario</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contenedor de Imágenes y Video con Bootstrap</title>
+  <!-- Integrar Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Integrar Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
+  <title>Formulario</title>
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+ 
+<style>
+	body {
+	  background-color: #f8f9fa;
+	}
+	.form-container {
+	  background-color: #fff;
+	  border-radius: 8px;
+	  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+	  padding: 20px;
+	  margin-top: 30px;
+	}
+	.btn-primary {
+	  background-color: #007bff;
+	  border-color: #007bff;
+	}
+	.btn-primary:hover {
+	  background-color: #0056b3;
+	  border-color: #0056b3;
+	}
+  </style>
 </head>
 <body>
 
-<form id="myForm">
-  <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre" required>
-  <br>
-  <label for="apellido">Apellido:</label>
-  <input type="text" id="apellido" name="apellido" required>
-  <br>
-  <button type="button" onclick="enviarDatos()">Enviar</button>
-</form>
+<!-- Encabezado flotante -->
+<nav class="navbar navbar-light bg-light fixed-top">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <!-- Logo a la izquierda -->
+    <a class="navbar-brand" href="#">
+      <img src="imagen/0.png" alt="Logo" style="max-width: 100px;">
+    </a>
+    <!-- Mensaje con enlace al formulario en el centro -->
+    <span class="navbar-text mx-auto">
+      <a href="#formulario" style="text-decoration: none; color: inherit;" class="h4 fw-bold">
+        Pídelo ahora y paga en la puerta de tu casa
+      </a>
+    </span>
+  </div>
+</nav>
+
+<!-- Contenido principal -->
+<div class="container mt-5"> <!-- Agregar un margen superior para el contenido -->
+  <div class="row">
+    <!-- Imágenes y botones -->
+    <div class="col-md-12 mb-4">
+      <img src="imagen/1.png" class="img-fluid" alt="">
+      <div class="card-body">
+        <a class="btn btn-primary custom-btn font-italic" href="#formulario">
+          <span class="display-2">¡Obtén la oferta!</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-12 mb-4">
+      <img src="imagen/2.png" class="img-fluid" alt="">
+      <div class="card-body">
+        <a class="btn btn-primary custom-btn font-italic" href="#formulario">
+          <span class="display-2">¡Obtén la oferta!</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-12 mb-4">
+      <img src="imagen/3.png" class="img-fluid" alt="">
+      <div class="card-body">
+        <a class="btn btn-primary custom-btn font-italic" href="#formulario">
+          <span class="display-2">¡Obtén la oferta!</span>
+        </a>
+      </div>
+    </div>
+    <!-- Contenedor de video -->
+    <div class="col-md-12 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Video</h5>
+          <video controls class="card-video" style="width: 100%;">
+            <source src="video/1.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Formulario de Google Sheets -->
+<div class="container">
+	<div class="row justify-content-center">
+	  <div class="col-md-6">
+		<div class="form-container">
+		  <h2 class="text-center mb-4">Formulario</h2>
+		  <form id="myForm">
+			<div class="form-group">
+			  <label for="nombreCompleto">Nombre Completo:</label>
+			  <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" required>
+			</div>
+			<div class="form-group">
+			  <label for="telefono">Teléfono:</label>
+			  <input type="tel" class="form-control" id="telefono" name="telefono" required>
+			</div>
+			<div class="form-group">
+			  <label for="direccionBarrio">Dirección/Barrio:</label>
+			  <input type="text" class="form-control" id="direccionBarrio" name="direccionBarrio" required>
+			</div>
+			<div class="form-group">
+			  <label for="ciudadDepartamento">Ciudad/Departamento:</label>
+			  <input type="text" class="form-control" id="ciudadDepartamento" name="ciudadDepartamento" required>
+			</div>
+			<div class="form-group">
+			  <label for="correoElectronico">Correo Electrónico:</label>
+			  <input type="email" class="form-control" id="correoElectronico" name="correoElectronico" required>
+			</div>
+			<button type="button" class="btn btn-primary btn-block" onclick="enviarDatos()">Enviar</button>
+		  </form>
+		</div>
+	  </div>
+	</div>
+  </div>
+  
+
+<!-- Botón de WhatsApp estilizado con Bootstrap y estilos personalizados -->
+<div class="container-fluid mt-3">
+  <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success btn-lg custom-whatsapp-btn w-100" style="font-size: 60px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; display: flex; justify-content: center; align-items: center;">
+    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Contactar por WhatsApp
+  </a>
+</div>
+
+<!-- Pie de página -->
+<footer class="mt-5">
+  <div class="container text-center">
+    <div>
+      <p>© S24 seguridad electronica. Todos los derechos reservados.</p>
+      <p>Contacto: s24hseguridad@gmail.com</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Integrar Bootstrap JS (opcional, solo si necesitas funcionalidades como modales, etc.) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
 function enviarDatos() {
-  var nombre = document.getElementById("nombre").value;
-  var apellido = document.getElementById("apellido").value;
+  var nombreCompleto = document.getElementById("nombreCompleto").value;
+  var telefono = document.getElementById("telefono").value;
+  var direccionBarrio = document.getElementById("direccionBarrio").value;
+  var ciudadDepartamento = document.getElementById("ciudadDepartamento").value;
+  var correoElectronico = document.getElementById("correoElectronico").value;
 
   var formData = new FormData();
-  formData.append("nombre", nombre);
-  formData.append("apellido", apellido);
+  formData.append("nombreCompleto", nombreCompleto);
+  formData.append("telefono", telefono);
+  formData.append("direccionBarrio", direccionBarrio);
+  formData.append("ciudadDepartamento", ciudadDepartamento);
+  formData.append("correoElectronico", correoElectronico);
 
   fetch('https://script.google.com/macros/s/AKfycbw_QzTls8Nwast3dFztkcFfs86n1ud_pHyIc-RYcGyKCaRkde8GgEOOUuGQYcKQX-kK/exec', {
     method: 'POST',
@@ -43,6 +188,13 @@ function enviarDatos() {
   });
 }
 </script>
+
+
+
+
+
+<!-- Integrar JavaScript -->
+<script src="script.js"></script>
 
 </body>
 </html>
