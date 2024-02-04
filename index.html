@@ -118,38 +118,44 @@ body {
 
 <!-- Botón fuera del contenedor -->
 <div class="card-body text-center">
-  <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
+  <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario" onclick="scrollToForm()">
     <span class="display-2">¡Obtén la oferta!</span>
   </a>
 </div>
 
     
+<!-- Contenido principal -->
 <div class="container mt-5">
   <div class="row">
-    <!-- Imágenes y botones -->
+    <!-- Imágenes -->
     <div class="col-md-12 mb-4">
-      <img src="imagen/2.png" class="img-fluid" alt="">
-      <div class="card-body">
-        <a class="btn btn-primary custom-btn font-italic" href="#formulario">
-          <span class="display-2 ">¡Obtén la oferta!</span>
-        </a>
-      </div>
+      <img src="imagen/1.png" class="img-fluid" alt="">
     </div>
   </div>
 </div>
 
+<!-- Botón fuera del contenedor -->
+<div class="card-body text-center">
+  <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
+    <span class="display-2">¡Obtén la oferta!</span>
+  </a>
+</div>
+
+<!-- Contenido principal -->
 <div class="container mt-5">
   <div class="row">
-    <!-- Imágenes y botones -->
+    <!-- Imágenes -->
     <div class="col-md-12 mb-4">
-      <img src="imagen/3.png" class="img-fluid" alt="">
-      <div class="card-body">
-        <a class="btn btn-primary custom-btn font-italic" href="#formulario">
-          <span class="display-2 ">¡Obtén la oferta!</span>
-        </a>
-      </div>
+      <img src="imagen/1.png" class="img-fluid" alt="">
     </div>
   </div>
+</div>
+
+<!-- Botón fuera del contenedor -->
+<div class="card-body text-center">
+  <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
+    <span class="display-2">¡Obtén la oferta!</span>
+  </a>
 </div>
 
     <!-- Contenedor de video -->
@@ -172,7 +178,7 @@ body {
 <div class="row justify-content-center" id="formulario">
   <div class="col-md-6">
     <div class="form-container">
-      <h2 class="text-center mb-4">Formulario</h2>
+      <h2 class="text-center mb-4">ingrese sus datos para enviar su pedido!! incluya el correo electronico para FACTURACION ELECTRONICA</h2>
       <form id="myForm">
         <div class="row">
           <div class="col-md-12">
@@ -206,7 +212,7 @@ body {
             </div>
           </div>
         </div>
-        <button type="button" class="btn btn-primary btn-block" onclick="enviarDatos()">Enviar</button>
+        <button type="button" class="btn btn-primary btn-block custom-btn" onclick="enviarDatos()">Enviar</button>
       </form>
     </div>
   </div>
@@ -238,6 +244,20 @@ body {
 
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script>
+  function scrollToForm() {
+    var formulario = document.getElementById('formulario');
+    formulario.scrollIntoView();
+    window.scrollBy(0, -window.innerHeight * 0.09); // Desplaza un 5% hacia arriba
+  }
+</script>
+
+
+
+
+
 
 <script>
 function enviarDatos() {
