@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de la Hoja de Cálculo</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
 
+<h2>Datos de la Hoja de Cálculo</h2>
+
+<table id="datosTabla">
+    <thead>
+        <tr>
+            <th>referencia</th>
+            <th>imagen</th>
+            <th>descripcion</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Aquí se llenarán las filas de la tabla con los datos obtenidos -->
+    </tbody>
+</table>
+
+<script>
+    // Hacer una solicitud AJAX a Google Apps Script para obtener los datos
+    function obtenerDatos() {
+        var url = 'https://script.googleusercontent.com/macros/echo?user_content_key=wtUNH9ti6_-gza01ZWKuWwB2nG5XlRVmBBi_FuPbGQp0C7fjAGJnE62nWWMMyMUfUzGBOKCz8b7Xzt-dOAKCVxHqgArQag77m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnPz6xr09dx70q3hhTe1QB3Nb3JxB5IiycGukAd0NswdxMO6BdpaPz9MFb64ml70vXTPt-B0qnl74R-UBvwr8uTmScqAqtmF5-g&lib=Mg7WCahowQEBKYDvy6ZpX5ITTeJiQRcCS'; // Reemplaza con la URL de tu script de Google Apps Script
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var datos = JSON.parse(this.responseText).datos;
+                llenarTabla(datos);
+            }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
+
+   // Llenar la tabla con los datos obtenidos
+function llenarTabla(datos) {
+    var tabla = document.getElementById("datosTabla");
+    var tbody = tabla.getElementsByTagName("tbody")[0];
+
+    // Iterar sobre los datos y agregar cada fila a la tabla
+    datos.forEach(function(filaDatos) {
+        var fila = tbody.insertRow();
+        filaDatos.forEach(function(dato, index) {
+            var celda = fila.insertCell(index);
+            // Si estamos en la columna de la imagen, construimos la ruta de la imagen utilizando el nombre de la imagen
+            if (index === 1) {
+                var rutaImagen = 'imagen' + dato + '.jpg'; // Reemplaza con la URL base de tu repositorio en GitHub
+                var imagen = document.createElement("img");
+                imagen.src = rutaImagen;
+                imagen.alt = "Imagen de " + dato; // Puedes personalizar el texto alternativo si lo deseas
+                imagen.className = "imagen"; // Clase para aplicar estilos si es necesario
+                celda.appendChild(imagen);
+            } else {
+                celda.textContent = dato;
+            }
+        });
+    });
+}
+
+
+
+
+
+    // Llamar a la función para obtener los datos al cargar la página
+    window.onload = function() {
+        obtenerDatos();
+    };
+</script>
+
+</body>
+</html>
