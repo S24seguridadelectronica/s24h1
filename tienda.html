@@ -57,18 +57,13 @@ function llenarTabla(datos) {
     var tabla = document.getElementById("datosTabla");
     var tbody = tabla.getElementsByTagName("tbody")[0];
 
-    // Iterar sobre los datos y agregar cada fila a la tabla
-    datos.forEach(function(filaDatos) {
-        var fila = tbody.insertRow();
-        filaDatos.forEach(function(dato, index) {
-            var celda = fila.insertCell(index);
-            // Si estamos en la columna de la imagen, construimos la ruta de la imagen utilizando el nombre de la imagen
+    // Si estamos en la columna de la imagen, construimos la ruta de la imagen utilizando el nombre de la imagen
             if (index === 1) {
-                var rutaImagen = 'imagen' + dato + '.jpg'; // Reemplaza con la URL base de tu repositorio en GitHub
+                var rutaImagen = 'https://github.com/S24seguridadelectronica/s24h1/blob/main/imagen' + dato + '.png'; // Reemplaza con la URL base de tu repositorio en GitHub y la extensión del archivo
                 var imagen = document.createElement("img");
                 imagen.src = rutaImagen;
                 imagen.alt = "Imagen de " + dato; // Puedes personalizar el texto alternativo si lo deseas
-                imagen.className = "https://github.com/S24seguridadelectronica/s24h1/tree/main/imagen"; // Clase para aplicar estilos si es necesario
+                imagen.className = "imagen"; // Clase para aplicar estilos si es necesario
                 celda.appendChild(imagen);
             } else {
                 celda.textContent = dato;
