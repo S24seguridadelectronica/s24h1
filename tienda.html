@@ -62,62 +62,9 @@ function llenarTabla(datos) {
         var fila = tbody.insertRow();
         filaDatos.forEach(function(dato, index) {
             var celda = fila.insertCell(index);
-
-
-
-// Añadir la referencia como primera columna
-var referenciaCell = document.createElement("td");
-            referenciaCell.textContent = filaDatos[0];
-            fila.appendChild(referenciaCell);
-
-            // Crear la celda de detalle que contiene la imagen, descripción y precio
-            var detalleCell = document.createElement("td");
-
-            // Crear el contenedor para la imagen
-            var imagenContainer = document.createElement("div");
-            imagenContainer.classList.add("float-left", "mr-3");
-
-            // Crear la imagen
-            var rutaImagen = 'imagen' + filaDatos[1] + '.jpg'; // Reemplaza con la URL base de tu repositorio en GitHub
-            var imagen = document.createElement("img");
-            imagen.src = rutaImagen;
-            imagen.alt = "Imagen de " + filaDatos[1]; // Puedes personalizar el texto alternativo si lo deseas
-            imagen.classList.add("img-thumbnail");
-            imagenContainer.appendChild(imagen);
-
-            // Crear la descripción
-            var descripcion = document.createElement("p");
-            descripcion.textContent = filaDatos[2];
-            imagenContainer.appendChild(descripcion);
-
-            // Crear el precio
-            var precio = document.createElement("p");
-            precio.textContent = filaDatos[3];
-            imagenContainer.appendChild(precio);
-
-            // Agregar el contenedor de imagen al detalleCell
-            detalleCell.appendChild(imagenContainer);
-
-            // Agregar el detalleCell a la fila
-            fila.appendChild(detalleCell);
-
-            // Agregar la fila a la tabla
-            tbody.appendChild(fila);
-        });
-    }
-
-    // Llamar a la función para obtener los datos al cargar la página
-    window.onload = function() {
-        obtenerDatos();
-    };
-
-
-
-
-
             // Si estamos en la columna de la imagen, construimos la ruta de la imagen utilizando el nombre de la imagen
             if (index === 1) {
-                var rutaImagen = 'imagen' + dato + '.jpg'; // Reemplaza con la URL base de tu repositorio en GitHub
+                var rutaImagen = 'https://github.com/' + dato + '.png'; // Reemplaza con la URL base de tu repositorio en GitHub y la extensión del archivo
                 var imagen = document.createElement("img");
                 imagen.src = rutaImagen;
                 imagen.alt = "Imagen de " + dato; // Puedes personalizar el texto alternativo si lo deseas
@@ -130,12 +77,10 @@ var referenciaCell = document.createElement("td");
     });
 }
 
-
-
-    // Llamar a la función para obtener los datos al cargar la página
-    window.onload = function() {
-        obtenerDatos();
-    };
+// Llamar a la función para obtener los datos al cargar la página
+window.onload = function() {
+    obtenerDatos();
+};
 </script>
 
 </body>
