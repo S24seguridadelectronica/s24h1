@@ -10,80 +10,71 @@
   <!-- Integrar Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
  
-  <title>Formulario</title>
-<!-- Bootstrap CSS -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+        background-color: #f8f9fa;
+    }
+    ..form-container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-top: 30px;
+        width: 100%; /* Cambiado a 100% */
+        max-width: 600px; /* Ancho máximo permitido */
+        height: 500px; /* Altura fija */
+        margin-left: auto; /* Centrar horizontalmente */
+        margin-right: auto; /* Centrar horizontalmente */
+        text-align: center; /* Centrar contenido */
+    }
 
- 
-<style>
-	body {
-	  background-color: #f8f9fa;
-	}
-	..form-container {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-top: 30px;
-  width: 820%; /* Porcentaje del ancho del contenedor padre */
-  max-width: 600px; /* Ancho máximo permitido */
-  height: 500px; /* Altura fija */
-  margin-left: auto; /* Centrar horizontalmente */
-  margin-right: auto; /* Centrar horizontalmente */
-  text-align: center; /* Centrar contenido */
-}
+    .form-group {
+        padding-top: 5px; /* Aumentar el padding superior */
+        padding-bottom: 5px; /* Aumentar el padding inferior */
+    }
 
-.form-group {
-  padding-top: 5px; /* Aumentar el padding superior */
-  padding-bottom: 5px; /* Aumentar el padding inferior */
-}
+    .input-container {
+        display: flex;
+        align-items: center;
+    }
 
-.input-container {
-  display: flex;
-  align-items: center;
-}
+    .input-container label {
+        width: 150px; /* Ancho de las etiquetas */
+        margin-right: 10px; /* Espaciado entre etiqueta y campo de entrada */
+    }
 
-.input-container label {
-  width: 150px; /* Ancho de las etiquetas */
-  margin-right: 10px; /* Espaciado entre etiqueta y campo de entrada */
-}
+    /* Importa la fuente de Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
 
+    /* Aplica la fuente a todo el cuerpo del documento */
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
 
+    /* Estilo personalizado para el botón */
+    .custom-btn {
+        font-size: 22px;
+        font-weight: bold;
+        text-transform: uppercase;
+        background-color: #ff0000;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        position: relative; /* Asegura que z-index funcione */
+        z-index: 1; /* Asegura que el botón esté por encima de otros elementos */
+    }
 
-/* Importa la fuente de Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
-
-/* Aplica la fuente a todo el cuerpo del documento */
-body {
-  font-family: 'Roboto', sans-serif;
-}
-
-/* Estilo personalizado para el botón */
-.custom-btn {
-  font-size: 22px;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: #ff0000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  position: relative; /* Asegura que z-index funcione */
-  z-index: 1; /* Asegura que el botón esté por encima de otros elementos */
-
-}
-
-.custom-btn:hover {
-  background-color: #0056b3;
-}
-/* Estilo personalizado para el botón */
-.custom-btn .display-2 {
-    font-size: 9vw; /* Tamaño de fuente relativo al ancho del botón */
-
-
-	
+    .custom-btn:hover {
+        background-color: #0056b3;
+    }
+    /* Estilo personalizado para el botón */
+    .custom-btn .display-2 {
+        font-size: 9vw; /* Tamaño de fuente relativo al ancho del botón */
+    }
   </style>
+
 </head>
 <body>
 
@@ -121,11 +112,10 @@ body {
 
 <!-- Botón "Obtén la oferta" -->
 <div class="card-body text-center">
-  <a class="btn btn-primary btn-block custom-btn font-italic btn-block m-0" href="#formulario" onclick="scrollToForm()">
-    <span class="display-2">¡Obtén la oferta!</span>
+  <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
+    <span class="display-2">¡Obtén bono!</span>
   </a>
 </div>
-
 
     
 <!-- Contenido principal -->
@@ -140,8 +130,8 @@ body {
 
 <!-- Botón "pague en la puerta " -->
 <div class="card-body text-center">
-  <a class="btn btn-primary btn-block custom-btn font-italic btn-block m-0" href="#formulario" onclick="scrollToForm()">
-    <span class="display-2">¡Obtén la oferta!</span>
+  <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
+    <span class="display-2">¡Obtén bono!</span>
   </a>
 </div>
 
@@ -162,27 +152,33 @@ body {
   </a>
 </div>
 
-    <!-- Contenedor de video -->
-    <div class="col-md-12 mb-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Video</h5>
-          <video controls class="card-video" style="width: 100%;">
-            <source src="video/1.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento de video.
-          </video>
-        </div>
-      </div>
+<!-- Contenedor de video -->
+<div class="col-md-12 mb-4">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Video</h5>
+      <video controls class="card-video" style="width: 100%;">
+        <source src="video/1.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
     </div>
   </div>
 </div>
+</div>
+</div>
 
+<!-- Botón fuera del contenedor -->
+<div class="card-body text-center">
+  <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
+    <span class="display-2">¡Obtén bono!</span>
+  </a>
+</div>
 
-<!-- Formulario de Google Sheets -->
-<div class="row justify-content-center" id="formulario">
+<!-- Formulario de github -->
+<div class="container justify-content-center" id="formulario">
   <div class="col-md-6">
     <div class="form-container">
-      <h2 class="text-center mb-4">ingrese sus datos para enviar su pedido!! incluya el correo electronico para FACTURACION ELECTRONICA</h2>
+      <h2 class="text-center mb-4">Ingrese sus datos para enviar su pedido!! Incluya el correo electrónico para FACTURACIÓN ELECTRÓNICA</h2>
       <form id="myForm">
         <div class="row">
           <div class="col-md-12">
@@ -191,24 +187,28 @@ body {
               <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" required>
             </div>
           </div>
+
           <div class="col-md-12">
             <div class="form-group">
               <label for="telefono">Teléfono:</label>
               <input type="tel" class="form-control" id="telefono" name="telefono" required>
             </div>
           </div>
+
           <div class="col-md-12">
             <div class="form-group">
               <label for="direccionBarrio">Dirección/Barrio:</label>
               <input type="text" class="form-control" id="direccionBarrio" name="direccionBarrio" required>
             </div>
           </div>
+
           <div class="col-md-12">
             <div class="form-group">
               <label for="ciudadDepartamento">Ciudad/Departamento:</label>
               <input type="text" class="form-control" id="ciudadDepartamento" name="ciudadDepartamento" required>
             </div>
           </div>
+
           <div class="col-md-12">
             <div class="form-group">
               <label for="correoElectronico">Correo Electrónico:</label>
@@ -216,6 +216,7 @@ body {
             </div>
           </div>
         </div>
+
         <button type="button" class="btn btn-primary btn-block custom-btn" onclick="enviarDatos()">Enviar</button>
       </form>
     </div>
@@ -224,10 +225,9 @@ body {
 
   
 
-
 <!-- Botón de WhatsApp estilizado con Bootstrap y estilos personalizados -->
-<div class="container-fluid mt-3">
-  <a href="https://wa.me/3158859744" target="_blank" class="btn btn-success btn-lg custom-whatsapp-btn w-100" style="font-size: 60px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; display: flex; justify-content: center; align-items: center;">
+<div class="mt-3">
+  <a href="https://wa.me/3158859744" target="_blank" class="btn btn-success btn-lg custom-btn w-100" style="font-size: 60px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; display: flex; justify-content: center; align-items: center;">
     <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp
   </a>
 </div>
@@ -245,11 +245,6 @@ body {
 <!-- Integrar Bootstrap JS (opcional, solo si necesitas funcionalidades como modales, etc.) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-
-<!-- Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
 <script>
   function scrollToForm() {
     var formulario = document.getElementById('formulario');
@@ -257,11 +252,6 @@ body {
     window.scrollBy(0, -window.innerHeight * 0.09); // Desplaza un 5% hacia arriba
   }
 </script>
-
-
-
-
-
 
 <script>
 function enviarDatos() {
@@ -295,9 +285,6 @@ function enviarDatos() {
   });
 }
 </script>
-
-<!-- Integrar JavaScript -->
-<script src="script.js"></script>
 
 </body>
 </html>
