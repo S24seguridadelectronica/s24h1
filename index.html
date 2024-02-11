@@ -17,10 +17,12 @@
 
     /* Estilo personalizado para las imágenes con texto */
     .image-with-text img {
-  width: 100%; /* Ancho completo del contenedor */
-  height: auto; /* Altura automática para mantener la proporción */
+  width: 100vw; /* Ancho completo de la pantalla */
+  height: 75vh; /* 75% de la altura de la pantalla */
+  object-fit: cover; /* La imagen cubrirá todo el contenedor */
   border-radius: 20px; /* Estilo redondeado */
 }
+
 
 @media (max-width: 576px) {
   /* Para dispositivos con ancho de pantalla menor o igual a 576px (celulares) */
