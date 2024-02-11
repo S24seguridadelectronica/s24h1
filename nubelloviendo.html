@@ -29,6 +29,11 @@
             box-shadow: 0 0 50px 20px #FFD700; /* Resplandor del sol */
         }
 
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         @media only screen and (max-width: 768px) {
             canvas {
                 width: 100%;
@@ -37,6 +42,12 @@
             #sun {
                 top: 10%;
                 left: 90%;
+                transform: translate(-50%, -50%);
+            }
+            img {
+                top: 80%;
+                width: 80%;
+                left: 50%;
                 transform: translate(-50%, -50%);
             }
         }
@@ -127,4 +138,3 @@
     </script>
 </body>
 </html>
-
