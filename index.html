@@ -18,8 +18,17 @@
     /* Estilo personalizado para las imágenes con texto */
     .image-with-text {
       position: relative;
-      margin-left: -10px;
+      margin: 0; /* Eliminar los márgenes */
+      overflow: hidden; /* Evitar que la imagen se desborde */
     }
+    .image-with-text img {
+  width: 100vw; /* Ancho completo de la pantalla */
+  height: auto; /* Altura automática para mantener la proporción */
+  border-radius: 20px; /* Estilo redondeado */
+  margin-left: -10px; /* Elimina cualquier margen izquierdo */
+  margin-right: -10px; /* Elimina cualquier margen derecho */
+}
+
 
     .image-with-text h1 {
       position: absolute;
@@ -93,23 +102,23 @@
 
 <!-- Encabezado flotante -->
 <nav class="navbar navbar-light bg-light fixed-top">
-	<div class="container-fluid d-flex justify-content-between align-items-center">
-	  <!-- Logo a la izquierda -->
-	  <a class="navbar-brand" href="#">
-		<img src="imagen/0.png" alt="Logo" style="max-width: 100px;">
-	  </a>
-	  <!-- Mensaje con enlace al formulario en el centro -->
-	  <span class="navbar-text mx-auto">
-		<a href="#formulario" style="text-decoration: none; color: inherit;" class="h4 fw-bold">
-		  Pídelo ahora y paga en la puerta de tu casa
-		</a>
-	  </span>
-	</div>
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <!-- Logo a la izquierda -->
+    <a class="navbar-brand" href="#">
+      <img src="imagen/0.png" alt="Logo" style="max-width: 100px;">
+    </a>
+    <!-- Mensaje con enlace al formulario en el centro -->
+    <span class="navbar-text mx-auto">
+    <a href="#formulario" style="text-decoration: none; color: inherit;" class="h4 fw-bold">
+      Pídelo ahora y paga en la puerta de tu casa
+    </a>
+  </span>
+  </div>
 </nav>
   
 <!-- Elemento h1 -->
 <div class="container-fluid mt-5">
-	<h1 class="text-center mt-5">Servicio Contraentrega en Bucaramanga y Área Metropolitana</h1>
+  <h1 class="text-center mt-5">Servicio Contraentrega en Bucaramanga y Área Metropolitana</h1>
 </div>
   
 <!-- camara-H3c-2K-vision-color -->
