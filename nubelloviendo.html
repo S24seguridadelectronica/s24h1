@@ -1,1 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nube Lloviendo con Sol Resplandeciente</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #87CEEB; /* Color de fondo azul claro */
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+        }
+        #sun {
+            position: absolute;
+            top: 20%;
+            left: 75%; /* Ajuste para que el sol esté en la mitad derecha */
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #FFD700; /* Color del sol amarillo */
+            box-shadow: 0 0 50px 20px #FFD700; /* Resplandor del sol */
+        }
+
+        @media only screen and (max-width: 768px) {
+            canvas {
+                width: 100%;
+                height: 50%;
+            }
+            #sun {
+                top: 10%;
+                left: 90%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="rainCanvas"></canvas> <!-- Lienzo para la animación de la lluvia -->
+
+    <div id="sun"></div> <!-- Sol resplandeciente -->
+
+    <!-- Agregar imagen de un árbol -->
+    <img src="\imagen\camara-H3c-2K-4 mpx -camara -inteligente.png" alt="Árbol" style="position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: auto;">
+
+    <script>
+        // Obtener el lienzo
+        var canvas = document.getElementById('rainCanvas');
+        var ctx = canvas.getContext('2d');
+
+        // Establecer el tamaño del lienzo para que cubra la mitad izquierda de la ventana
+        canvas.width = window.innerWidth / 2;
+        canvas.height = window.innerHeight;
+
+        // Dibujar la nube
+        function drawCloud() {
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2 - 100, 100, 50, 0, Math.PI * 2); // Círculo izquierdo
+            ctx.arc(canvas.width / 2 - 50, 90, 60, 0, Math.PI * 2); // Círculo superior
+            ctx.arc(canvas.width / 2, 100, 50, 0, Math.PI * 2); // Círculo derecho
+            ctx.fillStyle = 'white';
+            ctx.fill();
+        }
+
+        // Definir la clase Drop para representar una gota de lluvia
+        class Drop {
+            constructor() {
+                this.x = Math.random() * canvas.width; // Posición x aleatoria
+                this.y = 0; // Posición y inicial
+                this.speed = Math.random() * 3 + 2; // Velocidad aleatoria
+                this.length = Math.random() * 10 + 5; // Longitud aleatoria
+            }
+
+            // Método para actualizar la posición de la gota
+            fall() {
+                this.y += this.speed; // Incrementar la posición y
+                if (this.y > canvas.height) { // Si la gota cae fuera del lienzo
+                    this.y = 0; // Reiniciar desde la parte superior
+                    this.x = Math.random() * canvas.width; // Nueva posición x aleatoria
+                }
+            }
+
+            // Método para dibujar la gota en el lienzo
+            draw() {
+                ctx.strokeStyle = 'blue'; // Color de la gota
+                ctx.lineWidth = 2; // Grosor de la línea
+                ctx.beginPath(); // Comenzar el trazado
+                ctx.moveTo(this.x, this.y); // Mover al punto inicial
+                ctx.lineTo(this.x, this.y + this.length); // Dibujar una línea hacia abajo
+                ctx.stroke(); // Dibujar la línea
+            }
+        }
+
+        // Crear un array para almacenar las gotas
+        var drops = [];
+        for (var i = 0; i < 300; i++) { // Crear 300 gotas
+            drops.push(new Drop());
+        }
+
+        // Función para animar las gotas y la nube
+        function animate() {
+            // Limpiar el lienzo
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Dibujar la nube en el lienzo
+            drawCloud();
+
+            // Actualizar y dibujar cada gota
+            for (var i = 0; i < drops.length; i++) {
+                drops[i].fall(); // Actualizar la posición
+                drops[i].draw(); // Dibujar en el lienzo
+            }
+
+            // Solicitar el próximo fotograma de animación
+            requestAnimationFrame(animate);
+        }
+
+        // Iniciar la animación
+        animate();
+    </script>
+</body>
+</html>
 
