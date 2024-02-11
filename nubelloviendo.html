@@ -7,15 +7,26 @@
     <style>
         body {
             margin: 0;
-            overflow-x: hidden;
+            overflow: hidden;
             background-color: #87CEEB; /* Color de fondo azul claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        #container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 80vh;
+            max-height: 600px;
         }
         canvas {
-            display: block;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 600px; /* Limitar el ancho del lienzo en dispositivos grandes */
-            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
         }
         #sun {
             position: absolute;
@@ -30,12 +41,12 @@
         }
 
         img {
-            display: block;
-            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             max-width: 100%;
-            height: auto;
-            position: relative;
-            top: 80%;
+            max-height: 50%;
         }
 
         @media only screen and (max-width: 768px) {
@@ -58,12 +69,14 @@
     </style>
 </head>
 <body>
-    <canvas id="rainCanvas"></canvas> <!-- Lienzo para la animación de la lluvia -->
+    <div id="container">
+        <canvas id="rainCanvas"></canvas> <!-- Lienzo para la animación de la lluvia -->
 
-    <div id="sun"></div> <!-- Sol resplandeciente -->
+        <div id="sun"></div> <!-- Sol resplandeciente -->
 
-    <!-- Agregar imagen de un árbol -->
-    <img src="\imagen\camara-H3c-2K-4 mpx -camara -inteligente.png" alt="Árbol">
+        <!-- Agregar imagen de un árbol -->
+        <img src="\imagen\camara-H3c-2K-4 mpx -camara -inteligente.png" alt="Árbol">
+    </div>
 
     <script>
         // Obtener el lienzo
@@ -72,7 +85,7 @@
 
         // Establecer el tamaño del lienzo para que cubra la mitad izquierda de la ventana
         canvas.width = window.innerWidth / 2;
-        canvas.height = window.innerHeight / 2; // Reducir la altura en dispositivos pequeños
+        canvas.height = window.innerHeight;
 
         // Dibujar la nube
         function drawCloud() {
