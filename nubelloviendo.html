@@ -7,15 +7,15 @@
     <style>
         body {
             margin: 0;
-            overflow: hidden;
+            overflow-x: hidden;
             background-color: #87CEEB; /* Color de fondo azul claro */
         }
         canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px; /* Limitar el ancho del lienzo en dispositivos grandes */
+            height: auto;
         }
         #sun {
             position: absolute;
@@ -30,8 +30,12 @@
         }
 
         img {
+            display: block;
+            margin: 0 auto;
             max-width: 100%;
             height: auto;
+            position: relative;
+            top: 80%;
         }
 
         @media only screen and (max-width: 768px) {
@@ -59,7 +63,7 @@
     <div id="sun"></div> <!-- Sol resplandeciente -->
 
     <!-- Agregar imagen de un árbol -->
-    <img src="\imagen\camara-H3c-2K-4 mpx -camara -inteligente.png" alt="Árbol" style="position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: auto;">
+    <img src="\imagen\camara-H3c-2K-4 mpx -camara -inteligente.png" alt="Árbol">
 
     <script>
         // Obtener el lienzo
@@ -68,7 +72,7 @@
 
         // Establecer el tamaño del lienzo para que cubra la mitad izquierda de la ventana
         canvas.width = window.innerWidth / 2;
-        canvas.height = window.innerHeight;
+        canvas.height = window.innerHeight / 2; // Reducir la altura en dispositivos pequeños
 
         // Dibujar la nube
         function drawCloud() {
