@@ -255,8 +255,8 @@
 
 
 
-    #contenido-debajo {
-  padding-top: 500px; /* Ajusta el valor según sea necesario */
+#contenido-debajo {
+  padding-top: 10%; /* O cualquier otro valor relativo */
 }
 
 
@@ -275,6 +275,23 @@ body {
       box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
     }
 
+    /* Media queries para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .benefits-container {
+    margin-top: 30px; /* Reducir el margen superior en pantallas más pequeñas */
+  }
+
+  .benefit {
+    padding: 15px; /* Reducir el relleno de los beneficios en pantallas más pequeñas */
+  }
+}
+
+
+
+
+
+
+
     .image-wrapper {
     height: auto; /* Ajusta la altura según el contenido de la imagen */
     max-height: 1500px; /* Establece una altura máxima para limitar el tamaño de la imagen */
@@ -283,7 +300,7 @@ body {
 
   
 
-  /* Asegúrate de que este selector tenga suficiente especificidad */
+  /* H1 PARA COMPUTADORES */
 .col-12 .image-casos.de.exito {
     height: auto;
     max-height: 1500px;
@@ -341,6 +358,80 @@ body {
 
 
 
+/* H1 RESPONSIVO PARA PANTALLAS MAS PEQUEÑAS */
+.image-casos.de.exito {
+    height: auto;
+    max-height: 1500px;
+    overflow: hidden;
+    margin-top: 5%; /* Cambié a un valor porcentual para mayor adaptabilidad */
+}
+
+/* Estilos responsivos para la imagen */
+@media only screen and (max-width: 768px) {
+    .col-12 .image-casos.de.exito {
+        margin-top: 10%; /* Ajuste el margen superior para pantallas pequeñas */
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .col-12 .image-casos.de.exito {
+        margin-top: 8%; /* Ajuste el margen superior para pantallas medianas */
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .col-12 .image-casos.de.exito {
+        margin-top: 6%; /* Ajuste el margen superior para pantallas grandes */
+    }
+}
+
+/* Estilos para cada h1 */
+.h1-1 {
+    color: red; /* Cambiar color de texto */
+    font-size: 2.5em; /* Cambiar tamaño de fuente */
+    text-shadow: 0 0 9px #808080; /* Agregar un sombreado blanco al texto */
+}
+
+.h1-2,
+.h1-3,
+.h1-4,
+.h1-5,
+.h1-6 {
+    color: #000000; /* Cambiar color de texto */
+    font-size: 1.8em; /* Cambiar tamaño de fuente */
+}
+
+.h1-7 {
+    color: #000000; /* Cambiar color de texto */
+    font-size: 2.5em; /* Cambiar tamaño de fuente */
+}
+
+/* Estilos responsivos para cada h1 */
+@media only screen and (max-width: 768px) {
+    .h1-1,
+    .h1-2,
+    .h1-3,
+    .h1-4,
+    .h1-5,
+    .h1-6,
+    .h1-7 {
+        font-size: 1.5em; /* Reduzco el tamaño de fuente para todos los encabezados en pantallas pequeñas */
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .h1-1 {
+        text-shadow: 0 0 9px #808080; /* Sombra de texto solo para el primer encabezado en pantallas grandes */
+    }
+    .h1-7 {
+        font-size: 2.5em; /* Ajuste el tamaño de fuente para el séptimo encabezado en pantallas grandes */
+    }
+}
+
+
+
+
+
   </style>
 
 </head>
@@ -351,11 +442,11 @@ body {
   <div class="container-fluid d-flex justify-content-between align-items-center">
     <!-- Logo a la izquierda -->
     <a class="navbar-brand" href="#">
-      <img src="imagen/0.png" alt="Logo" style="max-width: 100px;">
+      <img src="imagen/0.png" alt="Logo" class="img-fluid" style="max-width: 100px;">
     </a>
     <!-- Mensaje con enlace al formulario en el centro -->
-    <span class="navbar-text mx-auto">
-    <a href="#formulario" style="text-decoration: none; color: inherit;" class="h4 fw-bold">
+    <span class="navbar-text mx-auto d-flex align-items-center">
+      <a href="#formulario" style="text-decoration: none; color: inherit;" class="h4 fw-bold">
       Pídelo ahora y paga en la puerta de tu casa
     </a>
   </span>
@@ -370,22 +461,20 @@ body {
 <div class="container-fluid mt-5">
   <div class="row">
     <!-- Imágenes con texto -->
-    <div class="col-12 mb-4 image-with-text" style="position: relative;">
+    <div class="col-12 mb-4 text-center">
       <img src="imagen\camara-H3c-2K-camara inteligente.png" class="img-fluid w-100" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
-      <h1 id="text1" class="display-1 text-center mt-3"> H3c - 2K (4 mpx) </h1>
-      <h1 id="text2" class="display-1 text-center mt-3"> camara inteligente </h1>
-      
-    </div>
-  </div>
+      <h1 id="text1" class="display-4 mt-3"> H3c - 2K (4 mpx) </h1>
+      <h1 id="text2" class="display-4 mt-3"> camara inteligente </h1>
     </div>
   </div>
 </div>
+
 
 <div class="container-fluid mt-5">
   <div class="row">
     <!-- Imágenes con texto -->
     <div class="col-6 mb-4 text-center">
-      <img src="imagen/camara-H3c-2K-deteccion de intrusos.png" class="img-fluid w-100 h-auto mb-4" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
+      <img src="\imagen\camara-H3c-2K-deteccion de intrusos.png" class="img-fluid w-100 h-auto mb-4" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
       <h1>Distinción precisa de movimientos humanos, notificaciones instantaneas!!</h1>
       <h1>Ajusta las áreas de interés para recibir alertas específicas!!</h1>
       <h1>Disuade a intrusos con una advertencia visual y auditiva!!</h1>
@@ -396,7 +485,7 @@ body {
 
     </div>
     <div class="col-6 mb-4 position-relative">
-      <img src="https://github.com/S24seguridadelectronica/s24h1/blob/main/imagen/camara-H3c-2K-resistente-agua.png" class="img-fluid w-100 h-auto mb-4" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
+      <img src="\imagen\camara-H3c-2K-reciva notificaciones.png" class="img-fluid w-100 h-auto mb-4" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
       <h1 class="position-absolute top-0 start-0 translate-middle m-3 text-white">Notificaciones en tiempo real</h1>
       </div>
       <div class="card-body text-center d-flex justify-content-center" style="margin-top: 50px;">
@@ -412,7 +501,7 @@ body {
     <!-- Primer par de imagen y texto -->
     <div class="col-12 mb-4 image-with-text" style="position: relative;">
       <div class="image-wrapper" style="margin-top: 600px;"> <!-- Ajusta este valor según tus necesidades -->
-        <img src="imagen\camara-H3c-2K-imagenes a color 247.png" class="img-fluid w-100 rounded" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
+        <img src="\imagen\camara-H3c-2K-imagenes a color 247.png" class="img-fluid w-100 rounded" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
       </div>
       <h1 id="text3" class="display-1 text-center mt-3">Restaura los colores y detalles durante la noche</h1>
       <h1 id="text4" class="display-1 text-center mt-3">Visión Nocturna a Color: La cámara utiliza tecnología avanzada para capturar imágenes a todo color durante la noche, lo que permite una visión más clara y detallada en comparación con las imágenes en blanco y negro tradicionales.
@@ -430,7 +519,7 @@ body {
     <!-- Segundo par de imagen y texto -->
     <div class="col-12 mb-4 image-with-text" style="position: relative;">
       <div class="image-wrapper">
-        <img src="imagen\camara-H3c-2K-30 metros de alcance en total oscuridad.png" class="img-fluid w-100 rounded" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
+        <img src="\imagen\camara-H3c-2K-30 metros de alcance en total oscuridad.png" class="img-fluid w-100 rounded" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
       </div>
       <h1 id="text6" class="display-1 text-center mt-3">30 metros de alcance en total oscuridad</h1>
       <h1 id="text7" class="display-1 text-center mt-3"></h1>
