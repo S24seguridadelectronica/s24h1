@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -24,7 +24,7 @@
 
 .image-with-text img {
     width: 100vw; /* Ancho completo de la pantalla */
-    /* height: 85vh; QUITA O COMENTA ESTA LÍNEA */ /* 75% de la altura de la pantalla */
+    height: 85vh; /* 85% de la altura de la pantalla */
     object-fit: cover; /* La imagen cubrirá todo el contenedor */
     border-radius: 5px; /* Estilo redondeado */
 }
@@ -432,6 +432,10 @@ body {
 
 
 
+
+
+
+
   </style>
 
 </head>
@@ -461,8 +465,8 @@ body {
 <div class="container-fluid mt-5">
   <div class="row">
     <!-- Imágenes con texto -->
-    <div class="col-12 mb-4 text-center">
-      <img src="imagen\camara-H3c-2K-camara inteligente.png" class="img-fluid w-100" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
+    <div class="col-12 mb-4 image-with-text">
+      <img src="imagen\camara-H3c-2K-camara inteligente.png" class="img-fluid w-100 h-auto mb-5" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
       <h1 id="text1" class="display-4 mt-3"> H3c - 2K (4 mpx) </h1>
       <h1 id="text2" class="display-4 mt-3"> camara inteligente </h1>
     </div>
@@ -473,7 +477,7 @@ body {
 <div class="container-fluid mt-5">
   <div class="row">
     <!-- Imágenes con texto -->
-    <div class="col-6 mb-4 text-center">
+    <div class="col-6 mb-4 image-with-text">
       <img src="imagen\camara-H3c-2K-deteccion de intrusos.png" class="img-fluid w-100 h-auto mb-4" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
       <h1>Distinción precisa de movimientos humanos, notificaciones instantaneas!!</h1>
       <h1>Ajusta las áreas de interés para recibir alertas específicas!!</h1>
