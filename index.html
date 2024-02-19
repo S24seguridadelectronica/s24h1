@@ -16,20 +16,19 @@
     }
 
     /* Estilo personalizado para las imágenes con texto */
-.image-with-text {
+    .image-with-text {
     position: relative;
-    margin-left: -10px;
+    margin-left: -10px; /* Mantener el margen izquierdo negativo actual */
+    margin-right: 0; /* Establecer el margen derecho en 0 para pegar la imagen al margen derecho */
     overflow-x: visible; /* Permitir que la imagen se desborde del ancho */
 }
 
 .image-with-text img {
-    width: 100vw; /* Ancho completo de la pantalla */
-    min-height: 50vh; /* Altura mínima del 50% de la pantalla */
+    width: calc(100vw - 10px); /* Ancho completo de la pantalla menos el margen izquierdo */
+    min-height: 40vh; /* Altura mínima del 50% de la pantalla */
     object-fit: cover; /* La imagen cubrirá todo el contenedor */
     border-radius: 5px; /* Estilo redondeado */
 }
-
-
 
 
     .image-with-text h1 {
@@ -428,8 +427,26 @@ body {
     }
 }
 
+@media (max-width: 576px) {
+  .intrusos img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#text16 {
+  animation: blink 1s infinite alternate; /* La animación parpadea cada segundo */
+  white-space: nowrap; /* Evita el salto de línea */
+  font-size: 7vw; /* Tamaño de la fuente en vw */
+  top: -100%; /* Ajuste de la posición vertical */
+}
 
 
 
@@ -466,7 +483,7 @@ body {
   <div class="row">
     <!-- Imágenes con texto -->
     <div class="col-12 mb-4 image-with-text">
-      <img src="imagen\camara-H3c-2K-camara inteligente.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
+      <img src="imagen\resistente al agua y al polvo.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
       <h1 id="text1" class="display-4 mt-3"> H3c - 2K (4 mpx) </h1>
       <h1 id="text2" class="display-4 mt-3"> camara inteligente </h1>
     </div>
@@ -477,7 +494,7 @@ body {
 <div class="container-fluid mt-5">
   <div class="row">
     <!-- Imágenes con texto -->
-    <div class="col-6 mb-4 image-with-text">
+    <div class="col-6 mb-4 intrusos">
       <img src="imagen\camara-H3c-2K-deteccion de intrusos.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
       <h1>Distinción precisa de movimientos humanos, notificaciones instantaneas!!</h1>
       <h1>Ajusta las áreas de interés para recibir alertas específicas!!</h1>
@@ -490,7 +507,7 @@ body {
     </div>
     <div class="col-6 mb-4 position-relative">
       <img src="imagen\camara-H3c-2K-reciva notificaciones.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
-      <h1 class="position-absolute top-0 start-0 translate-middle m-3 text-white">Notificaciones en tiempo real</h1>
+      <h1 id="text16" class="position-absolute top-0 start-0 translate-middle m-3 text-white">Notificaciones en tiempo real</h1>
       </div>
       <div class="card-body text-center d-flex justify-content-center" style="margin-top: 50px;">
         <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
@@ -813,8 +830,24 @@ body {
       console.error('Error:', error);
     });
   }
+
+
+  window.addEventListener("scroll", function() {
+  var scrollPosition = window.scrollY;
+  var elementPosition = document.getElementById("text16").getBoundingClientRect().top;
+
+  if (elementPosition < window.innerHeight / 2) {
+    document.getElementById("text16").style.animationPlayState = "paused"; // Detener la animación cuando el elemento está en la mitad superior de la ventana
+  } else {
+    document.getElementById("text16").style.animationPlayState = "running"; // Reanudar la animación cuando el elemento está en la mitad inferior de la ventana
+  }
+});
+
+
+
+
+
 </script>
 
 </body>
 </html>
-
