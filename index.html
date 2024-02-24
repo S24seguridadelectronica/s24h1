@@ -1,490 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicio Contraentrega en Bucaramanga y Área Metropolitana | S24 Seguridad Electrónica</title>
-  <!-- Integrar Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <!-- Integrar Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
- 
-  <style>
-    body {
-        background-color: #f8f9fa;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <style>
+        /* Estilos generales */
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* Ajustar el padding según el tamaño de pantalla */
+            padding: 0 20px;
+        }
+        header, footer {
+            background-color: #333333;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+        }
 
-    /* Estilo personalizado para las imágenes con texto */
-    .image-with-text {
-    position: relative;
-    margin-left: -10px; /* Mantener el margen izquierdo negativo actual */
-    margin-right: 0; /* Establecer el margen derecho en 0 para pegar la imagen al margen derecho */
-    overflow-x: visible; /* Permitir que la imagen se desborde del ancho */
+        /* Modificaciones para breakpoints */
+        @media (max-width: 767px) {
+            /* Estilos para pantallas pequeñas */
+            .container {
+                padding: 0 10px;
+            }
+            main {
+                padding: 10px;
+            }
+            .row > div[class^="col-"] {
+                padding: 0 5px;
+            }
+            .img-fluid {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            /* Estilos para pantallas medianas */
+            .container {
+                padding: 0 20px;
+            }
+            main {
+                padding: 20px;
+            }
+            .row > div[class^="col-"] {
+                padding: 0 10px;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            /* Estilos para pantallas grandes */
+            .container {
+                padding: 0 40px;
+            }
+            main {
+                padding: 30px;
+            }
+            .row > div[class^="col-"] {
+                padding: 0 15px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            /* Estilos para pantallas extra grandes */
+            .container {
+                padding: 0 60px;
+            }
+            main {
+                padding: 40px;
+            }
+            .row > div[class^="col-"] {
+                padding: 0 20px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.image-with-text img {
-    width: calc(100vw - 10px); /* Ancho completo de la pantalla menos el margen izquierdo */
-    min-height: 40vh; /* Altura mínima del 50% de la pantalla */
-    object-fit: cover; /* La imagen cubrirá todo el contenedor */
-    border-radius: 5px; /* Estilo redondeado */
+.text1 {
+    padding: 2vw;
+    border-radius: 5px;
+    margin: 2vw;
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
 }
 
-
-    .image-with-text h1 {
-      position: absolute;
-      top: 10vh;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-      width: 100vw;
-      font-size: 4vw; /* Tamaño de fuente relativo al ancho de la imagen */
-      text-align: center;
-    }
-
-    /* Estilo personalizado para el botón */
-    .custom-btn {
-        font-size: 4vw; /* Tamaño de fuente relativo al ancho del botón */
-        font-weight: bold;
-        text-transform: uppercase;
-        background-color: #ff0000;
-        color: #fff;
-        border: none;
-        padding: 1.5vw 3vw;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-        position: relative;
-        z-index: 1;
-    }
-
-    .custom-btn:hover {
-        background-color: #0056b3;
-    }
-
-    /* Estilos personalizados para las letras multicolor */
-    .multicolor {
-      color: #ff0000; /* Rojo */
-    }
-    .multicolor2 {
-      color: #ff8000; /* Naranja */
-    }
-    .multicolor3 {
-      color: #ffff00; /* Amarillo */
-    }
-    .multicolor4 {
-      color: #00ff00; /* Verde */
-    }
-    .multicolor5 {
-      color: #0000ff; /* Azul */
-    }
-
-    
-
-    #text1 {
-  position: absolute;
-  top: 1vh;
-  left: 40vw;
-  transform: translate(-50%, -50%);
-  font-size: 1vw;
-  text-align: center;
-  white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  #text1 { 
-    font-size: 1vw;
-  }
-}
-
-@media (max-width: 576px) {
-  #text1 {
-    font-size: 7vw;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-    /* Estilos para el segundo texto */
-    #text2 {
-      position: absolute;
-      top: 55vh; /* Ajusta esta propiedad según sea necesario para la posición vertical deseada */
-      left: 50vw;
-      transform: translate(-50%, -50%);
-      font-size: 6vw; /* Ajusta el tamaño de fuente según necesites */
-
-    }
-
-
-
-     /* Estilos para h1 vision a color */
-#text3 {
-  position: absolute;
-  top: -1vh; /* 10% desde la parte superior */
-  left: 50vw; /* 10% desde la izquierda */
-  font-size: 4.8vw; /* Ajusta el tamaño de fuente según necesites */
-  color: red; /* Color de letra blanco */
-  font-weight: 500; /* Cambia este valor para ajustar el grosor */
-
-}
-
-/* Estilos para el segundo texto */
-#text4 {
-  position: absolute;
-  top: 27vh; /* Ajusta esta propiedad según sea necesario para la posición vertical deseada */
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  font-size: 2.5vw; /* Ajusta el tamaño de fuente según necesites */
-  color: black; /* Color de letra blanco */
-}
-
-
-/* Estilos para h1 vision a color */
-#text5 {
-  position: absolute;
-  top: 80vh; /* 10% desde la parte superior */
-  left: 50vw; /* 10% desde la izquierda */
-  font-size: 6vw; /* Ajusta el tamaño de fuente según necesites */
-  color: white; /* Color de letra blanco */
-  font-weight: 500; /* Cambia este valor para ajustar el grosor */
-
-}
-
-/* Estilos para el segundo texto */
-#text6 {
-  position: absolute;
-  top: 90vh; /* Ajusta esta propiedad según sea necesario para la posición vertical deseada */
-  left: 59vw;
-  transform: translate(-50%, -50%);
-  font-size: 4.4vw; /* Ajusta el tamaño de fuente según necesites */
-  color: white; /* Color de letra blanco */
-  font-weight: 500; /* Cambia este valor para ajustar el grosor */
-}
-
-/* Estilos para el segundo texto */
-#text7 {
-  position: absolute;
-  top: 17vh; /* Ajusta esta propiedad según sea necesario para la posición vertical deseada */
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  font-size: 1.5vw; /* Ajusta el tamaño de fuente según necesites */
-  color: white; /* Color de letra blanco */
-}
-
-
-/* Estilos para h1 vision a color */
-#text8 {
-  position: absolute;
-  top: 1vh; /* 10% desde la parte superior */
-  left: 50vw; /* 10% desde la izquierda */
-  font-size: 4vw; /* Ajusta el tamaño de fuente según necesites */
-  color: #000000; /* Color de letra blanco */
-  text-shadow: 0 0 9px #ffffff; /* Agrega un sombreado blanco al texto */
-  font-weight: 500; /* Cambia este valor para ajustar el grosor */
-}
-
-
-/* Estilos para el segundo texto */
-#text9 {
-  position: absolute;
-  top: 90vh; /* Ajusta esta propiedad según sea necesario para la posición vertical deseada */
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  font-size: 6vw; /* Ajusta el tamaño de fuente según necesites */
-  color: white; /* Color de letra blanco */
-}
-
-/* Estilos para el segundo texto */
-#text10 {
-  position: absolute;
-  top: 70vh; /* Ajusta esta propiedad según sea necesario para la posición vertical deseada */
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  font-size: 8vw; /* Ajusta el tamaño de fuente según necesites */
-  color: white; /* Color de letra blanco */
-  text-shadow: 0 0 9px #000000; /* Agrega un sombreado blanco al texto */
-}
-
-
-/* Estilos para el segundo texto */
-#text11 {
-  position: absolute;
-  top: 4vh; /* Ajusta esta propiedad según sea necesario para la posición vertical deseada */
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  font-size: 8vw; /* Ajusta el tamaño de fuente según necesites */
-  color: #000000; /* Color de letra blanco */
-  font-weight: 500; /* Cambia este valor para ajustar el grosor */
-  text-shadow: 0 0 9px #000000; /* Agrega un sombreado blanco al texto */
-}
-
-/* Estilos para el segundo texto */
-#text12 {
-  position: absolute;
-  top: 1vh; /* Ajusta esta propiedad según sea necesario para la posición vertical deseada */
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  font-size: 6vw; /* Ajusta el tamaño de fuente según necesites */
-  color: #000000; /* Color de letra blanco */
-}
-
-/* Estilos para el segundo texto */
-#text13 {
-  position: absolute;
-  top: -10vh; /* Ajusta esta propiedad según sea necesario para la posición vertical deseada */
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  font-size: 5vw; /* Ajusta el tamaño de fuente según necesites */
-  color: white; /* Color de letra blanco */
-  font-weight: 500; /* Cambia este valor para ajustar el grosor */
-  text-shadow: 0 0 9px #000000; /* Agrega un sombreado blanco al texto */
-}
-
-/* Estilos para el segundo texto */
-#text14 {
-  position: absolute;
-  top: 25vh; /* Ajusta esta propiedad según sea necesario para la posición vertical deseada */
-  left: 60vw;
-  transform: translate(-50%, -50%);
-  font-size: 3vw; /* Ajusta el tamaño de fuente según necesites */
-  color: white; /* Color de letra blanco */
-}
-
-/* Estilos para el segundo texto */
-#text15 {
-  position: absolute;
-  top: 40vh; /* Ajusta esta propiedad según sea necesario para la posición vertical deseada */
-  left: 20vw;
-  transform: translate(-50%, -50%);
-  font-size: 3vw; /* Ajusta el tamaño de fuente según necesites */
-  color: white; /* Color de letra blanco */
-}
-
-
-#text20 {
-  position: absolute;
-  top: 110vh;
-  left: 49vw;
-  transform: translate(-50%, -50%);
-  font-size: 54vw;
-  text-align: center;
-  white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade una sombra con desplazamiento de 2px horizontal y 2px vertical, desenfoque de 4px y color semi-transparente */
-  color: red; /* Color rojo para el texto */
-}
-
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  #text20 { 
-    font-size: 1vw;
-  }
-}
-
-@media (max-width: 576px) {
-  #text20 {
-    font-size: 7.5vw;
-  }
-}
-
-#text21 {
-  position: absolute;
-  top: 118vh;
-  left: 47vw;
-  transform: translate(-50%, -50%);
-  font-size: 55vw;
-  text-align: center;
-  white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  #text21 { 
-    font-size: 55vw;
-  }
-}
-
-@media (max-width: 576px) {
-  #text21 {
-    font-size: 5vw;
-  }
-}
-
-
-
-#text22 {
-  position: absolute;
-  top: 60vh;
-  left: 1vw;
-  transform: translate(-50%, -50%);
-  font-size: 55vw;
-  text-align: center;
-  white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  #text22 { 
-    font-size: 55vw;
-  }
-}
-
-@media (max-width: 576px) {
-  #text22 {
-    font-size: 9vw;
-  }
-}
-
-
-
-#text23 {
-  position: absolute;
-  top: 136vh;
-  left: 48vw;
-  transform: translate(-50%, -50%);
-  font-size: 1vw;
-  text-align: center;
-  white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  #text23 { 
-    font-size: 15vw;
-  }
-}
-
-@media (max-width: 576px) {
-  #text23 {
-    font-size: 5dvw;
-  }
-}
-
-
-#text24 {
-  position: absolute;
-  top: 141vh;
-  left: -50vw;
-  transform: translate(50%, 50%);
-  font-size: 1vw;
-  text-align: center;
-  white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  #text24 { 
-    font-size: 1vw;
-  }
-}
-
-@media (max-width: 576px) {
-  #text24 {
-    font-size: 0.55vw;
-  }
-}
-
-
-
-#text25 {
-  position: absolute;
-  top: 200vh;
-  left: -3vw;
-  font-size: 1vw;
-  text-align: center;
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  #text25 { 
-    font-size: 1vw;
-  }
-}
-
-@media (max-width: 576px) {
-  #text25 {
-    font-size: 1vw;
-  }
-}
-
-
-
-#text26 {
-  position: absolute;
-  top: 240vh;
-  left: 49vw;
-  transform: translate(-50%, -50%);
-  font-size: 1vw;
-  text-align: center;
-  max-width: 100vw; /* Establece la anchura máxima al ancho de la pantalla */
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  #text26 { 
-    font-size: 1vw;
-  }
-}
-
-@media (max-width: 576px) {
-  #text26 {
-    font-size: 0.4vw;
-  }
-}
-
-
-#text27 {
-  position: absolute;
-  top: 300%;
-  left: 49%;
-  transform: translate(-50%, -50%);
-  font-size: 1em;
-  text-align: center;
-  white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  #text27 { 
-    font-size: 1em;
-  }
-}
-
-@media (max-width: 576px) {
-  #text27 {
-    font-size: 0.4em;
-  }
-}
-
-
-#text28 {
-  position: absolute;
-  top: 300%;
-  left: 49%;
-  transform: translate(-50%, -50%);
-  font-size: 1em;
-  text-align: center;
-  white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  #text28 { 
-    font-size: 1em;
-  }
-}
-
-@media (max-width: 576px) {
-  #text28 {
-    font-size: 0.4em;
-  }
+.text2 {
+    padding: 2vw;
+    border-radius: 5px;
+    margin: 2vw;
 }
 
 
@@ -492,116 +120,80 @@
 
 
 
-
-
-
-
-
-
-#contenido-debajo {
-  padding-top: 10%; /* O cualquier otro valor relativo */
+.text1 {
+    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
+    align-self: flex-start; /* Alinear el primer texto hacia arriba */
+    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+    font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
 }
 
-
-body {
-      background-color: #f8f9fa;
-      color: #333;
-    }
-    .benefits-container {
-      margin-top: 50px;
-    }
-    .benefit {
-      background-color: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-    }
-
-    /* Media queries para pantallas más pequeñas */
-@media screen and (max-width: 768px) {
-  .benefits-container {
-    margin-top: 30px; /* Reducir el margen superior en pantallas más pequeñas */
-  }
-
-  .benefit {
-    padding: 15px; /* Reducir el relleno de los beneficios en pantallas más pequeñas */
-  }
+.text2 {
+    background-color: rgba(0, 0, 255, 0.8); /* Azul transparente para el segundo texto */
+    margin-left: -5vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+    font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
 }
 
-
-
-
-
-
-
-    .image-wrapper {
-    height: auto; /* Ajusta la altura según el contenido de la imagen */
-    max-height: 1500px; /* Establece una altura máxima para limitar el tamaño de la imagen */
-    overflow: hidden; /* Evita que la imagen se desborde si es demasiado grande */
-  }
-
-  
-
-  /* H1 PARA COMPUTADORES */
-.col-12 .image-casos.de.exito {
-    height: auto;
-    max-height: 1500px;
-    overflow: hidden;
-    margin-top: 300px;
-}
-
-
-
-
-
-
-
-
-
-
-/* H1 RESPONSIVO PARA PANTALLAS MAS PEQUEÑAS */
-.image-casos.de.exito {
-    height: auto;
-    max-height: 1500px;
-    overflow: hidden;
-    margin-top: 5%; /* Cambié a un valor porcentual para mayor adaptabilidad */
-}
-
-/* Estilos responsivos para la imagen */
-@media only screen and (max-width: 768px) {
-    .col-12 .image-casos.de.exito {
-        margin-top: 10%; /* Ajuste el margen superior para pantallas pequeñas */
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+    .text1, .text2 {
+        padding: 3vw;
+        margin: 3vw;
+        font-size: 3vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-    .col-12 .image-casos.de.exito {
-        margin-top: 8%; /* Ajuste el margen superior para pantallas medianas */
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .text1, .text2 {
+        padding: 2.5vw;
+        margin: 2.5vw;
+        font-size: 2.5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
     }
 }
 
-@media only screen and (min-width: 992px) {
-    .col-12 .image-casos.de.exito {
-        margin-top: 6%; /* Ajuste el margen superior para pantallas grandes */
+/* Media queries para pantallas grandes */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .text1, .text2 {
+        padding: 2vw;
+        margin: 2vw;
+        font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas grandes */
+    }
+}
+
+/* Media queries para pantallas extra grandes */
+@media (min-width: 1200px) {
+    .text1, .text2 {
+        padding: 1.5vw;
+        margin: 1.5vw;
+        font-size: 1.5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas extra grandes */
     }
 }
 
 
 
-@media (max-width: 576px) {
-  .intrusos img {
-    max-width: 100%;
-    height: auto;
-  }
+
+
+.image-1 {
+    position: relative; /* Para usar posicionamiento relativo */
+}
+
+.image-1 img {
+    width: 100%; /* Ajustar el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Ajustar la altura automáticamente */
+}
+
+/* Ajustes de posición para cada figura de imagen */
+.image-1:nth-child(odd) {
+    /* Estilos para figuras de imagen impares */
+    margin-top: 80px; /* Ajustar el margen superior */
+}
+
+.image-1:nth-child(even) {
+    /* Estilos para figuras de imagen pares */
+    margin-bottom: 80px; /* Ajustar el margen inferior */
 }
 
 
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
 
 
 
@@ -611,333 +203,116 @@ body {
 
 
 
-  </style>
 
+
+
+
+
+
+
+
+
+
+    </style>
 </head>
 <body>
 
-<!-- Encabezado flotante -->
-<nav class="navbar navbar-light bg-light fixed-top">
-  <div class="container-fluid d-flex justify-content-between align-items-center">
-    <!-- Logo a la izquierda -->
-    <a class="navbar-brand" href="#">
-      <img src="imagen/0.png" alt="Logo" class="img-fluid" style="max-width: 100px;">
-    </a>
-    <!-- Mensaje con enlace al formulario en el centro -->
-    <span class="navbar-text mx-auto d-flex align-items-center">
-      <a href="#formulario" style="text-decoration: none; color: inherit;" class="h4 fw-bold">
-      Pídelo ahora y paga en la puerta de tu casa
-    </a>
-  </span>
-  </div>
-</nav>
-  
-<!-- Elemento h1 -->
-<div class="container-fluid mt-5">
-  <h1 class="text-center mt-5">Servicio Contraentrega en Bucaramanga y Área Metropolitana</h1>
-</div>
-  
-<div class="container-fluid mt-5">
-  <div class="row">
-    <!-- Imágenes con texto -->
-    <div class="col-12 mb-4 image-with-text">
-      <img src="imagen\resistente al agua y al polvo.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
-      <h1 id="text1" class="display-4 mt-3"> H3c - 2K (4 mpx) </h1>
-      <h1 id="text2" class="display-4 mt-3"> Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total. </h1>
-    </div>
-  </div>
-</div>
-
 <div class="container">
-  <div id="titulo" class="display-4 mt-3">
-    <h1 id="text24" class="display-4 mt-3">AHORRE UN 90% EN FALSAS ALARMAS11!!</h1>
-    <h1 id="text25" class="display-4 mt-3">Experimenta una Vigilancia Nocturna Sin Precedentes con la Cámara H3c 2K+</h1>
-    <h1 id="text26" class="display-4 mt-3">¿Estás listo para elevar tus estándares de seguridad nocturna? Con la cámara de vigilancia H3c 2K+, tus preocupaciones sobre la oscuridad se desvanecerán. Prepárate para una visión nocturna como nunca antes has visto.</h1>
-    <h1 id="text27" class="display-4 mt-3">Brillante Claridad en la Oscuridad</h1>
-    <h1 id="text28" class="display-4 mt-3">Nuestra cámara H3c 2K+ redefine la vigilancia nocturna con su visión a color. ¿Imaginas poder distinguir los detalles más sutiles incluso en la oscuridad total? Con nuestra tecnología de visión nocturna avanzada, ahora es una realidad.</h1>
-    <h1 id="text29" class="display-4 mt-3">AHORRE UN 90% EN FALSAS ALARMAS11!!</h1>
-
-  </div>
-
-
-
-<div class="container-fluid mt-5">
-  <div class="row">
-    <!-- Imágenes con texto -->
-    <div class="col-6 mb-7 intrusos"> <!-- Ajuste del margen superior -->
-      <img src="imagen\camara-H3c-2K-deteccion de intrusos.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color" style="margin-top: 230px;">
-      <h1 id="text20" class="display-4 mt-3">Notificaciones instantaneas!!</h1>
-      <h1 id="text21" class="display-4 mt-3">Distinción precisa de movimientos humanos</h1>
-    </div>
-    <div class="col-6 mb-7 position-relative"> <!-- Ajuste del margen superior -->
-      <img src="imagen\camara-H3c-2K-reciva notificaciones.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color" style="margin-top: 230px;">
-      <h1 id="text22" class="display-4 mt-3">Disuade intrusos </h1>
-      <h1 id="text23" class="display-4 mt-3">advertencia visual y auditiva</h1>
-    </div>
-    <div class="card-body text-center d-flex justify-content-center" style="margin-top: 100px;">
-      <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
-        <span class="display-2">¡Obtén bono!</span>
-      </a>
-    </div>
-  </div>
-</div>
-
-
-
-<div class="container-fluid mt-5">
-  <div class="row">
-    <!-- Primer par de imagen y texto -->
-    <div class="col-12 mb-4 image-with-text" style="position: relative;">
-      <div class="image-wrapper" style="margin-top: 600px;"> <!-- Ajusta este valor según tus necesidades -->
-        <img src="imagen\camara-H3c-2K-imagenes a color 247.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
-      </div>
-      <h1 id="text5" class="display-1 text-center mt-3">Visión a todo  <span class="multicolor">C</span><span class="multicolor2">o</span><span class="multicolor3">l</span><span class="multicolor4">o</span><span class="multicolor5">r</span> las 24/7</h1>
-    </div>
-  </div>
-</div>
-    
-    <!-- Segundo par de imagen y texto -->
-    <div class="col-12 mb-4 image-with-text" style="position: relative;">
-      <div class="image-wrapper">
-        <img src="imagen\camara-H3c-2K-30 metros de alcance en total oscuridad.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
-      </div>
-      <h1 id="text6" class="display-1 text-center mt-3">30 metros de alcance en total oscuridad</h1>
-      <h1 id="text7" class="display-1 text-center mt-3"></h1>
-    </div>
-    <div class="card-body text-center d-flex justify-content-center" style="margin-top: 50px;">
-      <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
-        <span class="display-2">¡Obtén bono!</span>
-      </a>
-  </div>
-</div>
-
-
-<div class="container-fluid mt-5">
-  <div class="row">
-    <!-- Primer par de imagen y texto -->
-    <div class="col-12 mb-4 image-with-text" style="position: relative;">
-      <div class="image-wrapper">
-        <img src="imagen\camara-H3c-2K-detalles mas precisos aun con  zoom digital.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
-      </div>
-      <h1 id="text8" class="display-1 text-center mt-3">¡No pierdas ni un solo detalle con la impresionante resolución de la cámara H3c 2K+!
-
-      </h1>
-      <h1 id="text9" class="display-1 text-center mt-3"></h1>
-      <h1 id="text10" class="display-1 text-center mt-3">aun con ZOOM digital!! </h1>
-    </div>
-    
-    <!-- CASOS DE EXITO DROGERIAS farmAhorro -->
-    <div class="col-12 mb-4 image-with-text" style="position: relative;">
-      <div class="image-casos de exito">
-        <img src="imagen\camara-H3c-2K-instalada en la farmacia farmAhorro piedecuesta.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
-      </div>
-      <h1 id="text11" class="display-1 text-center mt-3">CASOS DE EXITO!!</h1>
-      <h1 id="text12" class="display-1 text-center mt-3">drogerias farmAhorro piedecuesta</h1>
-    </div>
-  </div>
-</div>
-<!-- IMAGENES REALES DROGUERIAS farmAhorro -->
-<div class="col-12 mb-4 image-with-text" style="position: relative;">
-  <div class="image-casos de exito">
-    <img src="imagen\camara-H3c-2K-imagen estatica y en movimiento.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
-    <img src="imagen\camara-H3c-2K-imagen en movimiento.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
-  </div>
-  <h1 id="text13" class="display-1 text-center mt-3">IMAGENES REALES DE LA CAMARA H3c 2K+ (4MPX) !!</h1>
-  <h1 id="text14" class="display-1 text-center mt-3">motocicleta en movimiento</h1>
-  <h1 id="text15" class="display-1 text-center mt-3">vehiculo estacionado </h1>
-</div>
-<div class="card-body text-center d-flex justify-content-center" style="margin-top: 50px;">
-  <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
-    <span class="display-2">¡Obtén bono!</span>
-  </a>
-</div>
-</div>
-
- <!-- CASOS DE EXITO comidas rapidas GEMINIS -->
- <div class="col-12 mb-4 image-with-text" style="position: relative;">
-  <div class="image-casos de exito">
-    <img src="imagen\camara-H3c-2K-instalada en comidas rapidas geminis.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
-  </div>
-  <h1 id="text16" class="display-1 text-center mt-3"></h1>
-  <h1 id="text17" class="display-1 text-center mt-3">comidas rapidas GEMINIS/h1>
-</div>
-</div>
-</div>
-
-<!-- IMAGENES REALES comidas rapidas GEMINIS -->
-<div class="col-12 mb-4 image-with-text" style="position: relative;">
-  <div class="image-casos de exito">
-    <img src="imagen\camara-H3c-2K-luz estroboscopica apagada.jpeg" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
-    <img src="imagen\camara-H3c-2K-luz estroboscopica encendida.jpeg" class="img-fluid w-100 rounded" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
-  </div>
-  <h1 id="text18" class="display-1 text-center mt-3">IMAGENES REALES DE LA CAMARA H3c 2K+ (4MPX) !!</h1>
-  <h1 id="text19" class="display-1 text-center mt-3">motocicleta en movimiento</h1>
-  <h1 id="text20" class="display-1 text-center mt-3">vehiculo estacionado </h1>
-</div>
-</div>
-</div>
-
-
-<!-- Contenedor de video -->
-<div class="container-fluid" style="margin-top: 300px;">
-  <div class="row">
-    <div class="col-12 mb-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Video</h5>
-          <video controls class="card-video w-100">
-            <source src="video/1.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento de video.
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- PRECIO AL PUBLICO -->
-<div class="col-12 mb-4 image-with-text" style="position: relative;">
-  <div class="image-casos de exito">
-    <img src="imagen\camara-H3c-2K-precio al publico.png" class="img-fluid w-100 h-auto" alt="Cámara H3c 2K (4mpx) con visión nocturna en color">
-  </div>
-  <h1 id="text11" class="display-1 text-center mt-3"></h1>
-  <h1 id="text12" class="display-1 text-center mt-3">comidas rapidas GEMINIS/h1>
-</div>
-</div>
-</div>
-
-
-<div class="container-fluid mt-5" id="contenido-debajo">
-<!-- Botón "Obtén la oferta" -->
-<div class="card-body text-center" style="margin-top: 50px;">
-  <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
-    <span class="display-2">¡Obtén bono!</span>
-  </a>
-</div>
-
-<!-- Contenedor de video -->
-<div class="container-fluid" style="margin-top: 700px;">
-  <div class="row">
-    <div class="col-12 mb-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Video</h5>
-          <video controls class="card-video w-100">
-            <source src="video/1.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento de video.
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Formulario de contacto -->
-<div class="container justify-content-center" id="formulario" style="margin-top: 50px;">
-  <div class="col-md-6">
-    <div class="form-container">
-      <h2 class="text-center mb-4">Ingrese sus datos para enviar su pedido. ¡Incluya el correo electrónico para FACTURACIÓN ELECTRÓNICA!</h2>
-      <form id="myForm">
+    <header>
+        <h1>Encabezado</h1>
+    </header>
+    <main>
+        <h2>Servicio Contraentrega en Bucaramanga y Área Metropolitana</h2>
+        <section>
+            <p>H3c - 2K (4 mpx).</p>
+        </section>
         <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="nombreCompleto">Nombre Completo:</label>
-              <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" required>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="telefono">Teléfono:</label>
-              <input type="tel" class="form-control" id="telefono" name="telefono" required>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="direccionBarrio">Dirección/Barrio:</label>
-              <input type="text" class="form-control" id="direccionBarrio" name="direccionBarrio" required>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="ciudadDepartamento">Ciudad/Departamento:</label>
-              <input type="text" class="form-control" id="ciudadDepartamento" name="ciudadDepartamento" required>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="correoElectronico">Correo Electrónico:</label>
-              <input type="email" class="form-control" id="correoElectronico" name="correoElectronico" required>
-            </div>
-          </div>
+
+            <div class="col-12 col-md-6">
+                <figure class="image-1">
+                    <img src="imagen\camara-H3c-2K-camara inteligente.png" alt="Imagen 1" class="img-fluid" style="max-width: 100%;">
+                    <div class="text-container">
+                        <div class="text1">camara inteligente</div>
+                        <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
+                    </div>
+                </figure>
+            </div>                       
+                
+            <div class="col-12 col-md-6">
+                <figure>
+                    <img src="imagen\camara-H3c-2K-camara inteligente.png" alt="Imagen 1" class="img-fluid" style="max-width: 100%;">
+                    <div class="text-container">
+                        <div class="text1">Tu primer texto aquí</div>
+                        <div class="text2">Tu segundo texto aquí</div>
+                    </div>
+                </figure>
+            </div>                       
+          
+            <div class="col-12 col-md-6">
+                <figure>
+                    <img src="imagen\camara-H3c-2K-camara inteligente.png" alt="Imagen 1" class="img-fluid" style="max-width: 100%;">
+                    <div class="text-container">
+                        <div class="text1">Tu primer texto aquí</div>
+                        <div class="text2">Tu segundo texto aquí</div>
+                    </div>
+                </figure>
+            </div>                         
+
+<div class="col-12 col-md-6">
+    <figure>
+        <img src="imagen\camara-H3c-2K-camara inteligente.png" alt="Imagen 1" class="img-fluid" style="max-width: 100%;">
+        <div class="text-container">
+            <div class="text1">Tu primer texto aquí</div>
+            <div class="text2">Tu segundo texto aquí</div>
         </div>
-        <button type="button" class="btn btn-primary btn-block custom-btn" onclick="enviarDatos()">Enviar</button>
-      </form>
-    </div>
-  </div>
+    </figure>
+</div>                         
+
+<div class="col-12 col-md-6">
+    <figure>
+        <img src="imagen\camara-H3c-2K-camara inteligente.png" alt="Imagen 1" class="img-fluid" style="max-width: 100%;">
+        <div class="text-container">
+            <div class="text1">Tu primer texto aquí</div>
+            <div class="text2">Tu segundo texto aquí</div>
+        </div>
+    </figure>
+</div>                          
+
+<div class="col-12 col-md-6">
+    <figure>
+        <img src="imagen\camara-H3c-2K-camara inteligente.png" alt="Imagen 1" class="img-fluid" style="max-width: 100%;">
+        <div class="text-container">
+            <div class="text1">Tu primer texto aquí</div>
+            <div class="text2">Tu segundo texto aquí</div>
+        </div>
+    </figure>
+</div>                          
+    
+<div class="col-12 col-md-6">
+            <figure>
+                <img src="imagen\camara-H3c-2K-camara inteligente.png" alt="Imagen 1" class="img-fluid" style="max-width: 100%;">
+                <div class="text-container">
+                    <div class="text1">Tu primer texto aquí</div>
+                    <div class="text2">Tu segundo texto aquí</div>
+                </div>
+            </figure>
+        </div>                         
+    
+    
+            <div class="col-12 col-md-6">
+                <video controls class="img-fluid">
+                    <source src="video.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <p>Pie de Página</p>
+    </footer>
 </div>
 
-<!-- Botón de WhatsApp -->
-<div class="mt-3" style="margin-top: 50px;">
-  <a href="https://wa.me/3158859744" target="_blank" class="btn btn-success btn-lg custom-btn w-100">
-    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp
-  </a>
-</div>
-
-<!-- Pie de página -->
-<footer class="mt-5" style="margin-top: 50px;">
-  <div class="container text-center">
-    <div>
-      <p>© S24 seguridad electronica. Todos los derechos reservados.</p>
-      <p>Contacto: s24hseguridad@gmail.com</p>
-    </div>
-  </div>
-</footer>
-</div>
-
-<!-- Integrar Bootstrap JS (opcional, solo si necesitas funcionalidades como modales, etc.) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-  function enviarDatos() {
-    var nombreCompleto = document.getElementById("nombreCompleto").value;
-    var telefono = document.getElementById("telefono").value;
-    var direccionBarrio = document.getElementById("direccionBarrio").value;
-    var ciudadDepartamento = document.getElementById("ciudadDepartamento").value;
-    var correoElectronico = document.getElementById("correoElectronico").value;
-
-    var formData = new FormData();
-    formData.append("nombreCompleto", nombreCompleto);
-    formData.append("telefono", telefono);
-    formData.append("direccionBarrio", direccionBarrio);
-    formData.append("ciudadDepartamento", ciudadDepartamento);
-    formData.append("correoElectronico", correoElectronico);
-
-    fetch('https://script.google.com/macros/s/AKfycbwd5Ne_B5sPStA1KHNPm390zcBubpNJWyBBtu8dzI88rbdg9CPYsy-cXEPs2wqB6nix-A/exec', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      if (response.ok) {
-        alert('Datos enviados correctamente');
-        document.getElementById("myForm").reset(); // Limpiar el formulario después de enviar
-      } else {
-        alert('Error al enviar los datos');
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-  }
-
-
-  
-
-
-
-
-
-</script>
-
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
