@@ -110,10 +110,17 @@
 }
 
 .text2 {
-    padding: 2vw;
+    padding: 2em; /* Utilizando em como unidad de medida */
     border-radius: 5px;
-    margin: 2vw;
+    margin: 2em;
+    white-space: pre-line; /* Esto asegura que los saltos de línea se respeten */
+    word-wrap: break-word; /* Esto asegura que las palabras largas se dividan en varias líneas */
+    max-height: 10em; /* Altura máxima del contenedor en em */
+    min-height: 5em; /* Altura mínima del contenedor en em */
+    overflow: auto; /* Agrega una barra de desplazamiento vertical si el contenido es demasiado largo */
 }
+
+
 
 
 
