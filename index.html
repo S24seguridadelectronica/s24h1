@@ -382,7 +382,60 @@ main {
     box-sizing: border-box; /* Incluir el borde y el relleno en el ancho total */
 }
 
+/* Estilos para las imágenes dentro de las columnas */
+.row > div img {
+    width: 100vw; /* Ancho igual al 100% del contenedor */
+    height: auto; /* Ajustar la altura automáticamente */
+    object-fit: cover; /* Escalar la imagen para cubrir el contenedor */
+    overflow: visible; /* Permitir que las imágenes se desborden */
+}
 
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+    .row > div {
+        padding: 0; /* Eliminar el relleno en pantallas pequeñas */
+        overflow-x: visible; /* Permitir el desbordamiento horizontal */
+    }
+
+    .row > div img {
+        width: 100vw; /* Ancho igual al 100% del contenedor */
+    }
+}
+
+
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .row > div {
+        padding: 2.5vh 2vw; /* Ajustar el relleno según sea necesario */
+    }
+
+    .row > div img {
+        width: 100vw; /* Ancho igual al 100% del contenedor */
+    }
+}
+
+/* Media queries para pantallas grandes */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .row > div {
+        padding: 2vh 2vw; /* Ajustar el relleno según sea necesario */
+    }
+
+    .row > div img {
+        width: 100vw; /* Ancho igual al 100% del contenedor */
+    }
+}
+
+/* Media queries para pantallas extra grandes */
+@media (min-width: 1200px) {
+    .row > div {
+        padding: 1.5vh 1vw; /* Ajustar el relleno según sea necesario */
+    }
+
+    .row > div img {
+        width: 100vw; /* Ancho igual al 100% del contenedor */
+    }
+}
 
 
 
