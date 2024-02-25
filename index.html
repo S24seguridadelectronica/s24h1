@@ -180,25 +180,208 @@
 
 
 
-.image-1 {
-    position: relative; /* Para usar posicionamiento relativo */
+
+
+
+
+
+
+
+
+
+/* ENCABEZADO CON LOGO */
+header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw; /* Ancho del encabezado en vw */
+        height: 15vh; /* Altura del encabezado en vh */
+        z-index: 1000;
+        background-color: red;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        overflow-x: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2vw; /* Espaciado horizontal en vw */
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-brand img {
+        max-height: 80%; /* Altura máxima del logo en vh */
+    }
+
+    .navbar-text {
+        margin-left: auto; /* Mueve el mensaje al extremo derecho */
+    }
+
+   /* Estilo para el elemento main */
+main {
+    margin-top: 12vh; /* 10% del alto de la ventana del navegador */
+    padding: 2vw; /* 2% del ancho de la ventana del navegador */
+    background-color: #f8f9fa; /* Color de fondo */
+    color: #333; /* Color del texto */
 }
 
-.image-1 img {
-    width: 100%; /* Ajustar el ancho de la imagen al 100% del contenedor */
-    height: auto; /* Ajustar la altura automáticamente */
+
+
+
+
+
+
+
+
+
+/* Estilos para el logo */
+#logo {
+    font-size: 10vw; /* Tamaño del logo en relación con el ancho de la ventana */
+    font-weight: bold;
+    margin-right: 5vw; /* Margen derecho en relación con el ancho de la ventana */
 }
 
-/* Ajustes de posición para cada figura de imagen */
-.image-1:nth-child(odd) {
-    /* Estilos para figuras de imagen impares */
-    margin-top: 80px; /* Ajustar el margen superior */
+/* Estilos para el contenedor que envuelve al logo */
+.logo-container {
+    display: flex;
+    align-items: center;
 }
 
-.image-1:nth-child(even) {
-    /* Estilos para figuras de imagen pares */
-    margin-bottom: 80px; /* Ajustar el margen inferior */
+/* Animación del resplandor */
+.shine {
+    animation: shineAnimation 2s infinite alternate;
 }
+
+@keyframes shineAnimation {
+    0% {
+        opacity: 1;
+        text-shadow: none;
+    }
+    100% {
+        opacity: 0.8;
+        text-shadow: 0 0 2vw white, 0 0 4vw white, 0 0 6vw white, 0 0 8vw white, 0 0 10vw white, 0 0 12vw white, 0 0 14vw white;
+    }
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+    #logo {
+        font-size: 15vw; /* Tamaño del logo en relación con el ancho de la ventana */
+        margin-right: 10vw; /* Margen derecho en relación con el ancho de la ventana */
+    }
+}
+
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    #logo {
+        font-size: 7.5vw; /* Tamaño del logo en relación con el ancho de la ventana */
+        margin-right: 5vw; /* Margen derecho en relación con el ancho de la ventana */
+    }
+}
+
+/* Media queries para pantallas grandes */
+@media (min-width: 992px) and (max-width: 1199px) {
+    #logo {
+        font-size: 5vw; /* Tamaño del logo en relación con el ancho de la ventana */
+        margin-right: 3vw; /* Margen derecho en relación con el ancho de la ventana */
+    }
+}
+
+/* Media queries para pantallas extra grandes */
+@media (min-width: 1200px) {
+    #logo {
+        font-size: 3vw; /* Tamaño del logo en relación con el ancho de la ventana */
+        margin-right: 2vw; /* Margen derecho en relación con el ancho de la ventana */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos generales */
+.navbar-text {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Alinear el mensaje al frente del logo */
+}
+
+.navbar-text a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    font-size: 2.5vw; /* Tamaño de fuente relativo */
+    padding: 1vh 2vw; /* Relleno relativo */
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    box-shadow: 2 6px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: all 0.3s ease;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .navbar-text a {
+        font-size: 3vw;
+        padding: 1.5vh 3vw;
+    }
+}
+
+/* Efecto al pasar el cursor */
+.navbar-text a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+.row {
+    display: flex; /* Utilizar flexbox */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en múltiples líneas */
+    justify-content: center; /* Centrar horizontalmente los elementos */
+}
+
+/* Estilos para cada columna dentro de la fila */
+.row > div {
+    flex: 0 0 100vw; /* Cada columna ocupa todo el ancho disponible de la ventana */
+    max-width: 100vw; /* Ancho máximo del 100% de la ventana */
+    margin: 0 auto; /* Margen automático en los lados para centrar las columnas */
+    padding: 2vh 1vw; /* Ajustar el relleno según sea necesario */
+    box-sizing: border-box; /* Incluir el borde y el relleno en el ancho total */
+}
+
 
 
 
@@ -226,8 +409,25 @@
 
 <div class="container">
     <header>
-        <h1>Encabezado</h1>
+        <!-- Barra de navegación -->
+        <nav class="navbar navbar-light bg-light">
+            <div class="d-flex align-items-center justify-content-center" style="display: flex;">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#" style="margin-right: 100px;">
+                    <div id="logo" class="shine">S24</div>
+                </a>                
+                <!-- Texto -->
+                <span class="navbar-text mx-2" style="margin-right: auto;">
+                    <a href="#formulario" style="text-decoration: none; color: inherit;" class="h4 fw-bold">
+                        Pídelo ahora y paga en la puerta de tu casa
+                    </a>
+                </span>
+            </div>
+        </nav>
     </header>
+    
+    
+    
     <main>
         <h2>Servicio Contraentrega en Bucaramanga y Área Metropolitana</h2>
         <section>
@@ -321,5 +521,23 @@
 </div>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+    // Función para alternar la clase de brillo
+    function toggleShine() {
+        var logo = document.getElementById('logo');
+        logo.classList.toggle('shine');
+    }
+
+    // Ejecutar la función cada cierto tiempo
+    setInterval(toggleShine, 3000); // Cambiar el valor de 3000 para ajustar la frecuencia del brillo
+</script>
+
+
+
+
+
+
 </body>
 </html>
