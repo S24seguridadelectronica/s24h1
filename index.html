@@ -188,36 +188,86 @@
 
 
 
-
 /* ENCABEZADO CON LOGO */
 header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw; /* Ancho del encabezado en vw */
-        height: 15vh; /* Altura del encabezado en vh */
-        z-index: 1000;
-        background-color: red;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        overflow-x: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 2vw; /* Espaciado horizontal en vw */
-    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ancho del encabezado en vw */
+    height: 5vh; /* Altura del encabezado en vh */
+    z-index: 1000;
+    background-color: red;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw; /* Espaciado horizontal en vw */
+}
 
-    .navbar {
-        display: flex;
-        align-items: center;
-    }
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacio entre los elementos */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ancho completo de la ventana */
+    height: 15vh; /* Altura del encabezado en vh */
+    z-index: 1000;
+    background-color: red;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 0 2vw; /* Espaciado horizontal en vw */
+}
 
-    .navbar-brand img {
-        max-height: 80%; /* Altura máxima del logo en vh */
-    }
 
-    .navbar-text {
-        margin-left: auto; /* Mueve el mensaje al extremo derecho */
+.navbar-text {
+    margin-left: auto; /* Mueve el mensaje al extremo derecho */
+}
+
+.fixed-text {
+    position: fixed;
+    top: 1vh; /* Ajusta la posición vertical en relación con la altura de la ventana */
+    left: 1vw; /* Ajusta la posición horizontal en relación con el ancho de la ventana */
+    z-index: 1001; /* Asegura que el texto fijo esté por encima de la barra de navegación */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para una mejor legibilidad */
+    padding: 10px; /* Espacio alrededor del texto */
+}
+
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+    header {
+        height: 8vh; /* Cambiar la altura del encabezado en pantallas pequeñas */
     }
+}
+
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    header {
+        height: 10vh;
+    }
+}
+
+/* Media queries para pantallas grandes */
+@media (min-width: 992px) and (max-width: 1199px) {
+    header {
+        height: 10vh;
+    }
+}
+
+/* Media queries para pantallas extra grandes */
+@media (min-width: 1200px) {
+    header {
+        height: 10vh;
+    }
+}
+
+
+
+
+
+
 
    /* Estilo para el elemento main */
 main {
@@ -233,14 +283,11 @@ main {
 
 
 
-
-
-
 /* Estilos para el logo */
 #logo {
     font-size: 10vw; /* Tamaño del logo en relación con el ancho de la ventana */
     font-weight: bold;
-    margin-right: 5vw; /* Margen derecho en relación con el ancho de la ventana */
+    margin-right: 9vw; /* Margen derecho en relación con el ancho de la ventana */
 }
 
 /* Estilos para el contenedor que envuelve al logo */
@@ -328,12 +375,43 @@ main {
 
 
 
-/* Estilos generales */
 .navbar-text {
+    position: fixed;
+    top: 8vh; /* Centrado verticalmente */
+    left: 50vw; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     margin-left: auto; /* Alinear el mensaje al frente del logo */
+    white-space: nowrap; /* Evitar que el texto se divida en dos líneas */
 }
+
+
+/* Media queries para ajustar el margen izquierdo en todas las pantallas */
+@media (max-width: 767px) {
+    .navbar-text {
+        margin-left: 15vw; /* Ajusta el margen izquierdo en relación con el ancho de la ventana */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-text {
+        margin-left: 2vw; /* Ajusta el margen izquierdo en relación con el ancho de la ventana */
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .navbar-text {
+        margin-left: 2vw; /* Ajusta el margen izquierdo en relación con el ancho de la ventana */
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar-text {
+        margin-left: 2vw; /* Ajusta el margen izquierdo en relación con el ancho de la ventana */
+    }
+}
+
 
 .navbar-text a {
     text-decoration: none;
@@ -352,6 +430,7 @@ main {
     .navbar-text a {
         font-size: 3vw;
         padding: 1.5vh 3vw;
+        margin-left: -1vw; /* Ajusta el margen izquierdo según sea necesario */
     }
 }
 
@@ -441,6 +520,67 @@ main {
 
 
 
+.col-12.col-md-6 {
+    display: flex; /* Hacer que el contenedor sea un contenedor flex */
+    justify-content: center; /* Centrar la imagen horizontalmente */
+    align-items: center; /* Centrar la imagen verticalmente */
+}
+
+.img-fluid {
+    /* Elimina el estilo max-width para permitir que la imagen ocupe todo el ancho del contenedor */
+    max-width: none;
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+    .col-12.col-md-6 {
+        flex-direction: column; /* Cambiar la dirección de la flexbox a columna en pantallas pequeñas */
+        align-items: center; /* Centrar los elementos verticalmente */
+    }
+
+    .img-fluid {
+        width: 100vw; /* Ancho igual al 100% del contenedor */
+    }
+}
+
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .col-12.col-md-6 {
+        flex-direction: column; /* Cambiar la dirección de la flexbox a columna en pantallas medianas */
+        align-items: center; /* Centrar los elementos verticalmente */
+    }
+
+    .img-fluid {
+        width: 100vw; /* Ancho igual al 100% del contenedor */
+    }
+}
+
+/* Media queries para pantallas grandes */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .col-12.col-md-6 {
+        flex-direction: column; /* Cambiar la dirección de la flexbox a columna en pantallas grandes */
+        align-items: center; /* Centrar los elementos verticalmente */
+    }
+
+    .img-fluid {
+        width: 100vw; /* Ancho igual al 100% del contenedor */
+    }
+}
+
+/* Media queries para pantallas extra grandes */
+@media (min-width: 1200px) {
+    .col-12.col-md-6 {
+        flex-direction: column; /* Cambiar la dirección de la flexbox a columna en pantallas extra grandes */
+        align-items: center; /* Centrar los elementos verticalmente */
+    }
+
+    .img-fluid {
+        width: 100vw; /* Ancho igual al 100% del contenedor */
+    }
+}
+
 
 
 
@@ -490,7 +630,7 @@ main {
 
             <div class="col-12 col-md-6">
                 <figure class="image-1">
-                    <img src="imagen\camara-H3c-2K-camara inteligente.png" alt="Imagen 1" class="img-fluid" style="max-width: 100%;">
+                    <img src="imagen\resistente al agua y al polvo.png" alt="Imagen 1" class="img-fluid" 
                     <div class="text-container">
                         <div class="text1">camara inteligente</div>
                         <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
