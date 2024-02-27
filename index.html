@@ -95,36 +95,24 @@
 
 
 
+
+
+
+
+
+
+        
+
+
+
+
+
 .text-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 }
-
-.text1 {
-    padding: 2vw;
-    border-radius: 5px;
-    margin: 2vw;
-    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
-}
-
-.text2 {
-    padding: 2em; /* Utilizando em como unidad de medida */
-    border-radius: 5px;
-    margin: 2em;
-    white-space: pre-line; /* Esto asegura que los saltos de línea se respeten */
-    word-wrap: break-word; /* Esto asegura que las palabras largas se dividan en varias líneas */
-    max-height: 10em; /* Altura máxima del contenedor en em */
-    min-height: 5em; /* Altura mínima del contenedor en em */
-    overflow: auto; /* Agrega una barra de desplazamiento vertical si el contenido es demasiado largo */
-}
-
-
-
-
-
-
 
 
 .text1 {
@@ -175,6 +163,238 @@
         font-size: 1.5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas extra grandes */
     }
 }
+
+
+
+
+
+
+
+.text3 {
+    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
+    align-self: flex-start; /* Alinear el primer texto hacia arriba */
+    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+    margin-top: 10vw; /* Mover el texto hacia arriba */
+    font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+}
+
+.text4 {
+    background-color: (0, 0, 255, 0.5); /* Azul más transparente */
+    margin-left: -5vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+    font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+    .text3 {
+        padding: 3vw;
+        margin: 3vw;
+        font-size: 6vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
+        margin-top: -70vw; /* Mover el texto hacia arriba */
+    }
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+    .text4 {
+        padding: 3vw;
+        margin: 3vw;
+        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
+        margin-top: 54vw; /* Mover el texto hacia arriba */
+        margin-left: 9vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+    }
+}
+
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .text3 {
+        padding: 2.5vw;
+        margin: 2.5vw;
+        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
+        margin-top: -60vw; /* Mover el texto hacia arriba */
+    }
+}
+
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .text4 {
+        padding: 2.5vw;
+        margin: 2.5vw;
+        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
+        margin-top: 54vw; /* Mover el texto hacia arriba */
+    }
+}
+
+
+
+/* Media queries para pantallas grandes */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .text3 {
+        padding: 2vw;
+        margin: 2vw;
+        font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas grandes */
+        margin-top: -60vw; /* Mover el texto hacia arriba */
+    }
+}
+
+/* Media queries para pantallas grandes */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .text4 {
+        padding: 2vw;
+        margin: 2vw;
+        font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas grandes */
+        margin-top: 54vw; /* Mover el texto hacia arriba */
+    }
+}
+
+
+/* Media queries para pantallas extra grandes */
+@media (min-width: 1200px) {
+    .text3 {
+        padding: 1.5vw;
+        margin: 1.5vw;
+        font-size: 1.5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas extra grandes */
+        margin-top: -60vw; /* Mover el texto hacia arriba */
+    }
+}
+
+/* Media queries para pantallas extra grandes */
+@media (min-width: 1200px) {
+    .text4 {
+        padding: 1.5vw;
+        margin: 1.5vw;
+        font-size: 1.5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas extra grandes */
+        margin-top: 53vw; /* Mover el texto hacia arriba */
+    }
+}
+
+
+
+
+
+
+
+.text5 {
+    background-color:(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
+    align-self: flex-start; /* Alinear el primer texto hacia arriba */
+    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+    margin-top: 10vw; /* Mover el texto hacia arriba */
+    font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+    .text5 {
+        padding: 3vw;
+        margin: 3vw;
+        font-size: 4vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
+        margin-top: -4vw; /* Mover el texto hacia arriba */
+    }
+}
+
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .text5 {
+        padding: 2.5vw;
+        margin: 2.5vw;
+        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
+        margin-top: -4vw; /* Mover el texto hacia arriba */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.text6 {
+    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
+    align-self: flex-start; /* Alinear el primer texto hacia arriba */
+    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+    margin-top: 10vw; /* Mover el texto hacia arriba */
+    font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+    .text6 {
+        padding: 3vw;
+        margin: 3vw;
+        font-size: 4vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
+        margin-top: -70vw; /* Mover el texto hacia arriba */
+    }
+}
+
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .text6 {
+        padding: 2.5vw;
+        margin: 2.5vw;
+        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
+        margin-top: -70vw; /* Mover el texto hacia arriba */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.text7 {
+    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
+    align-self: flex-start; /* Alinear el primer texto hacia arriba */
+    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+    margin-top: 10vw; /* Mover el texto hacia arriba */
+    font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+    .text7 {
+        padding: 3vw;
+        margin: 3vw;
+        font-size: 4vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
+        margin-top: 150vw; /* Mover el texto hacia arriba */
+    }
+}
+
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .text7 {
+        padding: 2.5vw;
+        margin: 2.5vw;
+        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
+        margin-top: 150vw; /* Mover el texto hacia arriba */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -588,6 +808,99 @@ main {
 
 
 
+/* Estilos base */
+.faro-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faro {
+  position: absolute;
+  width: 10vw; /* Ajusta según sea necesario */
+  height: 10vw; /* Ajusta según sea necesario */
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, transparent 20%, blue 30%), /* Luz azul base */
+              radial-gradient(circle at 50% 50%, transparent 30%, blue 40%), /* Rayos azules */
+              radial-gradient(circle at 50% 50%, transparent 20%, red 30%), /* Luz roja base */
+              radial-gradient(circle at 50% 50%, transparent 30%, red 40%); /* Rayos rojos */
+  animation: luces 1s infinite alternate;
+  top: 80%; /* Centra verticalmente el faro */
+  left: 50%; /* Centra horizontalmente el faro */
+  transform: translate(-50%, -50%); /* Centra el faro completamente */
+}
+
+@keyframes luces {
+  0%, 100% {
+    background: radial-gradient(circle at 50% 50%, transparent 20%, blue 30%), /* Luz azul base */
+                radial-gradient(circle at 50% 50%, transparent 30%, blue 40%), /* Rayos azules */
+                radial-gradient(circle at 50% 50%, transparent 20%, red 30%), /* Luz roja base */
+                radial-gradient(circle at 50% 50%, transparent 30%, red 40%); /* Rayos rojos */
+  }
+  50% {
+    background: radial-gradient(circle at 50% 50%, transparent 20%, red 30%), /* Luz roja base */
+                radial-gradient(circle at 50% 50%, transparent 30%, red 40%), /* Rayos rojos */
+                radial-gradient(circle at 50% 50%, transparent 20%, blue 30%), /* Luz azul base */
+                radial-gradient(circle at 50% 50%, transparent 30%, blue 40%); /* Rayos azules */
+  }
+}
+
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+  .faro {
+        position: relative;  
+        width: 8vw; /* Ajusta el tamaño del faro para pantallas medianas */
+        height: 8vw; /* Ajusta el tamaño del faro para pantallas medianas */
+        top: 20vh; /* Centra verticalmente el faro */
+        left: 10%; /* Centra horizontalmente el faro */
+        transform: translate(-50%, -50%); /* Centra el faro completamente */
+    }
+}
+
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .faro {
+        position: relative;  
+        width: 8vw; /* Ajusta el tamaño del faro para pantallas medianas */
+        height: 8vw; /* Ajusta el tamaño del faro para pantallas medianas */
+        top: 20vh; /* Centra verticalmente el faro */
+        left: 10%; /* Centra horizontalmente el faro */
+        transform: translate(-50%, -50%); /* Centra el faro completamente */
+    }
+}
+
+/* Media queries para pantallas grandes */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .faro {
+        width: 6vw; /* Ajusta el tamaño del faro para pantallas grandes */
+        height: 6vw; /* Ajusta el tamaño del faro para pantallas grandes */
+        top: 50vh; /* Centra verticalmente el faro */
+        left: 50%; /* Centra horizontalmente el faro */
+        transform: translate(-50%, -50%); /* Centra el faro completamente */
+    }
+}
+
+/* Media queries para pantallas extra grandes */
+@media (min-width: 1200px) {
+    .faro {
+        width: 5vw; /* Ajusta el tamaño del faro para pantallas extra grandes */
+        height: 5vw; /* Ajusta el tamaño del faro para pantallas extra grandes */
+        top: 50%; /* Centra verticalmente el faro */
+        left: 50%; /* Centra horizontalmente el faro */
+        transform: translate(-50%, -50%); /* Centra el faro completamente */
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -640,27 +953,30 @@ main {
             
             <div class="col-12 col-md-6">
                 <figure class="image-1">
-                    <img src="imagen\resistente al agua y al polvo.png" alt="Imagen 1" class="img-fluid" 
+                    <div class="faro"></div>
+                    <img src="imagen\camara-H3c-2K-deteccion de intrusos.png" alt="Imagen 1" class="img-fluid" 
                     <div class="text-container">
-                        <div class="text1">camara inteligente</div>
-                        <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
+                        <div class="text3">deteccion de intrusion inteligente</div>
+                        <div class="text4">(((advertencia visual y auditiva)))</div>
+                        <div class="text5">AHORRE UN 90% EN FALSAS ALARMAS11!!</div>
                     </div>
                 </figure>
             </div>  
 
             <div class="col-12 col-md-6">
                 <figure class="image-1">
-                    <img src="imagen\resistente al agua y al polvo.png" alt="Imagen 1" class="img-fluid" 
+                    <img src="imagen\camara-H3c-2K-reciva notificaciones.png" alt="Imagen 1" class="img-fluid" 
                     <div class="text-container">
-                        <div class="text1">camara inteligente</div>
-                        <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
+                        <div class="text6">Notificaciones instantaneas!!</div>
+                        <div class="text7">Distinción precisa de movimientos humanos</div>
                     </div>
                 </figure>
             </div>  
+            
 
             <div class="col-12 col-md-6">
                 <figure class="image-1">
-                    <img src="imagen\resistente al agua y al polvo.png" alt="Imagen 1" class="img-fluid" 
+                    <img src="imagen\audio bidireccional.png" alt="Imagen 1" class="img-fluid" 
                     <div class="text-container">
                         <div class="text1">camara inteligente</div>
                         <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
@@ -670,7 +986,7 @@ main {
             
             <div class="col-12 col-md-6">
                 <figure class="image-1">
-                    <img src="imagen\resistente al agua y al polvo.png" alt="Imagen 1" class="img-fluid" 
+                    <img src="imagen\camara-H3c-2K-imagenes a color 247.png" alt="Imagen 1" class="img-fluid" 
                     <div class="text-container">
                         <div class="text1">camara inteligente</div>
                         <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
@@ -680,7 +996,7 @@ main {
 
             <div class="col-12 col-md-6">
                 <figure class="image-1">
-                    <img src="imagen\resistente al agua y al polvo.png" alt="Imagen 1" class="img-fluid" 
+                    <img src="imagen\camara-H3c-2K-30 metros de alcance en total oscuridad.png" alt="Imagen 1" class="img-fluid" 
                     <div class="text-container">
                         <div class="text1">camara inteligente</div>
                         <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
@@ -690,14 +1006,47 @@ main {
 
             <div class="col-12 col-md-6">
                 <figure class="image-1">
-                    <img src="imagen\resistente al agua y al polvo.png" alt="Imagen 1" class="img-fluid" 
+                    <img src="imagen\camara-H3c-2K-detalles mas precisos aun con  zoom digital.png" alt="Imagen 1" class="img-fluid" 
                     <div class="text-container">
                         <div class="text1">camara inteligente</div>
                         <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
                     </div>
                 </figure>
-            </div> 
-    
+            </div>
+
+            <div class="col-12 col-md-6">
+                <figure class="image-1">
+                    <img src="imagen\camara-H3c-2K-instalada en comidas rapidas geminis.png" alt="Imagen 1" class="img-fluid" 
+                    <div class="text-container">
+                        <div class="text1">camara inteligente</div>
+                        <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
+                    </div>
+                </figure>
+            </div>
+            
+            <div class="col-12 col-md-6">
+                <figure class="image-1">
+                    <img src="imagen\camara-H3c-2K-luz estroboscopica encendida.jpeg" alt="Imagen 1" class="img-fluid" 
+                    <div class="text-container">
+                        <div class="text1">camara inteligente</div>
+                        <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
+                    </div>
+                </figure>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <figure class="image-1">
+                    <img src="imagen\camara-H3c-2K-luz estroboscopica apagada.jpeg" alt="Imagen 1" class="img-fluid" 
+                    <div class="text-container">
+                        <div class="text1">camara inteligente</div>
+                        <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
+                    </div>
+                </figure>
+            </div>
+        
+
+
+            
             <div class="col-12 col-md-6">
                 <video controls class="img-fluid">
                     <source src="video.mp4" type="video/mp4">
@@ -709,7 +1058,7 @@ main {
         
         <div class="col-12 col-md-6">
             <figure class="image-1">
-                <img src="imagen\resistente al agua y al polvo.png" alt="Imagen 1" class="img-fluid" 
+                <img src="imagen\camara-H3c-2K-precio al publico.png" alt="Imagen 1" class="img-fluid" 
                 <div class="text-container">
                     <div class="text1">camara inteligente</div>
                     <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
