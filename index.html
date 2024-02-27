@@ -180,7 +180,9 @@
 }
 
 .text4 {
+    position: relative;
     background-color: (0, 0, 255, 0.5); /* Azul más transparente */
+    margin-top: 10vw; /* Mover el texto hacia arriba */
     margin-left: -5vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
     font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
 }
@@ -200,6 +202,7 @@
 /* Media queries para pantallas pequeñas */
 @media (max-width: 767px) {
     .text4 {
+        position: relative;
         padding: 3vw;
         margin: 3vw;
         font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
@@ -223,6 +226,7 @@
 /* Media queries para pantallas medianas */
 @media (min-width: 768px) and (max-width: 991px) {
     .text4 {
+        position: relative;
         padding: 2.5vw;
         margin: 2.5vw;
         font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
@@ -317,30 +321,37 @@
 
 
 .text6 {
+    position: relative;
     background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
     align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 10vw; /* Mover el texto hacia arriba */
-    font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+    margin-left: 1vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+    margin-top: -110vw; /* Mover el texto hacia arriba */
+    font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+    white-space: nowrap; /* Evita que el texto se divida */
 }
 
-/* Media queries para pantallas pequeñas */
 @media (max-width: 767px) {
     .text6 {
-        padding: 3vw;
-        margin: 3vw;
-        font-size: 4vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: -70vw; /* Mover el texto hacia arriba */
+        position: relative;
+        background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
+        align-self: flex-start; /* Alinear el primer texto hacia arriba */
+        margin-left: 1vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+        margin-top: -110vw; /* Mover el texto hacia arriba */
+        font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+        white-space: nowrap; /* Evita que el texto se divida */
     }
 }
 
 /* Media queries para pantallas medianas */
 @media (min-width: 768px) and (max-width: 991px) {
     .text6 {
-        padding: 2.5vw;
-        margin: 2.5vw;
-        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: -70vw; /* Mover el texto hacia arriba */
+        position: relative;
+        background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
+        align-self: flex-start; /* Alinear el primer texto hacia arriba */
+        margin-left: 1vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+        margin-top: -110vw; /* Mover el texto hacia arriba */
+        font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+        white-space: nowrap; /* Evita que el texto se divida */
     }
 }
 
@@ -371,7 +382,7 @@
         padding: 3vw;
         margin: 3vw;
         font-size: 4vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: 150vw; /* Mover el texto hacia arriba */
+        margin-top: 100vw; /* Mover el texto hacia arriba */
     }
 }
 
@@ -381,7 +392,7 @@
         padding: 2.5vw;
         margin: 2.5vw;
         font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: 150vw; /* Mover el texto hacia arriba */
+        margin-top: 100vw; /* Mover el texto hacia arriba */
     }
 }
 
@@ -905,6 +916,207 @@ main {
 
 
 
+/* Estilo personalizado para el contenedor del botón */
+.custom-btn-container {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    align-items: center; /* Centra el botón verticalmente */
+}
+
+/* Estilo personalizado para el botón */
+.custom-btn {
+    font-family: Arial, sans-serif; /* Cambia la fuente del botón */
+    /* Otros estilos del botón */
+    font-size: 4vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 0vw 0vw;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 767px) {
+    .custom-btn {
+        font-size: 10vw; /* Tamaño de fuente para pantallas pequeñas */
+        padding: 0vw 0vw; /* Relleno para pantallas pequeñas */
+    }
+}
+
+/* Media query para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .custom-btn {
+        font-size: 10vw; /* Tamaño de fuente para pantallas medianas */
+        padding: 0vw 0vw; /* Relleno para pantallas medianas */
+    }
+}
+
+/* Media query para pantallas grandes */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .custom-btn {
+        font-size: 2.5vw; /* Tamaño de fuente para pantallas grandes */
+        padding: 1vw 1.5vw; /* Relleno para pantallas grandes */
+    }
+}
+
+/* Media query para pantallas extra grandes */
+@media (min-width: 1200px) {
+    .custom-btn {
+        font-size: 2vw; /* Tamaño de fuente para pantallas extra grandes */
+        padding: 0.5vw 1vw; /* Relleno para pantallas extra grandes */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para el contenedor del formulario */
+#formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: -5; /* Mover el contenedor del formulario más a la izquierda */
+}
+
+/* Estilos para el contenedor del formulario */
+.form-container {
+    background-color: #f8f9fa;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 96%; /* Ocupa el ancho completo de su contenedor */
+    max-width: 96%; /* Ocupa el ancho completo de la pantalla */
+    margin-left: -5; /* Mover el contenedor del formulario más a la izquierda */
+}
+
+/* Estilos para los inputs */
+.form-control {
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    padding: 8px;
+    width: 96%; /* Ajustar el ancho de los campos de entrada */
+}
+
+
+/* Estilos para el botón */
+.custom-btn {
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    transition: background-color 0.3s;
+}
+
+.custom-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 767px) {
+    .custom-btn {
+        font-size: 10vw; /* Tamaño de fuente para pantallas pequeñas */
+        padding: 0vw 0vw; /* Relleno para pantallas pequeñas */
+    }
+}
+.form-container {
+    background-color: #f8f9fa;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 96%; /* Ocupa el ancho completo de su contenedor */
+    max-width: 96%; /* Ocupa el ancho completo de la pantalla */
+    margin-left: -50; /* Mover el contenedor del formulario más a la izquierda */
+}
+
+
+
+
+/* Media query para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .custom-btn {
+        font-size: 10vw; /* Tamaño de fuente para pantallas medianas */
+        padding: 0vw 0vw; /* Relleno para pantallas medianas */
+    }
+}
+.form-container {
+    background-color: #f8f9fa;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 96%; /* Ocupa el ancho completo de su contenedor */
+    max-width: 96%; /* Ocupa el ancho completo de la pantalla */
+    margin-left: -50; /* Mover el contenedor del formulario más a la izquierda */
+}
+
+
+
+
+
+
+/* Media query para pantallas grandes */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .custom-btn {
+        font-size: 2.5vw; /* Tamaño de fuente para pantallas grandes */
+        padding: 0vw 0vw; /* Relleno para pantallas grandes */
+    }
+}
+
+/* Media query para pantallas extra grandes */
+@media (min-width: 1200px) {
+    .custom-btn {
+        font-size: 2vw; /* Tamaño de fuente para pantallas extra grandes */
+        padding: 0.5vw 1vw; /* Relleno para pantallas extra grandes */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -963,7 +1175,7 @@ main {
                     <div class="text-container">
                         <div class="text3">deteccion de intrusion inteligente</div>
                         <div class="text4">(((advertencia visual y auditiva)))</div>
-                        <div class="text5">AHORRE UN 90% EN FALSAS ALARMAS11!!</div>
+                        <div class="text5">Distinción precisa de movimientos humanos</div>
                     </div>
                 </figure>
             </div>  
@@ -973,8 +1185,14 @@ main {
                     <img src="imagen\camara-H3c-2K-reciva notificaciones.png" alt="Imagen 1" class="img-fluid" 
                     <div class="text-container">
                         <div class="text6">Notificaciones instantaneas!!</div>
-                        <div class="text7">Distinción precisa de movimientos humanos</div>
-                    </div>
+                        <div class="text7">AHORRE UN 90% EN FALSAS ALARMAS11!!</div>
+                        <div class="card-body text-center d-flex justify-content-center">
+                            <div class="custom-btn-container">
+                                <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
+                                    <span class="display-2">¡Obtén bono!</span>
+                                </a>
+                            </div>
+                        </div>                        
                 </figure>
             </div>  
             
@@ -983,8 +1201,8 @@ main {
                 <figure class="image-1">
                     <img src="imagen\audio bidireccional.png" alt="Imagen 1" class="img-fluid" 
                     <div class="text-container">
-                        <div class="text1">camara inteligente</div>
-                        <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
+                        <div class="text8">camara inteligente</div>
+                        <div class="text9">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
                     </div>
                 </figure>
             </div>
@@ -1071,6 +1289,71 @@ main {
             </figure>
         </div>
 
+
+
+
+
+        <!-- Formulario de contacto -->
+        <div class="container" id="formulario" style="margin-top: 50px;">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+                <div class="form-container">
+                    <h2 class="text-center mb-4">Ingrese sus datos para enviar su pedido. ¡Incluya el correo electrónico para FACTURACIÓN ELECTRÓNICA!</h2>
+                    <form id="myForm">
+                        <div class="form-group">
+                            <label for="nombreCompleto">Nombre Completo:</label>
+                            <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="direccionBarrio">Dirección/Barrio:</label>
+                            <input type="text" class="form-control" id="direccionBarrio" name="direccionBarrio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ciudadDepartamento">Ciudad/Departamento:</label>
+                            <input type="text" class="form-control" id="ciudadDepartamento" name="ciudadDepartamento" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correoElectronico">Correo Electrónico:</label>
+                            <input type="email" class="form-control" id="correoElectronico" name="correoElectronico" required>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block custom-btn" onclick="enviarDatos()">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+  
+  <!-- Botón de WhatsApp -->
+  <div class="mt-3" style="margin-top: 50px;">
+    <a href="https://wa.me/3158859744" target="_blank" class="btn btn-success btn-lg custom-btn w-100">
+      <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp
+    </a>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </main>
     <footer>
         <p>Pie de Página</p>
@@ -1078,6 +1361,65 @@ main {
 </div>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Integrar Bootstrap JS (opcional, solo si necesitas funcionalidades como modales, etc.) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  function enviarDatos() {
+    var nombreCompleto = document.getElementById("nombreCompleto").value;
+    var telefono = document.getElementById("telefono").value;
+    var direccionBarrio = document.getElementById("direccionBarrio").value;
+    var ciudadDepartamento = document.getElementById("ciudadDepartamento").value;
+    var correoElectronico = document.getElementById("correoElectronico").value;
+
+    var formData = new FormData();
+    formData.append("nombreCompleto", nombreCompleto);
+    formData.append("telefono", telefono);
+    formData.append("direccionBarrio", direccionBarrio);
+    formData.append("ciudadDepartamento", ciudadDepartamento);
+    formData.append("correoElectronico", correoElectronico);
+
+    fetch('https://script.google.com/macros/s/AKfycbwd5Ne_B5sPStA1KHNPm390zcBubpNJWyBBtu8dzI88rbdg9CPYsy-cXEPs2wqB6nix-A/exec', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        alert('Datos enviados correctamente');
+        document.getElementById("myForm").reset(); // Limpiar el formulario después de enviar
+      } else {
+        alert('Error al enviar los datos');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  }
+
+
+  
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script>
