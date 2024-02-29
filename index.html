@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Página Web</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-becWw2YsMz2BmzVZ5Lla+X5nZDT9k4L3y3CC/hHYYQ2oeWj+uDHUj2A3fPpI5aF" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilos generales */
@@ -1244,9 +1245,17 @@ header {
 }
 
 
+
 .navbar-text {
     margin-left: auto; /* Mueve el mensaje al extremo derecho */
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    color: white; /* Realce con negro */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Agrega una sombra al texto */
+    font-size: 4vw; /* Tamaño de letra en unidades de viewport */
 }
+
+
 
 .fixed-text {
     position: fixed;
@@ -1264,6 +1273,14 @@ header {
         height: 8vh; /* Cambiar la altura del encabezado en pantallas pequeñas */
     }
 }
+.navbar-text {
+    margin-left: auto; /* Mueve el mensaje al extremo derecho */
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    color: white; /* Realce con negro */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Agrega una sombra al texto */
+    font-size: 6vw; /* Tamaño de letra en unidades de viewport */
+}
 
 /* Media queries para pantallas medianas */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1271,6 +1288,16 @@ header {
         height: 10vh;
     }
 }
+
+.navbar-text {
+    margin-left: auto; /* Mueve el mensaje al extremo derecho */
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    color: white; /* Realce con negro */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Agrega una sombra al texto */
+    font-size: 6vw; /* Tamaño de letra en unidades de viewport */
+}
+
 
 /* Media queries para pantallas grandes */
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -1704,46 +1731,50 @@ main {
 
 
 /* Estilo personalizado para el contenedor del botón */
-.custom-btn-container {
+.custom-btn2-container {
     display: flex;
     justify-content: center; /* Centra el botón horizontalmente */
     align-items: center; /* Centra el botón verticalmente */
 }
 
 /* Estilo personalizado para el botón */
-.custom-btn {
+.custom-btn2 {
     font-family: Arial, sans-serif; /* Cambia la fuente del botón */
     /* Otros estilos del botón */
-    font-size: 4vw;
+    font-size: 3vw; /* Tamaño de la fuente en relación con el ancho de la pantalla */
     font-weight: bold;
     text-transform: uppercase;
     background-color: #ff0000;
     color: #fff;
     border: none;
-    padding: 0vw 0vw;
+    padding: 1% 2%; /* Ajuste de relleno en porcentaje para adaptarse al tamaño de la pantalla */
     border-radius: 5px;
     transition: background-color 0.3s;
+    max-width: 100%; /* Asegura que el botón no exceda el ancho de su contenedor */
+    box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
+    width: auto; /* Permite que el ancho del botón se ajuste automáticamente al contenido */
 }
+
 
 /* Media query para pantallas pequeñas */
 @media (max-width: 767px) {
-    .custom-btn {
-        font-size: 10vw; /* Tamaño de fuente para pantallas pequeñas */
-        padding: 0vw 0vw; /* Relleno para pantallas pequeñas */
+    .custom-btn2 {
+        font-size: 7vw; /* Tamaño de fuente para pantallas pequeñas */
+        padding: 1% 2%; /* Relleno para pantallas pequeñas */
     }
 }
 
 /* Media query para pantallas medianas */
 @media (min-width: 768px) and (max-width: 991px) {
-    .custom-btn {
-        font-size: 10vw; /* Tamaño de fuente para pantallas medianas */
-        padding: 0vw 0vw; /* Relleno para pantallas medianas */
+    .custom-btn2 {
+        font-size: 7vw; /* Tamaño de fuente para pantallas medianas */
+        padding: 1% 2%; /* Relleno para pantallas medianas */
     }
 }
 
 /* Media query para pantallas grandes */
 @media (min-width: 992px) and (max-width: 1199px) {
-    .custom-btn {
+    .custom-btn2 {
         font-size: 2.5vw; /* Tamaño de fuente para pantallas grandes */
         padding: 1vw 1.5vw; /* Relleno para pantallas grandes */
     }
@@ -1751,7 +1782,7 @@ main {
 
 /* Media query para pantallas extra grandes */
 @media (min-width: 1200px) {
-    .custom-btn {
+    .custom-btn2 {
         font-size: 2vw; /* Tamaño de fuente para pantallas extra grandes */
         padding: 0.5vw 1vw; /* Relleno para pantallas extra grandes */
     }
@@ -1931,10 +1962,48 @@ main {
 
 
 
+  /* Estilos adicionales */
+  .custom-title-container {
+            display: flex; /* Usa flexbox */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+            background-color: black;
+            color: yellow;
+            padding: 2vw; /* Utiliza unidades de viewport para el padding */
+            text-align: center;
+        }
+        .custom-title {
+            font-weight: bold;
+            font-size: 5vw; /* Utiliza unidades de viewport para el tamaño de la fuente */
+            margin: 0;
+        }
 
+        /* Media queries para ajustar el tamaño del título en diferentes tamaños de pantalla */
+        @media (max-width: 767px) {
+            .custom-title {
+                font-size: 5vw; /* Tamaño del título para pantallas pequeñas */
+                padding: 2vw; /* Utiliza unidades de viewport para el padding */
+            }
+        }
 
+        @media (min-width: 768px) and (max-width: 991px) {
+            .custom-title {
+                font-size: 5vw; /* Tamaño del título para pantallas medianas */
+                padding: 2vw; /* Utiliza unidades de viewport para el padding */
+            }
+        }
 
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .custom-title {
+                font-size: 5.5vw; /* Tamaño del título para pantallas grandes */
+            }
+        }
 
+        @media (min-width: 1200px) {
+            .custom-title {
+                font-size: 6vw; /* Tamaño del título para pantallas extra grandes */
+            }
+        }
 
 
 
@@ -1970,7 +2039,7 @@ main {
                 <!-- Texto -->
                 <span class="navbar-text mx-2" style="margin-right: auto;">
                     <a href="#formulario" style="text-decoration: none; color: inherit;" class="h4 fw-bold">
-                        Pídelo ahora y paga en la puerta de tu casa
+                        Pídela ahora y paga en la puerta de tu casa
                     </a>
                 </span>
             </div>
@@ -1980,7 +2049,15 @@ main {
     
     
     <main>
-        <h2>Servicio Contraentrega en Bucaramanga y Área Metropolitana</h2>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="custom-title-container">
+                        <h2 class="custom-title">Servicio Contraentrega en Bucaramanga y Área Metropolitana</h2>
+                    </div>
+            
+
         <section>
             <p>H3c - 2K (4 mpx).</p>
         </section>
@@ -2014,15 +2091,20 @@ main {
                     <div class="text-container">
                         <div class="text6">Notificaciones instantaneas!!</div>
                         <div class="text7">AHORRE UN 90% EN FALSAS ALARMAS11!!</div>
-                        <div class="card-body text-center d-flex justify-content-center">
-                            <div class="custom-btn-container">
-                                <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
-                                    <span class="display-2">¡Obtén bono!</span>
-                                </a>
                             </div>
                         </div>                        
                 </figure>
+                <div class="card-body text-center d-flex justify-content-center">
+                    <div class=
+                    "custom-btn2-container">
+                        <a class="btn btn-primary custom-btn2 font-italic btn-block m-0" href="#formulario">
+                            <span class="display-2">10% de descuento con el registro</span>
+                        </a>
             </div>  
+            
+
+
+
             
 
             <div class="col-12 col-md-6">
@@ -2033,9 +2115,9 @@ main {
                         <div class="text9">Con el audio bidireccional de nuestra cámara, puedes mantener el contacto en todo momento. Da instrucciones, ofrece consuelo o simplemente saluda a tus seres queridos con una simple comunicacion de voz en vivo.
                     </div>
                     <div class="card-body text-center d-flex justify-content-center">
-                        <div class="custom-btn-container">
-                            <a class="btn btn-primary custom-btn font-italic btn-block m-0" href="#formulario">
-                                <span class="display-2">¡Obtén bono!</span>
+                        <div class="custom-btn2-container">
+                            <a class="btn btn-primary custom-btn2 font-italic btn-block m-0" href="#formulario">
+                                <span class="display-2">compra + registro = memoria gratis </span>
                             </a>
                         </div>
                 </figure>
@@ -2226,9 +2308,9 @@ main {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
 
-<!-- Integrar Bootstrap JS (opcional, solo si necesitas funcionalidades como modales, etc.) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-GFgXL5BEuZN7Us+yoOtLXJbKcV8e6w2CWGlp3zUnKm87z+9sDTPrO+P3Ihe4HWu2" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-D/xsuj1O70N46r2Ck5C5K8HlXWwBL/PJTgmWRBqBpKs7roSpgjOT5HQvrPz6eM6L" crossorigin="anonymous"></script>
 <script>
   function enviarDatos() {
     var nombreCompleto = document.getElementById("nombreCompleto").value;
