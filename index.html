@@ -118,11 +118,35 @@
 
 
 .text1 {
-    background-color: (255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
+    background-color:red (255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
     align-self: flex-start; /* Alinear el primer texto hacia arriba */
     margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
     font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+    color: white;
 }
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+    .text1 {
+        padding: 3vw;
+        margin: 3vw;
+        font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
+        color: red;
+    }
+}
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .text1 {
+        padding: 2.5vw;
+        margin: 2.5vw;
+        font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
+        color: red;
+    }
+}
+
+
+
+
+
 
 .text2 {
     background-color: (0, 0, 255, 0.5); /* Azul más transparente */
@@ -132,7 +156,7 @@
 
 /* Media queries para pantallas pequeñas */
 @media (max-width: 767px) {
-    .text1, .text2 {
+    .text2 {
         padding: 3vw;
         margin: 3vw;
         font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
@@ -141,7 +165,7 @@
 
 /* Media queries para pantallas medianas */
 @media (min-width: 768px) and (max-width: 991px) {
-    .text1, .text2 {
+    .text2 {
         padding: 2.5vw;
         margin: 2.5vw;
         font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
@@ -150,7 +174,7 @@
 
 /* Media queries para pantallas grandes */
 @media (min-width: 992px) and (max-width: 1199px) {
-    .text1, .text2 {
+    .text2 {
         padding: 2vw;
         margin: 2vw;
         font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas grandes */
@@ -159,7 +183,7 @@
 
 /* Media queries para pantallas extra grandes */
 @media (min-width: 1200px) {
-    .text1, .text2 {
+    .text2 {
         padding: 1.5vw;
         margin: 1.5vw;
         font-size: 1.5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas extra grandes */
@@ -173,12 +197,13 @@
 
 .text3 {
     position: relative;
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
+    background-color: rgba(0, 0, 255, 0.8); /* Azul transparente para el fondo */
     align-self: flex-start; /* Alinear el primer texto hacia arriba */
     margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
     margin-top: 10vw; /* Mover el texto hacia arriba */
     font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
     white-space: nowrap; /* Evita que el texto se divida */
+    color: white; /* Color blanco para el texto */
 }
 
 .text4 {
@@ -324,37 +349,40 @@
 
 .text6 {
     position: relative;
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
+    background-color: rgba(0, 0, 255, 0.8); /* Azul transparente para el fondo */
     align-self: flex-start; /* Alinear el primer texto hacia arriba */
     margin-left: 1vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
     margin-top: -110vw; /* Mover el texto hacia arriba */
     font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla */
     white-space: nowrap; /* Evita que el texto se divida */
+    color: white;
 }
 
 @media (max-width: 767px) {
     .text6 {
-        position: relative;
-        background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-        align-self: flex-start; /* Alinear el primer texto hacia arriba */
-        margin-left: 1vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-        margin-top: -110vw; /* Mover el texto hacia arriba */
-        font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-        white-space: nowrap; /* Evita que el texto se divida */
-    }
+    position: relative;
+    background-color: rgba(0, 0, 255, 0.8); /* Azul transparente para el fondo */
+    align-self: flex-start; /* Alinear el primer texto hacia arriba */
+    margin-left: 1vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+    margin-top: -110vw; /* Mover el texto hacia arriba */
+    font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+    white-space: nowrap; /* Evita que el texto se divida */
+    color: white;
+ }
 }
 
 /* Media queries para pantallas medianas */
 @media (min-width: 768px) and (max-width: 991px) {
     .text6 {
-        position: relative;
-        background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-        align-self: flex-start; /* Alinear el primer texto hacia arriba */
-        margin-left: 1vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-        margin-top: -110vw; /* Mover el texto hacia arriba */
-        font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-        white-space: nowrap; /* Evita que el texto se divida */
-    }
+    position: relative;
+    background-color: rgba(0, 0, 255, 0.8); /* Azul transparente para el fondo */
+    align-self: flex-start; /* Alinear el primer texto hacia arriba */
+    margin-left: 1vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+    margin-top: -110vw; /* Mover el texto hacia arriba */
+    font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+    white-space: nowrap; /* Evita que el texto se divida */
+    color: white;
+ }
 }
 
 
@@ -1273,14 +1301,6 @@ header {
         height: 8vh; /* Cambiar la altura del encabezado en pantallas pequeñas */
     }
 }
-.navbar-text {
-    margin-left: auto; /* Mueve el mensaje al extremo derecho */
-    display: flex; /* Usa flexbox */
-    align-items: center; /* Centra verticalmente */
-    color: white; /* Realce con negro */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Agrega una sombra al texto */
-    font-size: 6vw; /* Tamaño de letra en unidades de viewport */
-}
 
 /* Media queries para pantallas medianas */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1288,16 +1308,6 @@ header {
         height: 10vh;
     }
 }
-
-.navbar-text {
-    margin-left: auto; /* Mueve el mensaje al extremo derecho */
-    display: flex; /* Usa flexbox */
-    align-items: center; /* Centra verticalmente */
-    color: white; /* Realce con negro */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Agrega una sombra al texto */
-    font-size: 6vw; /* Tamaño de letra en unidades de viewport */
-}
-
 
 /* Media queries para pantallas grandes */
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -1424,7 +1434,6 @@ main {
 
 
 
-
 .navbar-text {
     position: fixed;
     top: 8vh; /* Centrado verticalmente */
@@ -1434,19 +1443,24 @@ main {
     align-items: center;
     margin-left: auto; /* Alinear el mensaje al frente del logo */
     white-space: nowrap; /* Evitar que el texto se divida en dos líneas */
+    color: white; /* Realce con negro */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Agrega una sombra al texto */
+    font-size: 8vw; /* Tamaño de letra en unidades de viewport */
 }
 
 
 /* Media queries para ajustar el margen izquierdo en todas las pantallas */
 @media (max-width: 767px) {
     .navbar-text {
-        margin-left: 15vw; /* Ajusta el margen izquierdo en relación con el ancho de la ventana */
+        margin-left: 13vw; /* Ajusta el margen izquierdo en relación con el ancho de la ventana */
+        font-size: 8vw; /* Tamaño de letra en unidades de viewport */
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     .navbar-text {
-        margin-left: 2vw; /* Ajusta el margen izquierdo en relación con el ancho de la ventana */
+        margin-left: 13vw; /* Ajusta el margen izquierdo en relación con el ancho de la ventana */
+        font-size: 8vw; /* Tamaño de letra en unidades de viewport */
     }
 }
 
@@ -2059,7 +2073,7 @@ main {
             
 
         <section>
-            <p>H3c - 2K (4 mpx).</p>
+            <div class="text1">H3c - 2K+ (4 mpx).</div>
         </section>
         <div class="row">
 
