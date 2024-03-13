@@ -1,1255 +1,111 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>Landing Page con Bootstrap</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-becWw2YsMz2BmzVZ5Lla+X5nZDT9k4L3y3CC/hHYYQ2oeWj+uDHUj2A3fPpI5aF" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <style>
-        /* Estilos generales */
-        body {
-            background-color: #ffffff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            /* Ajustar el padding según el tamaño de pantalla */
-            padding: 0 20px;
-        }
-        header, footer {
-            background-color: #333333;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px 0;
-        }
-        main {
-            flex: 1;
-            padding: 20px;
-        }
-
-        /* Modificaciones para breakpoints */
-        @media (max-width: 767px) {
-            /* Estilos para pantallas pequeñas */
-            .container {
-                padding: 0 10px;
-            }
-            main {
-                padding: 10px;
-            }
-            .row > div[class^="col-"] {
-                padding: 0 5px;
-            }
-            .img-fluid {
-                max-width: 100%;
-            }
-        }
-
-        @media (min-width: 768px) and (max-width: 991px) {
-            /* Estilos para pantallas medianas */
-            .container {
-                padding: 0 20px;
-            }
-            main {
-                padding: 20px;
-            }
-            .row > div[class^="col-"] {
-                padding: 0 10px;
-            }
-        }
-
-        @media (min-width: 992px) and (max-width: 1199px) {
-            /* Estilos para pantallas grandes */
-            .container {
-                padding: 0 40px;
-            }
-            main {
-                padding: 30px;
-            }
-            .row > div[class^="col-"] {
-                padding: 0 15px;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            /* Estilos para pantallas extra grandes */
-            .container {
-                padding: 0 60px;
-            }
-            main {
-                padding: 40px;
-            }
-            .row > div[class^="col-"] {
-                padding: 0 20px;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-.text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-
-.text1 {
-    background-color:red (255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-    color: white;
-}
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text1 {
-        padding: 3vw;
-        margin: 3vw;
-        font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        color: red;
-    }
-}
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text1 {
-        padding: 2.5vw;
-        margin: 2.5vw;
-        font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        color: red;
-    }
-}
-
-
-
-
-
-
-.text2 {
-    background-color: (0, 0, 255, 0.5); /* Azul más transparente */
-    margin-left: -5vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text2 {
-        padding: 3vw;
-        margin: 3vw;
-        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text2 {
-        padding: 2.5vw;
-        margin: 2.5vw;
-        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-    }
-}
-
-/* Media queries para pantallas grandes */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .text2 {
-        padding: 2vw;
-        margin: 2vw;
-        font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas grandes */
-    }
-}
-
-/* Media queries para pantallas extra grandes */
-@media (min-width: 1200px) {
-    .text2 {
-        padding: 1.5vw;
-        margin: 1.5vw;
-        font-size: 1.5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas extra grandes */
-    }
-}
-
-
-  
-
-
-
-.text3 {
-    position: relative;
-    background-color: rgba(0, 0, 255, 0.8); /* Azul transparente para el fondo */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 10vw; /* Mover el texto hacia arriba */
-    font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-    white-space: nowrap; /* Evita que el texto se divida */
-    color: white; /* Color blanco para el texto */
-}
-
-.text4 {
-    position: relative;
-    background-color: (0, 0, 255, 0.5); /* Azul más transparente */
-    margin-top: 10vw; /* Mover el texto hacia arriba */
-    margin-left: -5vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text3 {
-        position: relative;
-        padding: 3vw;
-        margin: 3vw;
-        font-size: 6vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: -70vw; /* Mover el texto hacia arriba */
-        white-space: nowrap; /* Evita que el texto se divida */
-    }
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text4 {
-        position: relative;
-        padding: 3vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: 54vw; /* Mover el texto hacia arriba */
-        margin-left: 9vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text3 {
-        position: relative;
-        padding: 2.5vw;
-        margin: 2.5vw;
-        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: -60vw; /* Mover el texto hacia arriba */
-        white-space: nowrap; /* Evita que el texto se divida */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text4 {
-        position: relative;
-        padding: 2.5vw;
-        margin: 2.5vw;
-        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: 54vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-/* Media queries para pantallas grandes */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .text3 {
-        padding: 2vw;
-        margin: 2vw;
-        font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas grandes */
-        margin-top: -60vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas grandes */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .text4 {
-        padding: 2vw;
-        margin: 2vw;
-        font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas grandes */
-        margin-top: 54vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-/* Media queries para pantallas extra grandes */
-@media (min-width: 1200px) {
-    .text3 {
-        padding: 1.5vw;
-        margin: 1.5vw;
-        font-size: 1.5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas extra grandes */
-        margin-top: -60vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas extra grandes */
-@media (min-width: 1200px) {
-    .text4 {
-        padding: 1.5vw;
-        margin: 1.5vw;
-        font-size: 1.5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas extra grandes */
-        margin-top: 53vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-.text5 {
-    background-color:(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 10vw; /* Mover el texto hacia arriba */
-    font-size: 2vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text5 {
-        padding: 3vw;
-        margin: 3vw;
-        font-size: 4vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: -4vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text5 {
-        padding: 2.5vw;
-        margin: 2.5vw;
-        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: -4vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-.text6 {
-    position: relative;
-    background-color: rgba(0, 0, 255, 0.8); /* Azul transparente para el fondo */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: 1vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: -110vw; /* Mover el texto hacia arriba */
-    font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-    white-space: nowrap; /* Evita que el texto se divida */
-    color: white;
-}
-
-@media (max-width: 767px) {
-    .text6 {
-    position: relative;
-    background-color: rgba(0, 0, 255, 0.8); /* Azul transparente para el fondo */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: 1vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: -110vw; /* Mover el texto hacia arriba */
-    font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-    white-space: nowrap; /* Evita que el texto se divida */
-    color: white;
- }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text6 {
-    position: relative;
-    background-color: rgba(0, 0, 255, 0.8); /* Azul transparente para el fondo */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: 1vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: -110vw; /* Mover el texto hacia arriba */
-    font-size: 8vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-    white-space: nowrap; /* Evita que el texto se divida */
-    color: white;
- }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.text7 {
-    background-color: (255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: 3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 10vw; /* Mover el texto hacia arriba */
-    font-size: 4vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text7 {
-        padding: 3vw;
-        margin: 3vw;
-        font-size: 4vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: 100vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text7 {
-        padding: 2.5vw;
-        margin: 2.5vw;
-        font-size: 4vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: 100vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-.text8 {
-    background-color: rgba(0, 0, 255, 0.8); /* Azul transparente para el fondo */
-    padding: 0vw;
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 5vw; /* Mover el texto hacia arriba */
-    font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-    color: white;
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text8 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: 5vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text8 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: 5vw; /* Mover el texto hacia arriba */
-        color: white;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-.text9 {
-    background-color: (255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 10vw; /* Mover el texto hacia arriba */
-    font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text9 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: 10vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text9 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: 10vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-.text10 {
-    background-color: rgba(0, 0, 255, 0.8); /* Azul transparente para el fondo */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: -120vw; /* Mover el texto hacia arriba */
-    font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-    color: white;
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text10 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: -120vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text10 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 7vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: -120vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.text11 {
-    background-color:(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 1vw; /* Mover el texto hacia arriba */
-    font-size: 5.5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text11 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5.5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: 1vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text11 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5.5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: 1vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.text12 {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: -70vw; /* Mover el texto hacia arriba */
-    font-size: 6vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text12 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 6vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: -70vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text12 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 6vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: -70vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-.text13 {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 50vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text13 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: 50vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text13 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: 50vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-.text14 {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: -80vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text14 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: -80vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text14 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: -80vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.text15 {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 50vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text15 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: 50vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text15 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: 50vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-.text16 {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: -80vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text16 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: -80vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text16 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: -80vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-.text17 {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 73vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text17 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: 73vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text17 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: 73vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.text18 {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: -85vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text18 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: -85vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text18 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: -85vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.text19 {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 90vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text19 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: 90vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text19 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: 90vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-.text {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 90vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: 90vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: 90vw; /* Mover el texto hacia arriba */
-    }
+    /* Tus estilos CSS personalizados van aquí */
+       /* Modern CSS Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
-
-
-
-
-
-
-
-
-.text {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 90vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: 90vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: 90vw; /* Mover el texto hacia arriba */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-.text24 {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: -70vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text24 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: -70vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text24 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: -70vw; /* Mover el texto hacia arriba */
-    }
+body {
+  line-height: 1.6;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.text25 {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: 65vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text25 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: 65vw; /* Mover el texto hacia arriba */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text25 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: 65vw; /* Mover el texto hacia arriba */
-    }
+img,
+iframe,
+embed,
+object,
+video {
+  display: block;
+  max-width: 100%;
 }
-
-
-
-
-
-
-
-
 
-
-.text26 {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: -130vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+ol,
+ul {
+  list-style: none;
 }
 
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text26 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: -130vw; /* Mover el texto hacia arriba */
-    }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text26 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: -130vw; /* Mover el texto hacia arriba */
-    }
+a {
+  text-decoration: none;
+  color: inherit;
 }
-
-
-
-
-
-
 
-
-
-
-
-
-.text {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: -130vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
 }
 
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: -130vw; /* Mover el texto hacia arriba */
-    }
+button,
+input {
+  overflow: visible;
 }
 
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: -130vw; /* Mover el texto hacia arriba */
-    }
+button,
+select {
+  text-transform: none;
 }
-
-
 
-
-
-
-
-
-
-
-
-
-
-.text28 {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: flex-start; /* Alinear el primer texto hacia arriba */
-    margin-left: -3vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    margin-top: -130vw; /* Mover el texto hacia arriba */
-    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
 }
 
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text28 {
-        padding: 0vw;
-        margin: 3vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: -130vw; /* Mover el texto hacia arriba */
-    }
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
 }
 
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text28 {
-        padding: 0vw;
-        margin: 2.5vw;
-        font-size: 5vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: -130vw; /* Mover el texto hacia arriba */
-    }
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
 }
-
-
-
-
 
-
-
-
-
-
-
-
-
-.text30 {
-    background-color: rgba(255, 0, 0, 0.8); /* Rojo transparente para el primer texto */
-    align-self: center; /* Alinear el texto verticalmente en el centro */
-    margin-left: 10vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
-    font-size: 4vw; /* Tamaño de fuente relativo al ancho de la pantalla */
-    top: 50%; /* Posición vertical del 50% */
-    left: 10%; /* Posición horizontal del 50% */
-    transform: translate(-50%, -50%); /* Centrar el texto exactamente en el centro */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
 }
 
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .text30 {
-        padding: 0vw;
-        margin: 10vw;
-        font-size: 4vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas pequeñas */
-        margin-top: -30vw; /* Mover el texto hacia arriba */
-        top: 50%; /* Posición vertical del 50% */
-    left: 10%; /* Posición horizontal del 50% */
-    transform: translate(-50%, -50%); /* Centrar el texto exactamente en el centro */
-    margin-left: 10vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
 }
-    }
-
 
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .text30 {
-        padding: 0vw;
-        margin: 10vw;
-        font-size: 4vw; /* Tamaño de fuente relativo al ancho de la pantalla en pantallas medianas */
-        margin-top: -30vw; /* Mover el texto hacia arriba */
-        top: 50%; /* Posición vertical del 50% */
-    left: 10%; /* Posición horizontal del 50% */
-    transform: translate(-50%, -50%); /* Centrar el texto exactamente en el centro */
-    margin-left: 10vw; /* Ajuste del margen izquierdo para mover el texto más a la izquierda */
+::-webkit-search-decoration,
+::-webkit-search-cancel-button,
+::-webkit-search-results-button,
+::-webkit-search-results-decoration {
+  -webkit-appearance: none;
 }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
-/* ENCABEZADO CON LOGO */
-header {
+.header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Ancho del encabezado en vw */
-    height: 5vh; /* Altura del encabezado en vh */
+    width: 100vw;
+    height: 5vh;
     z-index: 1000;
     background-color: red;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -1257,45 +113,97 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2vw; /* Espaciado horizontal en vw */
+    padding: 0 2vw;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Espacio entre los elementos */
+    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Ancho completo de la ventana */
-    height: 15vh; /* Altura del encabezado en vh */
+    width: 100vw;
+    height: 15vh;
     z-index: 1000;
     background-color: red;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 0 2vw; /* Espaciado horizontal en vw */
+    padding: 0 2vw;
 }
-
-
 
 .navbar-text {
-    margin-left: auto; /* Mueve el mensaje al extremo derecho */
-    display: flex; /* Usa flexbox */
-    align-items: center; /* Centra verticalmente */
-    color: white; /* Realce con negro */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Agrega una sombra al texto */
-    font-size: 4vw; /* Tamaño de letra en unidades de viewport */
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 4vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
-
 
 .fixed-text {
     position: fixed;
-    top: 1vh; /* Ajusta la posición vertical en relación con la altura de la ventana */
-    left: 1vw; /* Ajusta la posición horizontal en relación con el ancho de la ventana */
-    z-index: 1001; /* Asegura que el texto fijo esté por encima de la barra de navegación */
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para una mejor legibilidad */
-    padding: 10px; /* Espacio alrededor del texto */
+    top: 1vh;
+    left: 1vw;
+    z-index: 1001;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1vh 2vw;
+    color: black; /* Cambiar el color del texto fijo */
 }
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+    .navbar-text {
+        font-size: 6vw;
+    }
+
+    .fixed-text {
+        font-size: 3vw;
+    }
+}
+
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-text {
+        font-size: 4vw;
+    }
+
+    .fixed-text {
+        font-size: 2.5vw;
+    }
+}
+
+/* Media queries para pantallas grandes */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .navbar-text {
+        font-size: 3vw;
+    }
+
+    .fixed-text {
+        font-size: 2vw;
+    }
+}
+
+/* Media queries para pantallas extra grandes */
+@media (min-width: 1200px) {
+    .navbar-text {
+        font-size: 2.5vw;
+    }
+
+    .fixed-text {
+        font-size: 1.5vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* Media queries para pantallas pequeñas */
@@ -1325,24 +233,6 @@ header {
         height: 10vh;
     }
 }
-
-
-
-
-
-
-
-   /* Estilo para el elemento main */
-main {
-    margin-top: 12vh; /* 10% del alto de la ventana del navegador */
-    padding: 2vw; /* 2% del ancho de la ventana del navegador */
-    background-color: #f8f9fa; /* Color de fondo */
-    color: #333; /* Color del texto */
-}
-
-
-
-
 
 
 
@@ -1409,34 +299,6 @@ main {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .navbar-text {
     position: fixed;
     top: 8vh; /* Centrado verticalmente */
@@ -1482,7 +344,7 @@ main {
 
 .navbar-text a {
     text-decoration: none;
-    color: inherit;
+    color: white;
     font-weight: bold;
     font-size: 2.5vw; /* Tamaño de fuente relativo */
     padding: 1vh 2vw; /* Relleno relativo */
@@ -1510,142 +372,56 @@ main {
 
 
 
-
-
-
-.row {
-    display: flex; /* Utilizar flexbox */
-    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en múltiples líneas */
-    justify-content: center; /* Centrar horizontalmente los elementos */
+.btn-container {
+    text-align: center; /* Centra el botón horizontalmente */
 }
 
-/* Estilos para cada columna dentro de la fila */
-.row > div {
-    flex: 0 0 100vw; /* Cada columna ocupa todo el ancho disponible de la ventana */
-    max-width: 100vw; /* Ancho máximo del 100% de la ventana */
-    margin: 0 auto; /* Margen automático en los lados para centrar las columnas */
-    padding: 2vh 1vw; /* Ajustar el relleno según sea necesario */
-    box-sizing: border-box; /* Incluir el borde y el relleno en el ancho total */
+.btn-contactar {
+    font-size: 2.5vw; /* Tamaño del botón en unidades de viewport */
+    padding: 1.5vh 3vw; /* Relleno del botón */
+    margin-top: 3vh; /* Ajusta la distancia superior entre el botón y el contenido anterior */
 }
 
-/* Estilos para las imágenes dentro de las columnas */
-.row > div img {
-    width: 100vw; /* Ancho igual al 100% del contenedor */
-    height: auto; /* Ajustar la altura automáticamente */
-    object-fit: cover; /* Escalar la imagen para cubrir el contenedor */
-    overflow: visible; /* Permitir que las imágenes se desborden */
-}
-
-
-/* Media queries para pantallas pequeñas */
+/* Media queries para ajustar el tamaño del botón en todas las pantallas */
 @media (max-width: 767px) {
-    .row > div {
-        padding: 0; /* Eliminar el relleno en pantallas pequeñas */
-        overflow-x: visible; /* Permitir el desbordamiento horizontal */
-    }
-
-    .row > div img {
-        width: 100vw; /* Ancho igual al 100% del contenedor */
+    .btn-contactar {
+        font-size: 4vw; /* Tamaño de letra en unidades de viewport */
+        padding: 2vh 4vw; /* Relleno del botón */
+        margin-top: 4vh; /* Ajusta la distancia superior en pantallas pequeñas */
     }
 }
 
-
-/* Media queries para pantallas medianas */
 @media (min-width: 768px) and (max-width: 991px) {
-    .row > div {
-        padding: 2.5vh 2vw; /* Ajustar el relleno según sea necesario */
-    }
-
-    .row > div img {
-        width: 100vw; /* Ancho igual al 100% del contenedor */
+    .btn-contactar {
+        font-size: 3vw; /* Tamaño de letra en unidades de viewport */
+        padding: 2vh 5vw; /* Relleno del botón */
+        margin-top: 3.5vh; /* Ajusta la distancia superior en pantallas medianas */
     }
 }
 
-/* Media queries para pantallas grandes */
 @media (min-width: 992px) and (max-width: 1199px) {
-    .row > div {
-        padding: 2vh 2vw; /* Ajustar el relleno según sea necesario */
-    }
-
-    .row > div img {
-        width: 100vw; /* Ancho igual al 100% del contenedor */
+    .btn-contactar {
+        font-size: 2.5vw; /* Tamaño de letra en unidades de viewport */
+        padding: 2vh 6vw; /* Relleno del botón */
+        margin-top: 3vh; /* Ajusta la distancia superior en pantallas grandes */
     }
 }
 
-/* Media queries para pantallas extra grandes */
 @media (min-width: 1200px) {
-    .row > div {
-        padding: 1.5vh 1vw; /* Ajustar el relleno según sea necesario */
-    }
-
-    .row > div img {
-        width: 100vw; /* Ancho igual al 100% del contenedor */
+    .btn-contactar {
+        font-size: 2vw; /* Tamaño de letra en unidades de viewport */
+        padding: 2vh 7vw; /* Relleno del botón */
+        margin-top: 2.5vh; /* Ajusta la distancia superior en pantallas extra grandes */
     }
 }
 
 
 
 
-
-.col-12.col-md-6 {
-    display: flex; /* Hacer que el contenedor sea un contenedor flex */
-    justify-content: center; /* Centrar la imagen horizontalmente */
-    align-items: center; /* Centrar la imagen verticalmente */
-}
-
-.img-fluid {
-    /* Elimina el estilo max-width para permitir que la imagen ocupe todo el ancho del contenedor */
-    max-width: none;
-    width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
-    height: auto; /* Mantiene la proporción de la imagen */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-    .col-12.col-md-6 {
-        flex-direction: column; /* Cambiar la dirección de la flexbox a columna en pantallas pequeñas */
-        align-items: center; /* Centrar los elementos verticalmente */
-    }
-
-    .img-fluid {
-        width: 100vw; /* Ancho igual al 100% del contenedor */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .col-12.col-md-6 {
-        flex-direction: column; /* Cambiar la dirección de la flexbox a columna en pantallas medianas */
-        align-items: center; /* Centrar los elementos verticalmente */
-    }
-
-    .img-fluid {
-        width: 100vw; /* Ancho igual al 100% del contenedor */
-    }
-}
-
-/* Media queries para pantallas grandes */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .col-12.col-md-6 {
-        flex-direction: column; /* Cambiar la dirección de la flexbox a columna en pantallas grandes */
-        align-items: center; /* Centrar los elementos verticalmente */
-    }
-
-    .img-fluid {
-        width: 100vw; /* Ancho igual al 100% del contenedor */
-    }
-}
-
-/* Media queries para pantallas extra grandes */
-@media (min-width: 1200px) {
-    .col-12.col-md-6 {
-        flex-direction: column; /* Cambiar la dirección de la flexbox a columna en pantallas extra grandes */
-        align-items: center; /* Centrar los elementos verticalmente */
-    }
-
-    .img-fluid {
-        width: 100vw; /* Ancho igual al 100% del contenedor */
-    }
+.form-container {
+    width: 90vw;
+    margin: 0 auto;
+    margin-left: -3vw; /* Mover el contenedor hacia la izquierda */
 }
 
 
@@ -1655,381 +431,70 @@ main {
 
 
 
-/* Estilos base */
-.faro-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+
+
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
 }
 
-.faro {
-  position: absolute;
-  width: 10vw; /* Ajusta según sea necesario */
-  height: 10vw; /* Ajusta según sea necesario */
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, transparent 20%, blue 30%), /* Luz azul base */
-              radial-gradient(circle at 50% 50%, transparent 30%, blue 40%), /* Rayos azules */
-              radial-gradient(circle at 50% 50%, transparent 20%, red 30%), /* Luz roja base */
-              radial-gradient(circle at 50% 50%, transparent 30%, red 40%); /* Rayos rojos */
-  animation: luces 1s infinite alternate;
-  top: 80%; /* Centra verticalmente el faro */
-  left: 50%; /* Centra horizontalmente el faro */
-  transform: translate(-50%, -50%); /* Centra el faro completamente */
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-@keyframes luces {
-  0%, 100% {
-    background: radial-gradient(circle at 50% 50%, transparent 20%, blue 30%), /* Luz azul base */
-                radial-gradient(circle at 50% 50%, transparent 30%, blue 40%), /* Rayos azules */
-                radial-gradient(circle at 50% 50%, transparent 20%, red 30%), /* Luz roja base */
-                radial-gradient(circle at 50% 50%, transparent 30%, red 40%); /* Rayos rojos */
+
+
+
+
+/* Estilos para el botón de WhatsApp */
+  #whatsapp-btn {
+    text-align: center;
   }
-  50% {
-    background: radial-gradient(circle at 50% 50%, transparent 20%, red 30%), /* Luz roja base */
-                radial-gradient(circle at 50% 50%, transparent 30%, red 40%), /* Rayos rojos */
-                radial-gradient(circle at 50% 50%, transparent 20%, blue 30%), /* Luz azul base */
-                radial-gradient(circle at 50% 50%, transparent 30%, blue 40%); /* Rayos azules */
+
+  #whatsapp-btn .btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
   }
-}
 
+  #whatsapp-btn .btn i {
+    margin-right: 10px;
+  }
 
-/* Media queries para pantallas pequeñas */
-@media (max-width: 767px) {
-  .faro {
-        position: relative;  
-        width: 8vw; /* Ajusta el tamaño del faro para pantallas medianas */
-        height: 8vw; /* Ajusta el tamaño del faro para pantallas medianas */
-        top: 20vh; /* Centra verticalmente el faro */
-        left: 10%; /* Centra horizontalmente el faro */
-        transform: translate(-50%, -50%); /* Centra el faro completamente */
-    }
-}
-
-/* Media queries para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .faro {
-        position: relative;  
-        width: 8vw; /* Ajusta el tamaño del faro para pantallas medianas */
-        height: 8vw; /* Ajusta el tamaño del faro para pantallas medianas */
-        top: 20vh; /* Centra verticalmente el faro */
-        left: 10%; /* Centra horizontalmente el faro */
-        transform: translate(-50%, -50%); /* Centra el faro completamente */
-    }
-}
-
-/* Media queries para pantallas grandes */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .faro {
-        width: 6vw; /* Ajusta el tamaño del faro para pantallas grandes */
-        height: 6vw; /* Ajusta el tamaño del faro para pantallas grandes */
-        top: 50vh; /* Centra verticalmente el faro */
-        left: 50%; /* Centra horizontalmente el faro */
-        transform: translate(-50%, -50%); /* Centra el faro completamente */
-    }
-}
-
-/* Media queries para pantallas extra grandes */
-@media (min-width: 1200px) {
-    .faro {
-        width: 5vw; /* Ajusta el tamaño del faro para pantallas extra grandes */
-        height: 5vw; /* Ajusta el tamaño del faro para pantallas extra grandes */
-        top: 50%; /* Centra verticalmente el faro */
-        left: 50%; /* Centra horizontalmente el faro */
-        transform: translate(-50%, -50%); /* Centra el faro completamente */
-    }
-}
-
-
-
-
-
-
-
-
-/* Estilo personalizado para el contenedor del botón */
-.custom-btn2-container {
-    display: flex;
-    justify-content: center; /* Centra el botón horizontalmente */
-    align-items: center; /* Centra el botón verticalmente */
-}
-
-/* Estilo personalizado para el botón */
-.custom-btn2 {
-    font-family: Arial, sans-serif; /* Cambia la fuente del botón */
-    /* Otros estilos del botón */
-    font-size: 3vw; /* Tamaño de la fuente en relación con el ancho de la pantalla */
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: #ff0000;
+  /* Estilos para el enlace de WhatsApp */
+  #whatsapp-btn .btn-whatsapp {
+    background-color: #25d366;
     color: #fff;
     border: none;
-    padding: 1% 2%; /* Ajuste de relleno en porcentaje para adaptarse al tamaño de la pantalla */
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    max-width: 100%; /* Asegura que el botón no exceda el ancho de su contenedor */
-    box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
-    width: auto; /* Permite que el ancho del botón se ajuste automáticamente al contenido */
-}
+    transition: background-color 0.3s ease;
+  }
+
+  #whatsapp-btn .btn-whatsapp:hover {
+    background-color: #128c7e;
+  }
 
 
-/* Media query para pantallas pequeñas */
-@media (max-width: 767px) {
-    .custom-btn2 {
-        font-size: 7vw; /* Tamaño de fuente para pantallas pequeñas */
-        padding: 1% 2%; /* Relleno para pantallas pequeñas */
+  
+
+    footer {
+        background-color: #f8f9fa;
+        padding: 2px;
+        text-align: center;
     }
-}
 
-/* Media query para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .custom-btn2 {
-        font-size: 7vw; /* Tamaño de fuente para pantallas medianas */
-        padding: 1% 2%; /* Relleno para pantallas medianas */
+    footer p {
+        margin: 0;
+        font-size: 14px;
+        color: #555;
     }
-}
-
-/* Media query para pantallas grandes */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .custom-btn2 {
-        font-size: 2.5vw; /* Tamaño de fuente para pantallas grandes */
-        padding: 1vw 1.5vw; /* Relleno para pantallas grandes */
-    }
-}
-
-/* Media query para pantallas extra grandes */
-@media (min-width: 1200px) {
-    .custom-btn2 {
-        font-size: 2vw; /* Tamaño de fuente para pantallas extra grandes */
-        padding: 0.5vw 1vw; /* Relleno para pantallas extra grandes */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Estilos para el contenedor del formulario */
-#formulario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    margin-left: -5; /* Mover el contenedor del formulario más a la izquierda */
-}
-
-/* Estilos para el contenedor del formulario */
-.form-container {
-    background-color: #f8f9fa;
-    padding: 5px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 96%; /* Ocupa el ancho completo de su contenedor */
-    max-width: 96%; /* Ocupa el ancho completo de la pantalla */
-    margin-left: -5; /* Mover el contenedor del formulario más a la izquierda */
-}
-
-/* Estilos para los inputs */
-.form-control {
-    border: 2px solid #ced4da;
-    border-radius: 5px;
-    padding: 8px;
-    width: 96%; /* Ajustar el ancho de los campos de entrada */
-}
-
-
-/* Estilos para el botón */
-.custom-btn {
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 5px;
-    transition: background-color 0.3s;
-}
-
-.custom-btn:hover {
-    background-color: #0056b3;
-}
-
-
-
-/* Media query para pantallas pequeñas */
-@media (max-width: 767px) {
-    .custom-btn {
-        font-size: 10vw; /* Tamaño de fuente para pantallas pequeñas */
-        padding: 0vw 0vw; /* Relleno para pantallas pequeñas */
-    }
-}
-.form-container {
-    background-color: #f8f9fa;
-    padding: 5px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 96%; /* Ocupa el ancho completo de su contenedor */
-    max-width: 96%; /* Ocupa el ancho completo de la pantalla */
-    margin-left: -50; /* Mover el contenedor del formulario más a la izquierda */
-}
-
-
-
-
-/* Media query para pantallas medianas */
-@media (min-width: 768px) and (max-width: 991px) {
-    .custom-btn {
-        font-size: 10vw; /* Tamaño de fuente para pantallas medianas */
-        padding: 0vw 0vw; /* Relleno para pantallas medianas */
-    }
-}
-.form-container {
-    background-color: #f8f9fa;
-    padding: 5px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 96%; /* Ocupa el ancho completo de su contenedor */
-    max-width: 96%; /* Ocupa el ancho completo de la pantalla */
-    margin-left: -50; /* Mover el contenedor del formulario más a la izquierda */
-}
-
-
-
-
-
-
-/* Media query para pantallas grandes */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .custom-btn {
-        font-size: 2.5vw; /* Tamaño de fuente para pantallas grandes */
-        padding: 0vw 0vw; /* Relleno para pantallas grandes */
-    }
-}
-
-/* Media query para pantallas extra grandes */
-@media (min-width: 1200px) {
-    .custom-btn {
-        font-size: 2vw; /* Tamaño de fuente para pantallas extra grandes */
-        padding: 0.5vw 1vw; /* Relleno para pantallas extra grandes */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* Estilos para el contenedor del video */
-.custom-video-container {
-    display: flex; /* Convertir el contenedor en un contenedor flex */
-    justify-content: center; /* Centrar el contenido horizontalmente */
-    align-items: center; /* Centrar el contenido verticalmente */
-    margin-top: 20px; /* Ajustar el margen superior según sea necesario */
-}
-
-/* Estilos para el video */
-.custom-video {
-    max-width: 100%; /* Ajustar el tamaño del video según sea necesario */
-}
-
-/* Media query para ajustar el tamaño del video en diferentes tamaños de pantalla */
-@media (max-width: 767px) {
-    .custom-video {
-        width: 90vw; /* Ancho del video para pantallas pequeñas */
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .custom-video {
-        width: 70vw; /* Ancho del video para pantallas medianas */
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    .custom-video {
-        width: 50vw; /* Ancho del video para pantallas grandes */
-    }
-}
-
-@media (min-width: 1200px) {
-    .custom-video {
-        width: 40vw; /* Ancho del video para pantallas extra grandes */
-    }
-}
-
-
-
-
-
-
-
-
-
-  /* Estilos adicionales */
-  .custom-title-container {
-            display: flex; /* Usa flexbox */
-            justify-content: center; /* Centra el contenido horizontalmente */
-            align-items: center; /* Centra el contenido verticalmente */
-            background-color: black;
-            color: yellow;
-            padding: 2vw; /* Utiliza unidades de viewport para el padding */
-            text-align: center;
-        }
-        .custom-title {
-            font-weight: bold;
-            font-size: 5vw; /* Utiliza unidades de viewport para el tamaño de la fuente */
-            margin: 0;
-        }
-
-        /* Media queries para ajustar el tamaño del título en diferentes tamaños de pantalla */
-        @media (max-width: 767px) {
-            .custom-title {
-                font-size: 5vw; /* Tamaño del título para pantallas pequeñas */
-                padding: 2vw; /* Utiliza unidades de viewport para el padding */
-            }
-        }
-
-        @media (min-width: 768px) and (max-width: 991px) {
-            .custom-title {
-                font-size: 5vw; /* Tamaño del título para pantallas medianas */
-                padding: 2vw; /* Utiliza unidades de viewport para el padding */
-            }
-        }
-
-        @media (min-width: 992px) and (max-width: 1199px) {
-            .custom-title {
-                font-size: 5.5vw; /* Tamaño del título para pantallas grandes */
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .custom-title {
-                font-size: 6vw; /* Tamaño del título para pantallas extra grandes */
-            }
-        }
-
-
-
-
-
-
-
-
-
+  
 
 
 
@@ -2043,11 +508,9 @@ main {
     </style>
 </head>
 <body>
-
-<div class="container">
     <header>
         <!-- Barra de navegación -->
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-light bg-red">
             <div class="d-flex align-items-center justify-content-center" style="display: flex;">
                 <!-- Logo -->
                 <a class="navbar-brand" href="#" style="margin-right: 100px;">
@@ -2055,339 +518,97 @@ main {
                 </a>                
                 <!-- Texto -->
                 <span class="navbar-text mx-2" style="margin-right: auto;">
-                    <a href="#formulario" style="text-decoration: none; color: inherit;" class="h4 fw-bold">
+                    <a href="#formulario" style="text-decoration: none; color: white;" class="h4 fw-bold">
                         Pídela ahora y paga en la puerta de tu casa
                     </a>
                 </span>
             </div>
         </nav>
     </header>
-    
-    
-    
-    <main>
-
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="custom-title-container">
-                        <h2 class="custom-title">Servicio Contraentrega en Bucaramanga y Área Metropolitana</h2>
-                    </div>
-            
-
-        <section>
-            <div class="text1">H3c - 2K+ (4 mpx).</div>
-        </section>
+  
+    <div class="container">
         <div class="row">
 
-            <div class="col-12 col-md-6">
-                <figure class="image-1">
-                    <img src="imagen\resistente al agua y al polvo.png" alt="Imagen 1" class="img-fluid" 
-                    <div class="text-container">
-                        <div class="text1"></div>
-                        <div class="text2">Convierte tu espacio en un entorno más seguro con la Cámara H3C 2K+. Equipada con inteligenica artificial, esta cámara ofrece una resolución excepcional de 2K+ para imágenes claras y detalladas, tanto de día como de noche. Su visión nocturna a color te brinda una vigilancia sin precedentes incluso en la oscuridad total.</div>
+            <div class="col-lg-12 col-md-6">
+                <div class="content">
+                    <h3>Imagen</h3>
+                    <img src="imagenes/0.png" class="img-fluid" alt="">
+                    <div class="btn-container">
+                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
-                </figure>
-            </div>
-            
-            <div class="col-12 col-md-6">
-                <figure class="image-1">
-                    <div class="faro"></div>
-                    <img src="imagen\camara-H3c-2K-deteccion de intrusos.png" alt="Imagen 1" class="img-fluid" 
-                    <div class="text-container">
-                        <div class="text3">deteccion de intrusion inteligente</div>
-                        <div class="text4">(((advertencia visual y auditiva)))</div>
-                        <div class="text5">Distinción precisa de movimientos humanos</div>
-                    </div>
-                </figure>
-            </div>  
-
-            <div class="col-12 col-md-6">
-                <figure class="image-1">
-                    <img src="imagen\camara-H3c-2K-reciva notificaciones.png" alt="Imagen 1" class="img-fluid" 
-                    <div class="text-container">
-                        <div class="text6">Notificaciones instantaneas!!</div>
-                        <div class="text7">AHORRE UN 90% EN FALSAS ALARMAS11!!</div>
-                            </div>
-                        </div>                        
-                </figure>
-                <div class="card-body text-center d-flex justify-content-center">
-                    <div class=
-                    "custom-btn2-container">
-                        <a class="btn btn-primary custom-btn2 font-italic btn-block m-0" href="#formulario">
-                            <span class="display-2">10% de descuento con el registro</span>
-                        </a>
-            </div>  
-            
-
-
-
-            
-
-            <div class="col-12 col-md-6">
-                <figure class="image-1">
-                    <div class="text-container">
-                        <div class="text8">¿Te preocupa no estar presente cuando más te necesitan?
-                    </div>
-                    <img src="imagen\audio bidireccional.png" alt="Imagen 1" class="img-fluid" style="margin-top: 1.5rem;">
-                    <div class="text-container">
-                        <div class="text9">Con el audio bidireccional de nuestra cámara, puedes mantener el contacto en todo momento. Da instrucciones, ofrece consuelo o simplemente saluda a tus seres queridos con una simple comunicacion de voz en vivo.
-                    </div>
-                    <div class="card-body text-center d-flex justify-content-center">
-                        <div class="custom-btn2-container">
-                            <a class="btn btn-primary custom-btn2 font-italic btn-block m-0" href="#formulario">
-                                <span class="display-2">compra + registro = memoria gratis </span>
-                            </a>
-                        </div>
-                </figure>
-            </div>
-            
-            <div class="col-12 col-md-6">
-                <figure class="image-1">
-                    <img src="imagen\camara-H3c-2K-imagenes a color 247.png" alt="Imagen 1" class="img-fluid" style="margin-top: 15rem;"> 
-                    <div class="text-container">
-                        <div class="text10">¿Estás listo para elevar tus estándares de seguridad nocturna?</div>
-                        <div class="text11">Con la cámara de vigilancia H3c 2K+, tus preocupaciones sobre la oscuridad se desvanecerán. Prepárate para una visión nocturna como nunca antes has visto.</div>
-                    </div>
-                </figure>
-            </div>  
-
-            <div class="col-12 col-md-6">
-                <figure class="image-1">
-                    <img src="imagen\camara-H3c-2K-30 metros de alcance en total oscuridad.png" alt="Imagen 1" class="img-fluid" style="margin-top: 1rem;">
-                    <div class="text-container">
-                        <div class="text12">Brillante Claridad en la Oscuridad</div>
-                        <div class="text13">30 metros de alcance en total oscuridad</div>
-                    </div>
-                </figure>
-            </div>  
-
-            <div class="col-12 col-md-6">
-                <figure class="image-1">
-                    <img src="imagen\camara-H3c-2K-detalles mas precisos aun con  zoom digital.png" alt="Imagen 1" class="img-fluid" style="margin-top: 5rem;">
-                    <div class="text-container">
-                        <div class="text14">¡No pierdas ni un solo detalle con la impresionante resolución de la cámara H3c 2K+!</div>
-                        <div class="text15">aun con ZOOM digital!!</div>
-                    </div>
-                </figure>
-            </div>
-
-            <div class="col-12 col-md-6">
-                <figure class="image-1">
-                    <img src="imagen\camara-H3c-2K-instalada en comidas rapidas geminis.png" alt="Imagen 1" class="img-fluid" style="margin-top: 5rem;">
-                    <div class="text-container">
-                        <div class="text16">CASOS DE EXITO</div>
-                        <div class="text17">camara H3c 2K+ instalada para registrar el proceso de pago y atencion al cliente</div>
-                        <div class="text18">comidas rapidas GEMINIS</div>
-                        <div class="text19">imagenes reales de la camara</div>
-                    </div>
-                </figure>
-            </div>
-            
-            <div class="col-12 col-md-6">
-                <figure class="image-1">
-                    <img src="imagen\camara-H3c-2K-luz estroboscopica encendida.jpeg" alt="Imagen 1" class="img-fluid" 
-                    <div class="text-container">
-                        <div class="text20">luz estroboscopica encendida</div>
-                        <div class="text21"></div>
-                    </div>
-                </figure>
-            </div>
-
-            <div class="col-12 col-md-6">
-                <figure class="image-1">
-                    <img src="imagen\camara-H3c-2K-luz estroboscopica apagada.jpeg" alt="Imagen 1" class="img-fluid" 
-                    <div class="text-container">
-                        <div class="text22">luz estroboscopica apagada.</div>
-                        <div class="text23"></div>
-                    </div>
-                </figure>
-            </div>
-        
-            <div class="col-12 col-md-6">
-                <figure class="image-1">
-                    <img src="imagen\camara-H3c-2K-instalada en la farmacia farmAhorro piedecuesta.png" alt="Imagen 1" class="img-fluid" style="margin-top: 5rem;">
-                    <div class="text-container">
-                        <div class="text24">drogerias farmAhorro piedecuesta</div>
-                        <div class="text25">instalada para el motitoreo de las dos vias</div>
-                    </div>
-                </figure>
-            </div>
-
-            <div class="col-12 col-md-6">
-                <iframe width="320" height="16  0" src="https://www.youtube.com/embed/R9rqw5Qv__g" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            
-            
-            <div class="col-12 col-md-6 custom-video-container">
-                <video autoplay loop muted controls class="img-fluid custom-video">
-                    <source src="https://i.imgur.com/n51x4Hv.mp4" type="video/mp4">
-                    Tu navegador no soporta el elemento de video.
-                </video>
-            </div>
-            
-
-            <div class="col-12 col-md-6 custom-video-container">
-                <video autoplay loop muted controls class="img-fluid custom-video">
-                    <source src="https://i.imgur.com/IXRokhV.mp4" type="video/mp4">
-                    Tu navegador no soporta el elemento de video.
-                </video>
-            </div>
-            
-            
-            
-            
-            
-           
-        
-        <div class="col-12 col-md-6">
-            <figure class="image-1">
-                <img src="imagen\camara-H3c-2K-precio al publico.png" alt="Imagen 1" class="img-fluid" 
-                <div class="text-container">
-                    <div class="text30">Hc3 k+ 4mpx, metalica, IP67 resisitente al agua y sol, lente de 2.8mm angulo de vision 101° de apertura, IR  30 mts de alcnce en total oscuridad a color o a blanco y negro  </div>
-                    <div class="text31">precio al publico $ 255.000</div>
-                </div>
-            </figure>
-        </div>
-
-
-
-
-
-        <!-- Formulario de contacto -->
-        <div class="container" id="formulario" style="margin-top: 50px;">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
-                <div class="form-container">
-                    <h2 class="text-center mb-4">Ingrese sus datos para enviar su pedido. ¡Incluya el correo electrónico para FACTURACIÓN ELECTRÓNICA!</h2>
-                    <form id="myForm">
-                        <div class="form-group">
-                            <label for="nombreCompleto">Nombre Completo:</label>
-                            <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono">Teléfono:</label>
-                            <input type="tel" class="form-control" id="telefono" name="telefono" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="direccionBarrio">Dirección/Barrio:</label>
-                            <input type="text" class="form-control" id="direccionBarrio" name="direccionBarrio" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="ciudadDepartamento">Ciudad/Departamento:</label>
-                            <input type="text" class="form-control" id="ciudadDepartamento" name="ciudadDepartamento" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="correoElectronico">Correo Electrónico:</label>
-                            <input type="email" class="form-control" id="correoElectronico" name="correoElectronico" required>
-                        </div>
-                        <button type="button" class="btn btn-primary btn-block custom-btn" onclick="enviarDatos()">Enviar</button>
-                    </form>
                 </div>
             </div>
+            
+            <div class="col-lg-12 col-md-6">
+                <div class="content">
+                    <h3>Imagen</h3>
+                    <img src="imagenes/1.png" class="img-fluid" alt="">
+                    <div class="btn-container">
+                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-        
-  
-  <!-- Botón de WhatsApp -->
-  <div class="mt-3" style="margin-top: 50px;">
-    <a href="https://wa.me/3158859744" target="_blank" class="btn btn-success btn-lg custom-btn w-100">
-      <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp
-    </a>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </main>
-    <footer>
-        <p>Pie de Página</p>
-    </footer>
+    </div>
 </div>
 
+<!-- Formulario de contacto -->
+<div class="container" id="formulario" style="margin-top: 50px;">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+        <div class="form-container">
+            <h2 class="text-center mb-4">Ingrese sus datos para enviar su pedido. ¡Incluya el correo electrónico para FACTURACIÓN ELECTRÓNICA!</h2>
+            <form id="myForm">
+                <div class="form-group">
+                    <label for="nombreCompleto">Nombre Completo:</label>
+                    <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="direccionBarrio">Dirección/Barrio:</label>
+                    <input type="text" class="form-control" id="direccionBarrio" name="direccionBarrio" required>
+                </div>
+                <div class="form-group">
+                    <label for="ciudadDepartamento">Ciudad/Departamento:</label>
+                    <input type="text" class="form-control" id="ciudadDepartamento" name="ciudadDepartamento" required>
+                </div>
+                <div class="form-group">
+                    <label for="correoElectronico">Correo Electrónico:</label>
+                    <input type="email" class="form-control" id="correoElectronico" name="correoElectronico" required>
+                </div>
+                <button type="button" class="btn btn-primary btn-block custom-btn" onclick="enviarDatos()">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+ <!-- Botón de WhatsApp -->
+<div id="whatsapp-btn" class="mt-3" style="margin-top: 50px;">
+  <a href="https://wa.me/3158859744" target="_blank" class="btn btn-success btn-lg custom-btn w-100">
+    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp
+  </a>
+</div>
+
+<footer>
+    <p>© 2024 Nombre de tu empresa. Todos los derechos reservados.</p>
+</footer>
 
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS and jQuery (optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-GFgXL5BEuZN7Us+yoOtLXJbKcV8e6w2CWGlp3zUnKm87z+9sDTPrO+P3Ihe4HWu2" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-D/xsuj1O70N46r2Ck5C5K8HlXWwBL/PJTgmWRBqBpKs7roSpgjOT5HQvrPz6eM6L" crossorigin="anonymous"></script>
 <script>
-  function enviarDatos() {
-    var nombreCompleto = document.getElementById("nombreCompleto").value;
-    var telefono = document.getElementById("telefono").value;
-    var direccionBarrio = document.getElementById("direccionBarrio").value;
-    var ciudadDepartamento = document.getElementById("ciudadDepartamento").value;
-    var correoElectronico = document.getElementById("correoElectronico").value;
-
-    var formData = new FormData();
-    formData.append("nombreCompleto", nombreCompleto);
-    formData.append("telefono", telefono);
-    formData.append("direccionBarrio", direccionBarrio);
-    formData.append("ciudadDepartamento", ciudadDepartamento);
-    formData.append("correoElectronico", correoElectronico);
-
-    fetch('https://script.google.com/macros/s/AKfycbwd5Ne_B5sPStA1KHNPm390zcBubpNJWyBBtu8dzI88rbdg9CPYsy-cXEPs2wqB6nix-A/exec', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      if (response.ok) {
-        alert('Datos enviados correctamente');
-        document.getElementById("myForm").reset(); // Limpiar el formulario después de enviar
-      } else {
-        alert('Error al enviar los datos');
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-  }
-
-
-  
-
-
-
-
-
+    function redirectToForm() {
+        window.location.href = "#formulario";
+    }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
-    // Función para alternar la clase de brillo
+    // Función para alternar la clase de brillo DEL LOGO
     function toggleShine() {
         var logo = document.getElementById('logo');
         logo.classList.toggle('shine');
@@ -2397,26 +618,38 @@ main {
     setInterval(toggleShine, 3000); // Cambiar el valor de 3000 para ajustar la frecuencia del brillo
 </script>
 
-
 <script>
-    function submitForm() {
-      var form = document.getElementById("myForm");
-      var formData = new FormData(form);
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "https://script.google.com/macros/s/AKfycbwMt9CkNQMsG58HhHOrrFMT5RfpNuQ4m4VvQijC7joS5AB0019u0t8QxcTEwfNGHV6jPw/exec");
-      xhr.send(formData);
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-          if (xhr.status === 200) {
-            alert(xhr.responseText); // Muestra la respuesta del script
-          } else {
-            alert("Hubo un error al enviar el formulario.");
-          }
-        }
-      };
+    function enviarDatos() {
+        var nombreCompleto = document.getElementById("nombreCompleto").value;
+        var telefono = document.getElementById("telefono").value;
+        var direccionBarrio = document.getElementById("direccionBarrio").value;
+        var ciudadDepartamento = document.getElementById("ciudadDepartamento").value;
+        var correoElectronico = document.getElementById("correoElectronico").value;
+
+        var formData = new FormData();
+        formData.append("nombreCompleto", nombreCompleto);
+        formData.append("telefono", telefono);
+        formData.append("direccionBarrio", direccionBarrio);
+        formData.append("ciudadDepartamento", ciudadDepartamento);
+        formData.append("correoElectronico", correoElectronico);
+
+        fetch('https://script.google.com/macros/s/AKfycbwd5Ne_B5sPStA1KHNPm390zcBubpNJWyBBtu8dzI88rbdg9CPYsy-cXEPs2wqB6nix-A/exec', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Datos enviados correctamente');
+                document.getElementById("myForm").reset(); // Limpiar el formulario después de enviar
+            } else {
+                alert('Error al enviar los datos');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     }
-    </script>
-    
+</script>
 
 </body>
 </html>
