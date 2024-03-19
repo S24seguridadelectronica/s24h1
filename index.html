@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page con Bootstrap</title>
+    <title>Ventana Modal</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Normalize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
     <style>
     /* Tus estilos CSS personalizados van aquí */
        /* Modern CSS Reset */
+       
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,7 +22,9 @@
 }
 
 body {
-  line-height: 1.6;
+    line-height: 1.6; /* Altura de línea */
+    background-color: black; /* Fondo negro */
+    color: white; /* Color del texto blanco para que sea legible en el fondo negro */
 }
 
 img,
@@ -373,47 +379,31 @@ html [type="button"],
 
 
 .btn-container {
-    text-align: center; /* Centra el botón horizontalmente */
+    text-align: center; /* Centra horizontalmente los elementos */
 }
 
-.btn-contactar {
-    font-size: 2.5vw; /* Tamaño del botón en unidades de viewport */
-    padding: 1.5vh 3vw; /* Relleno del botón */
-    margin-top: 3vh; /* Ajusta la distancia superior entre el botón y el contenido anterior */
+.btn-custom {
+    background-color: orange; /* Color naranja */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: -10vw; /* Bordes redondeados */
+    padding: 5vw 10vw; /* Espaciado interno */
+    font-size: 10vw; /* Tamaño del texto */
+    cursor: pointer; /* Cursor al pasar */
+    transition: background-color 0.3s ease; /* Transición suave */
+    margin: 10vh auto; /* Margen automático izquierdo y derecho, y 10px arriba y abajo */
+    display: inline-block; /* Permite que el botón respete el margen automático */
+    height: 10vh; /* Altura del botón */
+    width: 75vw; /* Anchura del botón */
+    line-height: 10px; /* Alinea verticalmente el texto */
+
 }
 
-/* Media queries para ajustar el tamaño del botón en todas las pantallas */
-@media (max-width: 767px) {
-    .btn-contactar {
-        font-size: 4vw; /* Tamaño de letra en unidades de viewport */
-        padding: 2vh 4vw; /* Relleno del botón */
-        margin-top: 4vh; /* Ajusta la distancia superior en pantallas pequeñas */
-    }
+.btn-custom:hover {
+    background-color: darkorange; /* Cambio de color al pasar el cursor */
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-    .btn-contactar {
-        font-size: 3vw; /* Tamaño de letra en unidades de viewport */
-        padding: 2vh 5vw; /* Relleno del botón */
-        margin-top: 3.5vh; /* Ajusta la distancia superior en pantallas medianas */
-    }
-}
 
-@media (min-width: 992px) and (max-width: 1199px) {
-    .btn-contactar {
-        font-size: 2.5vw; /* Tamaño de letra en unidades de viewport */
-        padding: 2vh 6vw; /* Relleno del botón */
-        margin-top: 3vh; /* Ajusta la distancia superior en pantallas grandes */
-    }
-}
-
-@media (min-width: 1200px) {
-    .btn-contactar {
-        font-size: 2vw; /* Tamaño de letra en unidades de viewport */
-        padding: 2vh 7vw; /* Relleno del botón */
-        margin-top: 2.5vh; /* Ajusta la distancia superior en pantallas extra grandes */
-    }
-}
 
 
 
@@ -497,6 +487,45 @@ html [type="button"],
   
 
 
+    
+/* Estilos personalizados para la ventana modal */
+.modal-content {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.modal-header {
+    background-color: #007bff; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    border-top-left-radius: 15px; /* Bordes redondeados arriba */
+    border-top-right-radius: 15px;
+}
+
+.modal-body {
+    padding: 30px; /* Mayor espacio entre el contenido y los bordes */
+    font-family: 'Arial', sans-serif; /* Fuente legible */
+}
+
+.modal-footer {
+    border-bottom-left-radius: 15px; /* Bordes redondeados abajo */
+    border-bottom-right-radius: 15px;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #6c757d; /* Botón secundario de color gris */
+    border-color: #6c757d;
+}
+
+.modal-footer .btn-primary {
+    background-color: #28a745; /* Botón primario de color verde */
+    border-color: #28a745;
+}
+
+
+
+
+
 
 
 
@@ -531,139 +560,151 @@ html [type="button"],
 
             <div class="col-lg-12 col-md-6">
                 <div class="content">
-                    <h3>Imagen</h3>
-                    <img src="imagen/0.png" class="img-fluid" alt="">
+                    <h3></h3>
+                    <img src="imagenes/0.png" class="img-fluid" alt="">
                     <div class="btn-container">
-                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                     <button class="btn btn-custom btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-12 col-md-6">
                 <div class="content">
-                    <h3>Imagen</h3>
-                    <img src="imagen/1.png" class="img-fluid" alt="">
+                    <h3></h3>
+                    <img src="imagenes/1.png" class="img-fluid" alt="">
                     <div class="btn-container">
-                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                     <button class="btn btn-custom btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-12 col-md-6">
                 <div class="content">
-                    <h3>Imagen</h3>
-                    <img src="imagen/2.png" class="img-fluid" alt="">
+                    <h3></h3>
+                    <img src="imagenes/2.png" class="img-fluid" alt="">
                     <div class="btn-container">
-                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                     <button class="btn btn-custom btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-12 col-md-6">
                 <div class="content">
-                    <h3>Imagen</h3>
-                    <img src="imagen/3.png" class="img-fluid" alt="">
+                    <h3></h3>
+                    <img src="imagenes/3.png" class="img-fluid" alt="">
                     <div class="btn-container">
-                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                     <button class="btn btn-custom btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-12 col-md-6">
                 <div class="content">
-                    <h3>Imagen</h3>
-                    <img src="imagen/4.png" class="img-fluid" alt="">
+                    <h3></h3>
+                    <img src="imagenes/4.png" class="img-fluid" alt="">
                     <div class="btn-container">
-                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                     <button class="btn btn-custom btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-12 col-md-6">
                 <div class="content">
-                    <h3>Imagen</h3>
-                    <img src="imagen/5.png" class="img-fluid" alt="">
+                    <h3></h3>
+                    <img src="imagenes/5.png" class="img-fluid" alt="">
                     <div class="btn-container">
-                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                     <button class="btn btn-custom btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-12 col-md-6">
                 <div class="content">
-                    <h3>Imagen</h3>
-                    <img src="imagen/6.gif" class="img-fluid" alt="">
+                    <h3></h3>
+                    <img src="imagenes/6.gif" class="img-fluid" alt="">
                     <div class="btn-container">
-                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                     <button class="btn btn-custom btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-12 col-md-6">
                 <div class="content">
-                    <h3>Imagen</h3>
-                    <img src="imagen/7.png" class="img-fluid" alt="">
+                    <h3></h3>
+                    <img src="imagenes/7.png" class="img-fluid" alt="">
                     <div class="btn-container">
-                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                     <button class="btn btn-custom btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-12 col-md-6">
                 <div class="content">
-                    <h3>Imagen</h3>
-                    <img src="imagen/8.gif" class="img-fluid" alt="">
+                    <h3></h3>
+                    <img src="imagenes/8.gif" class="img-fluid" alt="">
                     <div class="btn-container">
-                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                     <button class="btn btn-custom btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-12 col-md-6">
                 <div class="content">
-                    <h3>Imagen</h3>
-                    <img src="imagen/9.png" class="img-fluid" alt="">
+                    <h3></h3>
+                    <img src="imagenes/9.png" class="img-fluid" alt="">
                     <div class="btn-container">
-                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                     <button class="btn btn-custom btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-12 col-md-6">
                 <div class="content">
-                    <h3>Imagen</h3>
-                    <img src="imagen/10.gif" class="img-fluid" alt="">
+                    <h3></h3>
+                    <img src="imagenes/10.gif" class="img-fluid" alt="">
                     <div class="btn-container">
-                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                     <button class="btn btn-custom btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-12 col-md-6">
                 <div class="content">
-                    <h3>Imagen</h3>
-                    <img src="imagen/11.png" class="img-fluid" alt="">
+                    <h3></h3>
+                    <img src="imagenes/11.png" class="img-fluid" alt="">
                     <div class="btn-container">
-                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                     <button class="btn btn-custom btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-12 col-md-6">
                 <div class="content">
-                    <h3>Imagen</h3>
-                    <img src="imagen/12.png" class="img-fluid" alt="">
+                    <h3></h3>
+                    <img src="imagenes/12.png" class="img-fluid" alt="">
                     <div class="btn-container">
-                        <button class="btn btn-primary btn-block" onclick="redirectToForm()">Contactar</button>
+                     <button class="btn btn-custom btn-block" onclick="redirectToForm()">Contactar</button>
                     </div>
                 </div>
             </div>
             
+    <div class="col-lg-10 col-md-6">
+        <div class="content">
+            <h3></h3>
+            <div class="iframe-container">
+                <iframe src="<div>Hola</div>
+" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="btn-container">
+             <button class="btn btn-success btn-block" onclick="redirectToForm()">Contactar</button>
+            </div>
+        </div>
+    </div>
+    
         </div>
     </div>
 </div>
 
-<!-- Formulario de contacto -->
 <div class="container" id="formulario" style="margin-top: 50px;">
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
         <div class="form-container">
@@ -689,11 +730,36 @@ html [type="button"],
                     <label for="correoElectronico">Correo Electrónico:</label>
                     <input type="email" class="form-control" id="correoElectronico" name="correoElectronico" required>
                 </div>
-                <button type="button" class="btn btn-primary btn-block custom-btn" onclick="enviarDatos()">Enviar</button>
+                <!-- Botón de apertura de la ventana modal -->
+                <button type="button" class="btn btn-primary btn-block custom-btn" data-toggle="modal" data-target="#myModal">
+                    Enviar
+                </button>
             </form>
         </div>
     </div>
 </div>
+
+<!-- Ventana modal -->
+<div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+    
+                <!-- Encabezado de la ventana modal -->
+                <div class="modal-header">
+                    <h4 class="modal-title">¡Gracias por tu compra!</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+    
+                <!-- Cuerpo de la ventana modal -->
+                <div class="modal-body">
+                    <p>Tu pedido ha sido enviado correctamente</p>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+
  <!-- Botón de WhatsApp -->
 <div id="whatsapp-btn" class="mt-3" style="margin-top: 50px;">
   <a href="https://wa.me/3158859744" target="_blank" class="btn btn-success btn-lg custom-btn w-100">
@@ -710,6 +776,9 @@ html [type="button"],
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
     function redirectToForm() {
