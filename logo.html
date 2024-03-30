@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo con HTML/CSS/JS</title>
+  <style>
+    /* Estilo del cuerpo del documento */
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0; /* Color de fondo */
+    }
+
+    /* Estilo del contenedor del lente de la cámara */
+    .lens {
+      position: relative;
+      width: 200px; /* Ajusta el tamaño del lente */
+      height: 200px; /* Ajusta el tamaño del lente */
+      border: 1px solid #ddd; /* Borde del lente */
+      border-radius: 50%;
+      overflow: hidden; /* Para recortar el contenido que se desborda */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    }
+/* Estilo del vidrio del lente */
+.glass {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle closest-side, transparent 60%, rgba(17, 0, 255, 0.9) 70%); /* Gradiente radial para simular los círculos */
+  border-radius: 50%;
+  border: 2px solid rgba(4, 0, 255, 0.6); /* Borde para simular brillo */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+}
+
+
+/* Estilo del círculo central dentro del vidrio del lente */
+.inner-circle {
+  position: absolute;
+  width: 98%; /* Ajusta el ancho del círculo central */
+  height: 98%; /* Ajusta la altura del círculo central */
+  background-color: #111; /* Color del círculo central */
+  border-radius: 50%;
+  top: 1%; /* Ajusta la posición superior del círculo */
+  left: 1%; /* Ajusta la posición izquierda del círculo */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+}
+
+
+    /* Estilo del reflejo en el vidrio del lente */
+    .highlight {
+      position: absolute;
+      width: 40%;
+      height: 40%;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6), transparent); /* Reflejo en el vidrio */
+      border-radius: 10%;
+      top: 0%;
+      left: 0%;
+    }
+/* Estilo del texto del logo */
+/* Estilo del texto del logo */
+.logo-text {
+  font-size: 9vw; /* Tamaño del texto relativo al ancho de la ventana */
+  position: absolute;
+  top: 50%; /* Centra verticalmente el texto */
+  left: 50%; /* Centra horizontalmente el texto */
+  transform: translate(-50%, -50%);......
+  color: #4400ff; /* Color del texto */
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #4400ff, #2c06ff); /* Degradado cromático */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Hace el texto transparente */
+}
+
+
+
+  </style>
+</head>
+<body>
+  <!-- Contenedor del lente de la cámara -->
+  <div class="lens">
+    <!-- Vidrio del lente -->
+    <div class="glass">
+      <!-- Círculo central dentro del vidrio del lente -->
+      <div class="inner-circle"></div>
+      <!-- Reflejo en el vidrio del lente -->
+      <div class="highlight"></div>
+    </div>
+    <!-- Texto del logo -->
+    <div class="logo-text">S24</div>
+  </div>
+</body>
+</html>
