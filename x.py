@@ -1,21 +1,41 @@
 # Inicializar un diccionario para almacenar los elementos HTML
-html_elements = {"h1": [], "p": [], "h3": [], "img": []}
+html_elements = {"h1": [], "p": [], "h3": [], "img": [], "figcaption": []}
+
+# Inicializar una variable para almacenar la línea requerida
+figcaption_line = None
 
 # Leer el archivo y cargar los elementos HTML
-with open("datos/titulos.txt", "r", encoding="utf-8") as titulos_file:
-    # Resto del código...
+with open("imagenes/titulos.txt", "r", encoding="utf-8") as titulos_file:
     current_group = None
     for linea in titulos_file:
-        elemento, identificador, contenido = linea.strip().split(":")
-        if elemento == "img":
-            # Si es una imagen, agregarla directamente al diccionario de elementos HTML
-            html_elements[elemento].append((identificador, contenido))
+        # Dividir la línea por el primer colon encontrado
+        partes = linea.strip().split(":", 1)
+        # Verificar si hay al menos dos partes después de la división
+        if len(partes) >= 2:
+            elemento = partes[0]
+            resto = partes[1]
+            # Buscar el segundo colon en el resto
+            idx_segundo_colon = resto.find(":")
+            if idx_segundo_colon != -1:
+                identificador = resto[:idx_segundo_colon]
+                contenido = resto[idx_segundo_colon + 1:].strip()
+                if elemento == "img":
+                    # Si es una imagen, agregarla directamente al diccionario de elementos HTML
+                    html_elements[elemento].append((identificador, contenido))
+                else:
+                    # Si es un título, párrafo, subtítulo o figcaption, iniciar un nuevo grupo
+                    current_group = elemento
+                    if elemento not in html_elements:
+                        html_elements[elemento] = []
+                    html_elements[elemento].append((identificador, contenido))
+                
+                # Buscar la línea que contiene la etiqueta <figcaption>
+                if elemento == "figcaption":
+                    figcaption_line = contenido
+            else:
+                print("Error: la línea no contiene suficientes valores después del primer colon:", linea)
         else:
-            # Si es un título, párrafo o subtítulo, iniciar un nuevo grupo
-            current_group = elemento
-            if elemento not in html_elements:
-                html_elements[elemento] = []
-            html_elements[elemento].append((identificador, contenido))
+            print("Error: la línea no contiene suficientes valores después del primer colon:", linea)
 
 # Generar el contenido HTML
 html_content = "<!DOCTYPE html>\n<html lang='es'>\n<head>\n<meta charset='UTF-8'>\n<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n<title>Títulos</title>\n</head>\n<body>\n"
@@ -39,8 +59,12 @@ for i in range(num_img):
     if i < len(html_elements['img']):
         html_content += f"<img src='{html_elements['img'][i][1]}' alt=''>\n"
     
-    # Agregar la etiqueta de cierre de la figura con la leyenda opcional
-    html_content += "<figcaption>Descripción opcional de la imagen.</figcaption>\n</figure>\n"
+    # Verificar si hay un figurecaption disponible para esta imagen
+    if figcaption_line:
+        html_content += f"<figcaption>{figcaption_line}</figcaption>\n"
+    
+    # Agregar la etiqueta de cierre de la figura
+    html_content += "</figure>\n"
     
     # Verificar si hay un párrafo disponible para esta imagen
     if i < len(html_elements['p']):
@@ -73,7 +97,7 @@ for i in range(num_img):
 html_content += "</body>\n</html>"
 
 # Escribir el contenido HTML en un archivo
-with open("index.html", "w", encoding="utf-8") as f:
+with open("xindex.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
 # Indicar que el archivo se ha creado con éxito
