@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrusel de Imágenes</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    .carousel-container {
+        text-align: center;
+        position: relative;
+        width: 80%;
+        margin: auto;
+        overflow: hidden; /* Oculta las miniaturas que estén fuera del contenedor */
+    }
+    .main-image {
+        max-width: 100%;
+        height: auto;
+    }
+    .thumbnail-images {
+        margin-top: 20px;
+        white-space: nowrap; /* Para que las miniaturas no se rompan en varias líneas */
+        animation: moveThumbnails 80s linear infinite; /* Animación para mover las miniaturas */
+    }
+    .thumbnail-images img {
+        width: 100px; /* Tamaño de las miniaturas */
+        height: auto;
+        margin: 0 5px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+    .thumbnail-images img:hover {
+        border-color: #333; /* Color del borde al pasar el ratón */
+    }
+
+    @keyframes moveThumbnails {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-100% - 10px)); /* Se desplaza una miniatura más allá del contenedor */
+        }
+    }
+
+    @keyframes moveThumbnailsForward {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-100% - 10px)); /* Mueve las miniaturas hacia adelante */
+        }
+    }
+
+    @keyframes moveThumbnailsBackward {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(100% + 10px)); /* Mueve las miniaturas hacia atrás */
+        }
+    }
+
+    #formulario {
+    margin-top: 20px;
+}
+
+#confirmar-compra-btn {
+    margin-top: 10px;
+}
+
+
+#formulario-compra {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px; /* Opcional: establece un ancho máximo para evitar que el formulario sea demasiado ancho en pantallas grandes */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+<h1>envios contra entrega para bucaramanga y su area metropolitana</h1>
+    <div class="carousel-container">
+        <h2>pidelo ahora y paga en la puerta de tu casa</h2>
+        <button class="prev-button">&lt;</button>
+        <img class="main-image" src="imagenes/(1)DS-2CE56D0T-IRPF.jpg" alt="Imagen Principal">
+        <button class="next-button">&gt;</button>
+        <div class="thumbnail-images">
+            <img src="imagenes/(138)DS-2CE10DF0T-PFS.png" alt="Miniatura 1">
+            <img src="imagenes/(138)DS-2CE10DF0T-PFS.png" alt="Miniatura 2">
+            <img src="imagenes/(138)DS-2CE10DF0T-PFS.png" alt="Miniatura 3">
+            <img src="imagenes/(138)DS-2CE10DF0T-PFS.png" alt="Miniatura 4">
+            <img src="imagenes/(138)DS-2CE10DF0T-PFS.png" alt="Miniatura 5">
+            <img src="imagenes/(138)DS-2CE10DF0T-PFS.png" alt="Miniatura 6">
+            <img src="imagenes/(1)DS-2CE56D0T-IRPF.jpg" alt="Miniatura 7">
+        </div>
+    </div>
+    <h2>1111</h2>
+    <p>2222</p>
+    <h2>3333</h2>
+    <p>4444</p>
+
+    <button id="comprar-btn">Comprar</button>
+
+    <div id="formulario-compra" style="display: none;">
+        <form id="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+    
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required><br>
+    
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required><br>
+    
+            <label for="nit">NIT:</label>
+            <input type="text" id="nit" name="nit" required><br>
+    
+            <button type="submit" id="confirmar-compra-btn">Confirmar Compra</button>
+        </form>
+    </div>
+    
+<footer>s24seguridadelectronica</footer>
+
+<script>
+document.getElementById("formulario").addEventListener("submit", function(event){
+  event.preventDefault(); // Prevenir el envío por defecto del formulario
+  
+  var nombre = document.getElementById("nombre").value;
+  var telefono = document.getElementById("telefono").value;
+  var direccion = document.getElementById("direccion").value;
+  var nit = document.getElementById("nit").value;
+  
+  var data = {
+    nombre: nombre,
+    telefono: telefono,
+    direccion: direccion,
+    nit: nit
+  };
+  
+  fetch("URL_del_servicio_web", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (response.ok) {
+      alert("Compra confirmada. Datos enviados correctamente.");
+      // Puedes agregar cualquier otra acción aquí, como redirigir a una página de confirmación.
+    } else {
+      alert("Hubo un error al enviar los datos. Por favor, intenta nuevamente.");
+    }
+  })
+  .catch(error => {
+    console.error("Error:", error);
+    alert("Hubo un error al enviar los datos. Por favor, intenta nuevamente.");
+  });
+});
+</script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mainImage = document.querySelector('.main-image');
+            const thumbnails = document.querySelectorAll('.thumbnail-images img');
+            const prevButton = document.querySelector('.prev-button');
+            const nextButton = document.querySelector('.next-button');
+            let currentIndex = 0;
+    
+            // Función para mostrar la imagen correspondiente al índice dado
+            function showImage(index) {
+                mainImage.src = thumbnails[index].src;
+            }
+    
+            // Manejadores de eventos para los botones prev y next
+            prevButton.addEventListener('click', function() {
+                currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+                showImage(currentIndex);
+            });
+    
+            nextButton.addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % thumbnails.length;
+                showImage(currentIndex);
+            });
+    
+            // Manejador de eventos para hacer clic en miniaturas
+            thumbnails.forEach((thumbnail, index) => {
+                thumbnail.addEventListener('click', function() {
+                    // Intercambiar src de la miniatura clicada con la imagen principal
+                    let tempSrc = mainImage.src;
+                    mainImage.src = thumbnail.src;
+                    thumbnail.src = tempSrc;
+                });
+            });
+    
+            // Añadir soporte para eventos táctiles en dispositivos móviles
+            thumbnails.forEach((thumbnail, index) => {
+                thumbnail.addEventListener('touchstart', function() {
+                    // Intercambiar src de la miniatura clicada con la imagen principal
+                    let tempSrc = mainImage.src;
+                    mainImage.src = thumbnail.src;
+                    thumbnail.src = tempSrc;
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const comprarBtn = document.getElementById("comprar-btn");
+    const formularioCompra = document.getElementById("formulario-compra");
+    const confirmarCompraBtn = document.getElementById("confirmar-compra-btn");
+
+    comprarBtn.addEventListener("click", function() {
+        if (formularioCompra.style.display === "block") {
+            formularioCompra.style.display = "none"; // Si está visible, se oculta
+        } else {
+            formularioCompra.style.display = "block"; // Si está oculto, se muestra
+        }
+    });
+
+    confirmarCompraBtn.addEventListener("click", function() {
+        // Aquí puedes agregar la lógica para procesar la compra
+        // Por ejemplo, puedes enviar los datos a un servidor
+        // Y mostrar un mensaje de confirmación al usuario
+        alert("¡Compra confirmada!");
+        // También puedes reiniciar el formulario si es necesario
+        document.getElementById("formulario").reset();
+        // Ocultar el formulario después de la confirmación
+        formularioCompra.style.display = "none";
+    });
+});
+
+
+    </script>
+    
+    
+
+
+
+
+
+</body>
+</html>
