@@ -1,9 +1,9 @@
 from PIL import Image
 import os
 
-# Directorio de entrada y salida
-directorio_entrada = "imagenes/"
-directorio_salida = "datos/"
+# Directorio de entrada y salida con rutas completas
+directorio_entrada = r"C:\Users\PERSONAL\1080X1080PY\imagenes"
+directorio_salida = r"C:\Users\PERSONAL\kit_de_camaras2\assets\images"
 
 # Obtener lista de archivos en el directorio de entrada
 archivos = os.listdir(directorio_entrada)
